@@ -10,6 +10,8 @@ Copyright:    ©2005 Robert J. Lang. All Rights Reserved.
 
 #include <iostream>
 #include <string>
+#include <cstring>
+
 
 #include "tmDpptr.h"
 #include "tmDpptrArray.h"

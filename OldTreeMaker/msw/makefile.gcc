@@ -20,10 +20,11 @@ CXX = g++
 CFLAGS = 
 
 # Standard flags for C++ 
-CXXFLAGS = 
+CXXFLAGS = -Wfatal-errors
 
 # Standard preprocessor flags (common for CC and CXX) 
-CPPFLAGS = 
+CPPFLAGS = -I"C:\Users\tooco\Desktop\SeniorProg\OrigamiMaker\wxWidgets\include" -I"C:\Users\tooco\Desktop\SeniorProg\OrigamiMaker\wxWidgets\lib\gcc_lib\mswu"
+
 
 # Standard linker flags 
 LDFLAGS = 
@@ -41,7 +42,7 @@ WX_DIR = $(WXWIN)
 WX_SHARED = 0
 
 # Compile Unicode build of wxWidgets? [0,1]
-WX_UNICODE = 0
+WX_UNICODE = 1
 
 # Use debug build of wxWidgets (define __WXDEBUG__)? [0,1]
 WX_DEBUG = 1

@@ -19,6 +19,8 @@ Copyright:    ©2003 Robert J. Lang. All Rights Reserved.
 #include <sstream>
 #include <fstream>
 #include <limits>
+#include <cmath>
+
 
 using namespace std;
 

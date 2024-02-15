@@ -12,6 +12,8 @@ Copyright:    ©2003 Robert J. Lang. All Rights Reserved.
 #include "tmModel.h"
 
 #include <cstdlib>
+#include <cstring>
+
 
 using namespace std;
 

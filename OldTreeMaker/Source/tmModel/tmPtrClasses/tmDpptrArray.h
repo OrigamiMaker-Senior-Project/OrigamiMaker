@@ -240,7 +240,8 @@ referencing it
 template <class T>
 void tmDpptrArray<T>::union_with(T* pt)
 {
-  if (!contains(pt)) push_back(pt);
+    if (!this->contains(pt)) this->push_back(pt);
+
 }
 
 
@@ -250,7 +251,7 @@ Remove all copies of this item from the list.
 template <class T>
 void tmDpptrArray<T>::erase_remove(T* pt)
 {
-  if (contains(pt)) {
+  if (this->contains(pt)) {
     tmArray<T*>::erase_remove(pt);
     DstRemoveMeAsDpptrSrc(pt);
   };

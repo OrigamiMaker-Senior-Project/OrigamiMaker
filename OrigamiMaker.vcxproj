@@ -1,0 +1,443 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>17.0</VCProjectVersion>
+    <ProjectGuid>{FB6F6A5F-0588-40FB-9425-6694E3B612EE}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;__WXDEBUG__;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\tooco\Desktop\SeniorProg\wx\include;C:\Users\tooco\Desktop\SeniorProg\wx\lib\vc_lib\mswud;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <WarningLevel>Level3</WarningLevel>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PreprocessorDefinitions>_DEBUG;_WINDOWS;__WXDEBUG__;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\tooco\Desktop\SeniorProg\wx\include;C:\Users\tooco\Desktop\SeniorProg\wx\lib\vc_lib\mswud;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <WarningLevel>Level3</WarningLevel>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;__WXDEBUG__;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\tooco\Desktop\SeniorProg\wx\include;C:\Users\tooco\Desktop\SeniorProg\wx\lib\vc_lib\mswud;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <WarningLevel>Level3</WarningLevel>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <PreprocessorDefinitions>NDEBUG;_WINDOWS;__WXDEBUG__;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\tooco\Desktop\SeniorProg\wx\include;C:\Users\tooco\Desktop\SeniorProg\wx\lib\vc_lib\mswud;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <WarningLevel>Level3</WarningLevel>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="oldtreemaker\linux\tmpath.c" />
+    <ClCompile Include="oldtreemaker\source\test\tmArrayTester.cpp" />
+    <ClCompile Include="oldtreemaker\source\test\tmDpptrTester.cpp" />
+    <ClCompile Include="oldtreemaker\source\test\tmmodeltester\tmModelTester.cpp" />
+    <ClCompile Include="oldtreemaker\source\test\tmNewtonRaphsonTester.cpp" />
+    <ClCompile Include="oldtreemaker\source\test\tmnlcotester\tmNLCOTester.cpp" />
+    <ClCompile Include="oldtreemaker\source\tmHeader.cpp" />
+    <ClCompile Include="oldtreemaker\source\tmmodel\tmnlco\tmNLCO.cpp" />
+    <ClCompile Include="oldtreemaker\source\tmmodel\tmnlco\tmNLCO_alm.cpp" />
+    <ClCompile Include="oldtreemaker\source\tmmodel\tmnlco\tmNLCO_cfsqp.cpp" />
+    <ClCompile Include="oldtreemaker\source\tmmodel\tmnlco\tmNLCO_rfsqp.cpp" />
+    <ClCompile Include="oldtreemaker\source\tmmodel\tmnlco\tmNLCO_wnlib.cpp" />
+    <ClCompile Include="oldtreemaker\source\tmmodel\tmnlco\tmNLCO_wnlibStub.c" />
+    <ClCompile Include="oldtreemaker\source\tmmodel\tmoptimizers\tmConstraintFns.cpp" />
+    <ClCompile Include="oldtreemaker\source\tmmodel\tmoptimizers\tmEdgeOptimizer.cpp" />
+    <ClCompile Include="oldtreemaker\source\tmmodel\tmoptimizers\tmOptimizer.cpp" />
+    <ClCompile Include="oldtreemaker\source\tmmodel\tmoptimizers\tmScaleOptimizer.cpp" />
+    <ClCompile Include="oldtreemaker\source\tmmodel\tmoptimizers\tmStrainOptimizer.cpp" />
+    <ClCompile Include="oldtreemaker\source\tmmodel\tmptrclasses\tmDpptrTarget.cpp" />
+    <ClCompile Include="oldtreemaker\source\tmmodel\tmsolvers\tmStubFinder.cpp" />
+    <ClCompile Include="oldtreemaker\source\tmmodel\tmtreeclasses\tmCluster.cpp" />
+    <ClCompile Include="oldtreemaker\source\tmmodel\tmtreeclasses\tmCondition.cpp" />
+    <ClCompile Include="oldtreemaker\source\tmmodel\tmtreeclasses\tmConditionEdgeLengthFixed.cpp" />
+    <ClCompile Include="oldtreemaker\source\tmmodel\tmtreeclasses\tmConditionEdgesSameStrain.cpp" />
+    <ClCompile Include="oldtreemaker\source\tmmodel\tmtreeclasses\tmConditionNodeCombo.cpp" />
+    <ClCompile Include="oldtreemaker\source\tmmodel\tmtreeclasses\tmConditionNodeFixed.cpp" />
+    <ClCompile Include="oldtreemaker\source\tmmodel\tmtreeclasses\tmConditionNodeOnCorner.cpp" />
+    <ClCompile Include="oldtreemaker\source\tmmodel\tmtreeclasses\tmConditionNodeOnEdge.cpp" />
+    <ClCompile Include="oldtreemaker\source\tmmodel\tmtreeclasses\tmConditionNodesCollinear.cpp" />
+    <ClCompile Include="oldtreemaker\source\tmmodel\tmtreeclasses\tmConditionNodesPaired.cpp" />
+    <ClCompile Include="oldtreemaker\source\tmmodel\tmtreeclasses\tmConditionNodeSymmetric.cpp" />
+    <ClCompile Include="oldtreemaker\source\tmmodel\tmtreeclasses\tmConditionOwner.cpp" />
+    <ClCompile Include="oldtreemaker\source\tmmodel\tmtreeclasses\tmConditionPathActive.cpp" />
+    <ClCompile Include="oldtreemaker\source\tmmodel\tmtreeclasses\tmConditionPathAngleFixed.cpp" />
+    <ClCompile Include="oldtreemaker\source\tmmodel\tmtreeclasses\tmConditionPathAngleQuant.cpp" />
+    <ClCompile Include="oldtreemaker\source\tmmodel\tmtreeclasses\tmConditionPathCombo.cpp" />
+    <ClCompile Include="oldtreemaker\source\tmmodel\tmtreeclasses\tmCrease.cpp" />
+    <ClCompile Include="oldtreemaker\source\tmmodel\tmtreeclasses\tmCreaseOwner.cpp" />
+    <ClCompile Include="oldtreemaker\source\tmmodel\tmtreeclasses\tmEdge.cpp" />
+    <ClCompile Include="oldtreemaker\source\tmmodel\tmtreeclasses\tmEdgeOwner.cpp" />
+    <ClCompile Include="oldtreemaker\source\tmmodel\tmtreeclasses\tmFacet.cpp" />
+    <ClCompile Include="oldtreemaker\source\tmmodel\tmtreeclasses\tmFacetOwner.cpp" />
+    <ClCompile Include="oldtreemaker\source\tmmodel\tmtreeclasses\tmNode.cpp" />
+    <ClCompile Include="oldtreemaker\source\tmmodel\tmtreeclasses\tmNodeOwner.cpp" />
+    <ClCompile Include="oldtreemaker\source\tmmodel\tmtreeclasses\tmPart.cpp" />
+    <ClCompile Include="oldtreemaker\source\tmmodel\tmtreeclasses\tmPath.cpp" />
+    <ClCompile Include="oldtreemaker\source\tmmodel\tmtreeclasses\tmPathOwner.cpp" />
+    <ClCompile Include="oldtreemaker\source\tmmodel\tmtreeclasses\tmPoint.cpp" />
+    <ClCompile Include="oldtreemaker\source\tmmodel\tmtreeclasses\tmPoly.cpp" />
+    <ClCompile Include="oldtreemaker\source\tmmodel\tmtreeclasses\tmPolyOwner.cpp" />
+    <ClCompile Include="oldtreemaker\source\tmmodel\tmtreeclasses\tmTree.cpp" />
+    <ClCompile Include="oldtreemaker\source\tmmodel\tmtreeclasses\tmTreeCleaner.cpp" />
+    <ClCompile Include="oldtreemaker\source\tmmodel\tmtreeclasses\tmTree_FacetOrder.cpp" />
+    <ClCompile Include="oldtreemaker\source\tmmodel\tmtreeclasses\tmTree_IO.cpp" />
+    <ClCompile Include="oldtreemaker\source\tmmodel\tmtreeclasses\tmTree_TestTrees.cpp" />
+    <ClCompile Include="oldtreemaker\source\tmmodel\tmtreeclasses\tmVertex.cpp" />
+    <ClCompile Include="oldtreemaker\source\tmmodel\tmtreeclasses\tmVertexOwner.cpp" />
+    <ClCompile Include="oldtreemaker\source\tmmodel\wnlib\cmp\wndcmp.c" />
+    <ClCompile Include="oldtreemaker\source\tmmodel\wnlib\conjdir\wn1dmin.c" />
+    <ClCompile Include="oldtreemaker\source\tmmodel\wnlib\conjdir\wncnjfg.c" />
+    <ClCompile Include="oldtreemaker\source\tmmodel\wnlib\conjdir\wnconjg.c" />
+    <ClCompile Include="oldtreemaker\source\tmmodel\wnlib\conjdir\wnnlp.c" />
+    <ClCompile Include="oldtreemaker\source\tmmodel\wnlib\conjdir\wnparvect.c" />
+    <ClCompile Include="oldtreemaker\source\tmmodel\wnlib\conjdir\wnqfit.c" />
+    <ClCompile Include="oldtreemaker\source\tmmodel\wnlib\list\wnscnt.c" />
+    <ClCompile Include="oldtreemaker\source\tmmodel\wnlib\list\wnsmk.c" />
+    <ClCompile Include="oldtreemaker\source\tmmodel\wnlib\low\wnasrt.c" />
+    <ClCompile Include="oldtreemaker\source\tmmodel\wnlib\mat\wnmmk.c" />
+    <ClCompile Include="oldtreemaker\source\tmmodel\wnlib\mem\wnmbtr.c" />
+    <ClCompile Include="oldtreemaker\source\tmmodel\wnlib\mem\wnmcpy.c" />
+    <ClCompile Include="oldtreemaker\source\tmmodel\wnlib\mem\wnmem.c" />
+    <ClCompile Include="oldtreemaker\source\tmmodel\wnlib\mem\wnmemb.c" />
+    <ClCompile Include="oldtreemaker\source\tmmodel\wnlib\mem\wnmemg.c" />
+    <ClCompile Include="oldtreemaker\source\tmmodel\wnlib\mem\wnmemn.c" />
+    <ClCompile Include="oldtreemaker\source\tmmodel\wnlib\random\wnrdb.c" />
+    <ClCompile Include="oldtreemaker\source\tmmodel\wnlib\random\wnrflt.c" />
+    <ClCompile Include="oldtreemaker\source\tmmodel\wnlib\random\wnrnd.c" />
+    <ClCompile Include="oldtreemaker\source\tmmodel\wnlib\random\wnrtab.c" />
+    <ClCompile Include="oldtreemaker\source\tmmodel\wnlib\vect\wndot.c" />
+    <ClCompile Include="oldtreemaker\source\tmmodel\wnlib\vect\wnpoly.c" />
+    <ClCompile Include="oldtreemaker\source\tmmodel\wnlib\vect\wnvadd3.c" />
+    <ClCompile Include="oldtreemaker\source\tmmodel\wnlib\vect\wnvcpy.c" />
+    <ClCompile Include="oldtreemaker\source\tmmodel\wnlib\vect\wnvgen.c" />
+    <ClCompile Include="oldtreemaker\source\tmmodel\wnlib\vect\wnvmk.c" />
+    <ClCompile Include="oldtreemaker\source\tmmodel\wnlib\vect\wnvnrm.c" />
+    <ClCompile Include="oldtreemaker\source\tmmodel\wnlib\vect\wnvprn.c" />
+    <ClCompile Include="oldtreemaker\source\tmPrec.cpp" />
+    <ClCompile Include="oldtreemaker\source\tmwxgui\tmwxcommon\tmwxApp.cpp" />
+    <ClCompile Include="oldtreemaker\source\tmwxgui\tmwxcommon\tmwxCommand.cpp" />
+    <ClCompile Include="oldtreemaker\source\tmwxgui\tmwxcommon\tmwxDocManager.cpp" />
+    <ClCompile Include="oldtreemaker\source\tmwxgui\tmwxcommon\tmwxGetUserInputDialog.cpp" />
+    <ClCompile Include="oldtreemaker\source\tmwxgui\tmwxcommon\tmwxPersistentFrame.cpp" />
+    <ClCompile Include="oldtreemaker\source\tmwxgui\tmwxcommon\tmwxStr.cpp" />
+    <ClCompile Include="oldtreemaker\source\tmwxgui\tmwxdocview\tmwxDesignCanvas.cpp" />
+    <ClCompile Include="oldtreemaker\source\tmwxgui\tmwxdocview\tmwxDesignFrame.cpp" />
+    <ClCompile Include="oldtreemaker\source\tmwxgui\tmwxdocview\tmwxDoc.cpp" />
+    <ClCompile Include="oldtreemaker\source\tmwxgui\tmwxdocview\tmwxDoc_Action.cpp" />
+    <ClCompile Include="oldtreemaker\source\tmwxgui\tmwxdocview\tmwxDoc_Condition.cpp" />
+    <ClCompile Include="oldtreemaker\source\tmwxgui\tmwxdocview\tmwxDoc_Debug.cpp" />
+    <ClCompile Include="oldtreemaker\source\tmwxgui\tmwxdocview\tmwxDoc_Edit.cpp" />
+    <ClCompile Include="oldtreemaker\source\tmwxgui\tmwxdocview\tmwxDoc_File.cpp" />
+    <ClCompile Include="oldtreemaker\source\tmwxgui\tmwxdocview\tmwxDoc_View.cpp" />
+    <ClCompile Include="oldtreemaker\source\tmwxgui\tmwxdocview\tmwxPrintout.cpp" />
+    <ClCompile Include="oldtreemaker\source\tmwxgui\tmwxdocview\tmwxView.cpp" />
+    <ClCompile Include="oldtreemaker\source\tmwxgui\tmwxfoldedform\tmwxFoldedFormFrame.cpp" />
+    <ClCompile Include="oldtreemaker\source\tmwxgui\tmwxhtmlhelp\tmwxHtmlHelpController.cpp" />
+    <ClCompile Include="oldtreemaker\source\tmwxgui\tmwxhtmlhelp\tmwxHtmlHelpFrame.cpp" />
+    <ClCompile Include="oldtreemaker\source\tmwxgui\tmwxinspector\tmwxConditionEdgeLengthFixedPanel.cpp" />
+    <ClCompile Include="oldtreemaker\source\tmwxgui\tmwxinspector\tmwxConditionEdgesSameStrainPanel.cpp" />
+    <ClCompile Include="oldtreemaker\source\tmwxgui\tmwxinspector\tmwxConditionListBox.cpp" />
+    <ClCompile Include="oldtreemaker\source\tmwxgui\tmwxinspector\tmwxConditionNodeComboPanel.cpp" />
+    <ClCompile Include="oldtreemaker\source\tmwxgui\tmwxinspector\tmwxConditionNodeFixedPanel.cpp" />
+    <ClCompile Include="oldtreemaker\source\tmwxgui\tmwxinspector\tmwxConditionNodeOnCornerPanel.cpp" />
+    <ClCompile Include="oldtreemaker\source\tmwxgui\tmwxinspector\tmwxConditionNodeOnEdgePanel.cpp" />
+    <ClCompile Include="oldtreemaker\source\tmwxgui\tmwxinspector\tmwxConditionNodesCollinearPanel.cpp" />
+    <ClCompile Include="oldtreemaker\source\tmwxgui\tmwxinspector\tmwxConditionNodesPairedPanel.cpp" />
+    <ClCompile Include="oldtreemaker\source\tmwxgui\tmwxinspector\tmwxConditionNodeSymmetricPanel.cpp" />
+    <ClCompile Include="oldtreemaker\source\tmwxgui\tmwxinspector\tmwxConditionPathActivePanel.cpp" />
+    <ClCompile Include="oldtreemaker\source\tmwxgui\tmwxinspector\tmwxConditionPathAngleFixedPanel.cpp" />
+    <ClCompile Include="oldtreemaker\source\tmwxgui\tmwxinspector\tmwxConditionPathAngleQuantPanel.cpp" />
+    <ClCompile Include="oldtreemaker\source\tmwxgui\tmwxinspector\tmwxConditionPathComboPanel.cpp" />
+    <ClCompile Include="oldtreemaker\source\tmwxgui\tmwxinspector\tmwxCreasePanel.cpp" />
+    <ClCompile Include="oldtreemaker\source\tmwxgui\tmwxinspector\tmwxEdgePanel.cpp" />
+    <ClCompile Include="oldtreemaker\source\tmwxgui\tmwxinspector\tmwxFacetPanel.cpp" />
+    <ClCompile Include="oldtreemaker\source\tmwxgui\tmwxinspector\tmwxGroupPanel.cpp" />
+    <ClCompile Include="oldtreemaker\source\tmwxgui\tmwxinspector\tmwxInspectorFrame.cpp" />
+    <ClCompile Include="oldtreemaker\source\tmwxgui\tmwxinspector\tmwxInspectorPanel.cpp" />
+    <ClCompile Include="oldtreemaker\source\tmwxgui\tmwxinspector\tmwxNodePanel.cpp" />
+    <ClCompile Include="oldtreemaker\source\tmwxgui\tmwxinspector\tmwxPathPanel.cpp" />
+    <ClCompile Include="oldtreemaker\source\tmwxgui\tmwxinspector\tmwxPolyPanel.cpp" />
+    <ClCompile Include="oldtreemaker\source\tmwxgui\tmwxinspector\tmwxTreePanel.cpp" />
+    <ClCompile Include="oldtreemaker\source\tmwxgui\tmwxinspector\tmwxVertexPanel.cpp" />
+    <ClCompile Include="oldtreemaker\source\tmwxgui\tmwxlogframe\tmwxLogFrame.cpp" />
+    <ClCompile Include="oldtreemaker\source\tmwxgui\tmwxoptimizerdialog\tmwxOptimizerDialog_cmn.cpp" />
+    <ClCompile Include="oldtreemaker\source\tmwxgui\tmwxoptimizerdialog\tmwxOptimizerDialog_gtk.cpp" />
+    <ClCompile Include="oldtreemaker\source\tmwxgui\tmwxoptimizerdialog\tmwxOptimizerDialog_mac.cpp" />
+    <ClCompile Include="oldtreemaker\source\tmwxgui\tmwxoptimizerdialog\tmwxOptimizerDialog_msw.cpp" />
+    <ClCompile Include="oldtreemaker\source\tmwxgui\tmwxpalette\tmwxButtonMini.cpp" />
+    <ClCompile Include="oldtreemaker\source\tmwxgui\tmwxpalette\tmwxButtonSmall.cpp" />
+    <ClCompile Include="oldtreemaker\source\tmwxgui\tmwxpalette\tmwxCheckBox.cpp" />
+    <ClCompile Include="oldtreemaker\source\tmwxgui\tmwxpalette\tmwxCheckBoxSmall.cpp" />
+    <ClCompile Include="oldtreemaker\source\tmwxgui\tmwxpalette\tmwxPaletteFrame.cpp" />
+    <ClCompile Include="oldtreemaker\source\tmwxgui\tmwxpalette\tmwxPalettePanel.cpp" />
+    <ClCompile Include="oldtreemaker\source\tmwxgui\tmwxpalette\tmwxRadioBoxSmall.cpp" />
+    <ClCompile Include="oldtreemaker\source\tmwxgui\tmwxpalette\tmwxStaticText.cpp" />
+    <ClCompile Include="oldtreemaker\source\tmwxgui\tmwxpalette\tmwxTextCtrl.cpp" />
+    <ClCompile Include="oldtreemaker\source\tmwxgui\tmwxviewsettings\tmwxViewSettings.cpp" />
+    <ClCompile Include="oldtreemaker\source\tmwxgui\tmwxviewsettings\tmwxViewSettingsFrame.cpp" />
+    <ClCompile Include="oldtreemaker\source\tmwxgui\tmwxviewsettings\tmwxViewSettingsPanel.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="oldtreemaker\msw\setup0.h" />
+    <ClInclude Include="oldtreemaker\source\test\tmnlcotester\tmNLCOTester.h" />
+    <ClInclude Include="oldtreemaker\source\tmHeader.h" />
+    <ClInclude Include="oldtreemaker\source\tmmodel\tmModel.h" />
+    <ClInclude Include="oldtreemaker\source\tmmodel\tmModel_fwd.h" />
+    <ClInclude Include="oldtreemaker\source\tmmodel\tmnlco\tmNLCO.h" />
+    <ClInclude Include="oldtreemaker\source\tmmodel\tmnlco\tmNLCO_alm.h" />
+    <ClInclude Include="oldtreemaker\source\tmmodel\tmnlco\tmNLCO_cfsqp.h" />
+    <ClInclude Include="oldtreemaker\source\tmmodel\tmnlco\tmNLCO_rfsqp.h" />
+    <ClInclude Include="oldtreemaker\source\tmmodel\tmnlco\tmNLCO_wnlib.h" />
+    <ClInclude Include="oldtreemaker\source\tmmodel\tmoptimizers\tmConstraintFns.h" />
+    <ClInclude Include="oldtreemaker\source\tmmodel\tmoptimizers\tmEdgeOptimizer.h" />
+    <ClInclude Include="oldtreemaker\source\tmmodel\tmoptimizers\tmOptimizer.h" />
+    <ClInclude Include="oldtreemaker\source\tmmodel\tmoptimizers\tmScaleOptimizer.h" />
+    <ClInclude Include="oldtreemaker\source\tmmodel\tmoptimizers\tmStrainOptimizer.h" />
+    <ClInclude Include="oldtreemaker\source\tmmodel\tmptrclasses\tmArray.h" />
+    <ClInclude Include="oldtreemaker\source\tmmodel\tmptrclasses\tmArrayIterator.h" />
+    <ClInclude Include="oldtreemaker\source\tmmodel\tmptrclasses\tmDpptr.h" />
+    <ClInclude Include="oldtreemaker\source\tmmodel\tmptrclasses\tmDpptrArray.h" />
+    <ClInclude Include="oldtreemaker\source\tmmodel\tmptrclasses\tmDpptrSrc.h" />
+    <ClInclude Include="oldtreemaker\source\tmmodel\tmptrclasses\tmDpptrTarget.h" />
+    <ClInclude Include="oldtreemaker\source\tmmodel\tmptrclasses\tmPtrClasses.h" />
+    <ClInclude Include="oldtreemaker\source\tmmodel\tmsolvers\tmMatrix.h" />
+    <ClInclude Include="oldtreemaker\source\tmmodel\tmsolvers\tmNewtonRaphson.h" />
+    <ClInclude Include="oldtreemaker\source\tmmodel\tmsolvers\tmStubFinder.h" />
+    <ClInclude Include="oldtreemaker\source\tmmodel\tmtreeclasses\tmCluster.h" />
+    <ClInclude Include="oldtreemaker\source\tmmodel\tmtreeclasses\tmCondition.h" />
+    <ClInclude Include="oldtreemaker\source\tmmodel\tmtreeclasses\tmConditionEdgeLengthFixed.h" />
+    <ClInclude Include="oldtreemaker\source\tmmodel\tmtreeclasses\tmConditionEdgesSameStrain.h" />
+    <ClInclude Include="oldtreemaker\source\tmmodel\tmtreeclasses\tmConditionNodeCombo.h" />
+    <ClInclude Include="oldtreemaker\source\tmmodel\tmtreeclasses\tmConditionNodeFixed.h" />
+    <ClInclude Include="oldtreemaker\source\tmmodel\tmtreeclasses\tmConditionNodeOnCorner.h" />
+    <ClInclude Include="oldtreemaker\source\tmmodel\tmtreeclasses\tmConditionNodeOnEdge.h" />
+    <ClInclude Include="oldtreemaker\source\tmmodel\tmtreeclasses\tmConditionNodesCollinear.h" />
+    <ClInclude Include="oldtreemaker\source\tmmodel\tmtreeclasses\tmConditionNodesPaired.h" />
+    <ClInclude Include="oldtreemaker\source\tmmodel\tmtreeclasses\tmConditionNodeSymmetric.h" />
+    <ClInclude Include="oldtreemaker\source\tmmodel\tmtreeclasses\tmConditionOwner.h" />
+    <ClInclude Include="oldtreemaker\source\tmmodel\tmtreeclasses\tmConditionPathActive.h" />
+    <ClInclude Include="oldtreemaker\source\tmmodel\tmtreeclasses\tmConditionPathAngleFixed.h" />
+    <ClInclude Include="oldtreemaker\source\tmmodel\tmtreeclasses\tmConditionPathAngleQuant.h" />
+    <ClInclude Include="oldtreemaker\source\tmmodel\tmtreeclasses\tmConditionPathCombo.h" />
+    <ClInclude Include="oldtreemaker\source\tmmodel\tmtreeclasses\tmCrease.h" />
+    <ClInclude Include="oldtreemaker\source\tmmodel\tmtreeclasses\tmCreaseOwner.h" />
+    <ClInclude Include="oldtreemaker\source\tmmodel\tmtreeclasses\tmEdge.h" />
+    <ClInclude Include="oldtreemaker\source\tmmodel\tmtreeclasses\tmEdgeOwner.h" />
+    <ClInclude Include="oldtreemaker\source\tmmodel\tmtreeclasses\tmFacet.h" />
+    <ClInclude Include="oldtreemaker\source\tmmodel\tmtreeclasses\tmFacetOwner.h" />
+    <ClInclude Include="oldtreemaker\source\tmmodel\tmtreeclasses\tmNode.h" />
+    <ClInclude Include="oldtreemaker\source\tmmodel\tmtreeclasses\tmNodeOwner.h" />
+    <ClInclude Include="oldtreemaker\source\tmmodel\tmtreeclasses\tmPart.h" />
+    <ClInclude Include="oldtreemaker\source\tmmodel\tmtreeclasses\tmPath.h" />
+    <ClInclude Include="oldtreemaker\source\tmmodel\tmtreeclasses\tmPathOwner.h" />
+    <ClInclude Include="oldtreemaker\source\tmmodel\tmtreeclasses\tmPoint.h" />
+    <ClInclude Include="oldtreemaker\source\tmmodel\tmtreeclasses\tmPoly.h" />
+    <ClInclude Include="oldtreemaker\source\tmmodel\tmtreeclasses\tmPolyOwner.h" />
+    <ClInclude Include="oldtreemaker\source\tmmodel\tmtreeclasses\tmTree.h" />
+    <ClInclude Include="oldtreemaker\source\tmmodel\tmtreeclasses\tmTreeClasses.h" />
+    <ClInclude Include="oldtreemaker\source\tmmodel\tmtreeclasses\tmTreeCleaner.h" />
+    <ClInclude Include="oldtreemaker\source\tmmodel\tmtreeclasses\tmVertex.h" />
+    <ClInclude Include="oldtreemaker\source\tmmodel\tmtreeclasses\tmVertexOwner.h" />
+    <ClInclude Include="oldtreemaker\source\tmmodel\wnlib\cmp\wncmp.h" />
+    <ClInclude Include="oldtreemaker\source\tmmodel\wnlib\conjdir\wncnjdn.h" />
+    <ClInclude Include="oldtreemaker\source\tmmodel\wnlib\conjdir\wnconj.h" />
+    <ClInclude Include="oldtreemaker\source\tmmodel\wnlib\conjdir\wnconjd.h" />
+    <ClInclude Include="oldtreemaker\source\tmmodel\wnlib\conjdir\wnnlp.h" />
+    <ClInclude Include="oldtreemaker\source\tmmodel\wnlib\conjdir\wnparvect.h" />
+    <ClInclude Include="oldtreemaker\source\tmmodel\wnlib\conjdir\wntol.h" />
+    <ClInclude Include="oldtreemaker\source\tmmodel\wnlib\cpy\wncpy.h" />
+    <ClInclude Include="oldtreemaker\source\tmmodel\wnlib\list\wnsll.h" />
+    <ClInclude Include="oldtreemaker\source\tmmodel\wnlib\low\wnabs.h" />
+    <ClInclude Include="oldtreemaker\source\tmmodel\wnlib\low\wnasrt.h" />
+    <ClInclude Include="oldtreemaker\source\tmmodel\wnlib\low\wncons.h" />
+    <ClInclude Include="oldtreemaker\source\tmmodel\wnlib\low\wnerr.h" />
+    <ClInclude Include="oldtreemaker\source\tmmodel\wnlib\low\wnlib.h" />
+    <ClInclude Include="oldtreemaker\source\tmmodel\wnlib\low\wnmax.h" />
+    <ClInclude Include="oldtreemaker\source\tmmodel\wnlib\low\wnport.h" />
+    <ClInclude Include="oldtreemaker\source\tmmodel\wnlib\low\wnsqr.h" />
+    <ClInclude Include="oldtreemaker\source\tmmodel\wnlib\low\wnswap.h" />
+    <ClInclude Include="oldtreemaker\source\tmmodel\wnlib\mat\wnmat.h" />
+    <ClInclude Include="oldtreemaker\source\tmmodel\wnlib\mem\wnmbtr.h" />
+    <ClInclude Include="oldtreemaker\source\tmmodel\wnlib\mem\wnmem.h" />
+    <ClInclude Include="oldtreemaker\source\tmmodel\wnlib\mem\wnmemb.h" />
+    <ClInclude Include="oldtreemaker\source\tmmodel\wnlib\random\wnrnd.h" />
+    <ClInclude Include="oldtreemaker\source\tmmodel\wnlib\random\wnrndd.h" />
+    <ClInclude Include="oldtreemaker\source\tmmodel\wnlib\random\wnrtab.h" />
+    <ClInclude Include="oldtreemaker\source\tmmodel\wnlib\vect\wnpoly.h" />
+    <ClInclude Include="oldtreemaker\source\tmmodel\wnlib\vect\wnvect.h" />
+    <ClInclude Include="oldtreemaker\source\tmTree.h" />
+    <ClInclude Include="oldtreemaker\source\tmVersion.h" />
+    <ClInclude Include="oldtreemaker\source\tmwxgui\tmwxcommon\tmwxApp.h" />
+    <ClInclude Include="oldtreemaker\source\tmwxgui\tmwxcommon\tmwxCommand.h" />
+    <ClInclude Include="oldtreemaker\source\tmwxgui\tmwxcommon\tmwxDocManager.h" />
+    <ClInclude Include="oldtreemaker\source\tmwxgui\tmwxcommon\tmwxGetUserInputDialog.h" />
+    <ClInclude Include="oldtreemaker\source\tmwxgui\tmwxcommon\tmwxGUI_fwd.h" />
+    <ClInclude Include="oldtreemaker\source\tmwxgui\tmwxcommon\tmwxPersistentFrame.h" />
+    <ClInclude Include="oldtreemaker\source\tmwxgui\tmwxcommon\tmwxStr.h" />
+    <ClInclude Include="oldtreemaker\source\tmwxgui\tmwxdocview\tmwxDesignCanvas.h" />
+    <ClInclude Include="oldtreemaker\source\tmwxgui\tmwxdocview\tmwxDesignFrame.h" />
+    <ClInclude Include="oldtreemaker\source\tmwxgui\tmwxdocview\tmwxDoc.h" />
+    <ClInclude Include="oldtreemaker\source\tmwxgui\tmwxdocview\tmwxPrintout.h" />
+    <ClInclude Include="oldtreemaker\source\tmwxgui\tmwxdocview\tmwxView.h" />
+    <ClInclude Include="oldtreemaker\source\tmwxgui\tmwxfoldedform\tmwxFoldedFormFrame.h" />
+    <ClInclude Include="oldtreemaker\source\tmwxgui\tmwxhtmlhelp\tmwxHtmlHelpController.h" />
+    <ClInclude Include="oldtreemaker\source\tmwxgui\tmwxhtmlhelp\tmwxHtmlHelpFrame.h" />
+    <ClInclude Include="oldtreemaker\source\tmwxgui\tmwxinspector\tmwxConditionEdgeLengthFixedPanel.h" />
+    <ClInclude Include="oldtreemaker\source\tmwxgui\tmwxinspector\tmwxConditionEdgesSameStrainPanel.h" />
+    <ClInclude Include="oldtreemaker\source\tmwxgui\tmwxinspector\tmwxConditionListBox.h" />
+    <ClInclude Include="oldtreemaker\source\tmwxgui\tmwxinspector\tmwxConditionNodeComboPanel.h" />
+    <ClInclude Include="oldtreemaker\source\tmwxgui\tmwxinspector\tmwxConditionNodeFixedPanel.h" />
+    <ClInclude Include="oldtreemaker\source\tmwxgui\tmwxinspector\tmwxConditionNodeOnCornerPanel.h" />
+    <ClInclude Include="oldtreemaker\source\tmwxgui\tmwxinspector\tmwxConditionNodeOnEdgePanel.h" />
+    <ClInclude Include="oldtreemaker\source\tmwxgui\tmwxinspector\tmwxConditionNodesCollinearPanel.h" />
+    <ClInclude Include="oldtreemaker\source\tmwxgui\tmwxinspector\tmwxConditionNodesPairedPanel.h" />
+    <ClInclude Include="oldtreemaker\source\tmwxgui\tmwxinspector\tmwxConditionNodeSymmetricPanel.h" />
+    <ClInclude Include="oldtreemaker\source\tmwxgui\tmwxinspector\tmwxConditionPathActivePanel.h" />
+    <ClInclude Include="oldtreemaker\source\tmwxgui\tmwxinspector\tmwxConditionPathAngleFixedPanel.h" />
+    <ClInclude Include="oldtreemaker\source\tmwxgui\tmwxinspector\tmwxConditionPathAngleQuantPanel.h" />
+    <ClInclude Include="oldtreemaker\source\tmwxgui\tmwxinspector\tmwxConditionPathComboPanel.h" />
+    <ClInclude Include="oldtreemaker\source\tmwxgui\tmwxinspector\tmwxCreasePanel.h" />
+    <ClInclude Include="oldtreemaker\source\tmwxgui\tmwxinspector\tmwxEdgePanel.h" />
+    <ClInclude Include="oldtreemaker\source\tmwxgui\tmwxinspector\tmwxFacetPanel.h" />
+    <ClInclude Include="oldtreemaker\source\tmwxgui\tmwxinspector\tmwxGroupPanel.h" />
+    <ClInclude Include="oldtreemaker\source\tmwxgui\tmwxinspector\tmwxInspectorFrame.h" />
+    <ClInclude Include="oldtreemaker\source\tmwxgui\tmwxinspector\tmwxInspectorPanel.h" />
+    <ClInclude Include="oldtreemaker\source\tmwxgui\tmwxinspector\tmwxNodePanel.h" />
+    <ClInclude Include="oldtreemaker\source\tmwxgui\tmwxinspector\tmwxPathPanel.h" />
+    <ClInclude Include="oldtreemaker\source\tmwxgui\tmwxinspector\tmwxPolyPanel.h" />
+    <ClInclude Include="oldtreemaker\source\tmwxgui\tmwxinspector\tmwxTreePanel.h" />
+    <ClInclude Include="oldtreemaker\source\tmwxgui\tmwxinspector\tmwxVertexPanel.h" />
+    <ClInclude Include="oldtreemaker\source\tmwxgui\tmwxlogframe\tmwxLogFrame.h" />
+    <ClInclude Include="oldtreemaker\source\tmwxgui\tmwxoptimizerdialog\tmwxOptimizerDialog.h" />
+    <ClInclude Include="oldtreemaker\source\tmwxgui\tmwxpalette\tmwxButtonMini.h" />
+    <ClInclude Include="oldtreemaker\source\tmwxgui\tmwxpalette\tmwxButtonSmall.h" />
+    <ClInclude Include="oldtreemaker\source\tmwxgui\tmwxpalette\tmwxCheckBox.h" />
+    <ClInclude Include="oldtreemaker\source\tmwxgui\tmwxpalette\tmwxCheckBoxSmall.h" />
+    <ClInclude Include="oldtreemaker\source\tmwxgui\tmwxpalette\tmwxPaletteFrame.h" />
+    <ClInclude Include="oldtreemaker\source\tmwxgui\tmwxpalette\tmwxPalettePanel.h" />
+    <ClInclude Include="oldtreemaker\source\tmwxgui\tmwxpalette\tmwxRadioBoxSmall.h" />
+    <ClInclude Include="oldtreemaker\source\tmwxgui\tmwxpalette\tmwxStaticText.h" />
+    <ClInclude Include="oldtreemaker\source\tmwxgui\tmwxpalette\tmwxTextCtrl.h" />
+    <ClInclude Include="oldtreemaker\source\tmwxgui\tmwxviewsettings\tmwxViewSettings.h" />
+    <ClInclude Include="oldtreemaker\source\tmwxgui\tmwxviewsettings\tmwxViewSettingsFrame.h" />
+    <ClInclude Include="oldtreemaker\source\tmwxgui\tmwxviewsettings\tmwxViewSettingsPanel.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="oldtreemaker\msw\wx_res.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="oldtreemaker\source\about\about.htm" />
+    <None Include="oldtreemaker\source\help\background.htm" />
+    <None Include="oldtreemaker\source\help\index.htm" />
+    <None Include="oldtreemaker\source\help\menus.htm" />
+    <None Include="oldtreemaker\source\help\overview.htm" />
+    <None Include="oldtreemaker\source\help\tips_1.htm" />
+    <None Include="oldtreemaker\source\help\tips_2.htm" />
+    <None Include="oldtreemaker\source\help\tips_3.htm" />
+    <None Include="oldtreemaker\source\help\tips_4.htm" />
+    <None Include="oldtreemaker\source\help\tips_5.htm" />
+    <None Include="oldtreemaker\source\help\tutorial_1.htm" />
+    <None Include="oldtreemaker\source\help\tutorial_2.htm" />
+    <None Include="oldtreemaker\source\help\tutorial_3.htm" />
+    <None Include="oldtreemaker\source\help\windows.htm" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
