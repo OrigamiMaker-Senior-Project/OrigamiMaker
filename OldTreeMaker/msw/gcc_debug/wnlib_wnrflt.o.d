@@ -1,0 +1,5 @@
+gcc_debug\wnlib_wnrflt.o: ../Source/tmModel/wnlib/random/wnrflt.c \
+ ..\Source\tmModel\wnlib\low/wnlib.h ..\Source\tmModel\wnlib\low/wnport.h \
+ ..\Source\tmModel\wnlib\low/wncons.h ..\Source\tmModel\wnlib\low/wnerr.h \
+ ../Source/tmModel/wnlib/random/wnrnd.h \
+ ../Source/tmModel/wnlib/random/wnrndd.h

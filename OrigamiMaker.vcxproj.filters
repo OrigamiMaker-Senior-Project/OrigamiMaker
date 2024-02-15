@@ -1,0 +1,918 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="oldtreemaker\linux\tmpath.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="oldtreemaker\source\tmHeader.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="oldtreemaker\source\tmPrec.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="oldtreemaker\source\test\tmArrayTester.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="oldtreemaker\source\test\tmDpptrTester.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="oldtreemaker\source\test\tmNewtonRaphsonTester.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="oldtreemaker\source\test\tmmodeltester\tmModelTester.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="oldtreemaker\source\test\tmnlcotester\tmNLCOTester.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="oldtreemaker\source\tmmodel\tmnlco\tmNLCO.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="oldtreemaker\source\tmmodel\tmnlco\tmNLCO_alm.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="oldtreemaker\source\tmmodel\tmnlco\tmNLCO_cfsqp.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="oldtreemaker\source\tmmodel\tmnlco\tmNLCO_rfsqp.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="oldtreemaker\source\tmmodel\tmnlco\tmNLCO_wnlib.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="oldtreemaker\source\tmmodel\tmnlco\tmNLCO_wnlibStub.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="oldtreemaker\source\tmmodel\tmoptimizers\tmConstraintFns.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="oldtreemaker\source\tmmodel\tmoptimizers\tmEdgeOptimizer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="oldtreemaker\source\tmmodel\tmoptimizers\tmOptimizer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="oldtreemaker\source\tmmodel\tmoptimizers\tmScaleOptimizer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="oldtreemaker\source\tmmodel\tmoptimizers\tmStrainOptimizer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="oldtreemaker\source\tmmodel\tmptrclasses\tmDpptrTarget.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="oldtreemaker\source\tmmodel\tmsolvers\tmStubFinder.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="oldtreemaker\source\tmmodel\tmtreeclasses\tmCluster.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="oldtreemaker\source\tmmodel\tmtreeclasses\tmCondition.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="oldtreemaker\source\tmmodel\tmtreeclasses\tmConditionEdgeLengthFixed.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="oldtreemaker\source\tmmodel\tmtreeclasses\tmConditionEdgesSameStrain.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="oldtreemaker\source\tmmodel\tmtreeclasses\tmConditionNodeCombo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="oldtreemaker\source\tmmodel\tmtreeclasses\tmConditionNodeFixed.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="oldtreemaker\source\tmmodel\tmtreeclasses\tmConditionNodeOnCorner.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="oldtreemaker\source\tmmodel\tmtreeclasses\tmConditionNodeOnEdge.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="oldtreemaker\source\tmmodel\tmtreeclasses\tmConditionNodesCollinear.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="oldtreemaker\source\tmmodel\tmtreeclasses\tmConditionNodesPaired.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="oldtreemaker\source\tmmodel\tmtreeclasses\tmConditionNodeSymmetric.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="oldtreemaker\source\tmmodel\tmtreeclasses\tmConditionOwner.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="oldtreemaker\source\tmmodel\tmtreeclasses\tmConditionPathActive.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="oldtreemaker\source\tmmodel\tmtreeclasses\tmConditionPathAngleFixed.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="oldtreemaker\source\tmmodel\tmtreeclasses\tmConditionPathAngleQuant.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="oldtreemaker\source\tmmodel\tmtreeclasses\tmConditionPathCombo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="oldtreemaker\source\tmmodel\tmtreeclasses\tmCrease.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="oldtreemaker\source\tmmodel\tmtreeclasses\tmCreaseOwner.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="oldtreemaker\source\tmmodel\tmtreeclasses\tmEdge.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="oldtreemaker\source\tmmodel\tmtreeclasses\tmEdgeOwner.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="oldtreemaker\source\tmmodel\tmtreeclasses\tmFacet.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="oldtreemaker\source\tmmodel\tmtreeclasses\tmFacetOwner.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="oldtreemaker\source\tmmodel\tmtreeclasses\tmNode.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="oldtreemaker\source\tmmodel\tmtreeclasses\tmNodeOwner.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="oldtreemaker\source\tmmodel\tmtreeclasses\tmPart.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="oldtreemaker\source\tmmodel\tmtreeclasses\tmPath.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="oldtreemaker\source\tmmodel\tmtreeclasses\tmPathOwner.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="oldtreemaker\source\tmmodel\tmtreeclasses\tmPoint.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="oldtreemaker\source\tmmodel\tmtreeclasses\tmPoly.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="oldtreemaker\source\tmmodel\tmtreeclasses\tmPolyOwner.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="oldtreemaker\source\tmmodel\tmtreeclasses\tmTree.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="oldtreemaker\source\tmmodel\tmtreeclasses\tmTreeCleaner.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="oldtreemaker\source\tmmodel\tmtreeclasses\tmTree_FacetOrder.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="oldtreemaker\source\tmmodel\tmtreeclasses\tmTree_IO.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="oldtreemaker\source\tmmodel\tmtreeclasses\tmTree_TestTrees.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="oldtreemaker\source\tmmodel\tmtreeclasses\tmVertex.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="oldtreemaker\source\tmmodel\tmtreeclasses\tmVertexOwner.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="oldtreemaker\source\tmmodel\wnlib\cmp\wndcmp.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="oldtreemaker\source\tmmodel\wnlib\conjdir\wn1dmin.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="oldtreemaker\source\tmmodel\wnlib\conjdir\wncnjfg.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="oldtreemaker\source\tmmodel\wnlib\conjdir\wnconjg.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="oldtreemaker\source\tmmodel\wnlib\conjdir\wnnlp.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="oldtreemaker\source\tmmodel\wnlib\conjdir\wnparvect.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="oldtreemaker\source\tmmodel\wnlib\conjdir\wnqfit.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="oldtreemaker\source\tmmodel\wnlib\list\wnscnt.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="oldtreemaker\source\tmmodel\wnlib\list\wnsmk.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="oldtreemaker\source\tmmodel\wnlib\low\wnasrt.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="oldtreemaker\source\tmmodel\wnlib\mat\wnmmk.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="oldtreemaker\source\tmmodel\wnlib\mem\wnmbtr.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="oldtreemaker\source\tmmodel\wnlib\mem\wnmcpy.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="oldtreemaker\source\tmmodel\wnlib\mem\wnmem.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="oldtreemaker\source\tmmodel\wnlib\mem\wnmemb.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="oldtreemaker\source\tmmodel\wnlib\mem\wnmemg.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="oldtreemaker\source\tmmodel\wnlib\mem\wnmemn.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="oldtreemaker\source\tmmodel\wnlib\random\wnrdb.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="oldtreemaker\source\tmmodel\wnlib\random\wnrflt.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="oldtreemaker\source\tmmodel\wnlib\random\wnrnd.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="oldtreemaker\source\tmmodel\wnlib\random\wnrtab.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="oldtreemaker\source\tmmodel\wnlib\vect\wndot.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="oldtreemaker\source\tmmodel\wnlib\vect\wnpoly.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="oldtreemaker\source\tmmodel\wnlib\vect\wnvadd3.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="oldtreemaker\source\tmmodel\wnlib\vect\wnvcpy.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="oldtreemaker\source\tmmodel\wnlib\vect\wnvgen.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="oldtreemaker\source\tmmodel\wnlib\vect\wnvmk.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="oldtreemaker\source\tmmodel\wnlib\vect\wnvnrm.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="oldtreemaker\source\tmmodel\wnlib\vect\wnvprn.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="oldtreemaker\source\tmwxgui\tmwxcommon\tmwxApp.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="oldtreemaker\source\tmwxgui\tmwxcommon\tmwxCommand.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="oldtreemaker\source\tmwxgui\tmwxcommon\tmwxDocManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="oldtreemaker\source\tmwxgui\tmwxcommon\tmwxGetUserInputDialog.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="oldtreemaker\source\tmwxgui\tmwxcommon\tmwxPersistentFrame.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="oldtreemaker\source\tmwxgui\tmwxcommon\tmwxStr.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="oldtreemaker\source\tmwxgui\tmwxdocview\tmwxDesignCanvas.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="oldtreemaker\source\tmwxgui\tmwxdocview\tmwxDesignFrame.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="oldtreemaker\source\tmwxgui\tmwxdocview\tmwxDoc.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="oldtreemaker\source\tmwxgui\tmwxdocview\tmwxDoc_Action.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="oldtreemaker\source\tmwxgui\tmwxdocview\tmwxDoc_Condition.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="oldtreemaker\source\tmwxgui\tmwxdocview\tmwxDoc_Debug.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="oldtreemaker\source\tmwxgui\tmwxdocview\tmwxDoc_Edit.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="oldtreemaker\source\tmwxgui\tmwxdocview\tmwxDoc_File.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="oldtreemaker\source\tmwxgui\tmwxdocview\tmwxDoc_View.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="oldtreemaker\source\tmwxgui\tmwxdocview\tmwxPrintout.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="oldtreemaker\source\tmwxgui\tmwxdocview\tmwxView.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="oldtreemaker\source\tmwxgui\tmwxfoldedform\tmwxFoldedFormFrame.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="oldtreemaker\source\tmwxgui\tmwxhtmlhelp\tmwxHtmlHelpController.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="oldtreemaker\source\tmwxgui\tmwxhtmlhelp\tmwxHtmlHelpFrame.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="oldtreemaker\source\tmwxgui\tmwxinspector\tmwxConditionEdgeLengthFixedPanel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="oldtreemaker\source\tmwxgui\tmwxinspector\tmwxConditionEdgesSameStrainPanel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="oldtreemaker\source\tmwxgui\tmwxinspector\tmwxConditionListBox.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="oldtreemaker\source\tmwxgui\tmwxinspector\tmwxConditionNodeComboPanel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="oldtreemaker\source\tmwxgui\tmwxinspector\tmwxConditionNodeFixedPanel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="oldtreemaker\source\tmwxgui\tmwxinspector\tmwxConditionNodeOnCornerPanel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="oldtreemaker\source\tmwxgui\tmwxinspector\tmwxConditionNodeOnEdgePanel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="oldtreemaker\source\tmwxgui\tmwxinspector\tmwxConditionNodesCollinearPanel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="oldtreemaker\source\tmwxgui\tmwxinspector\tmwxConditionNodesPairedPanel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="oldtreemaker\source\tmwxgui\tmwxinspector\tmwxConditionNodeSymmetricPanel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="oldtreemaker\source\tmwxgui\tmwxinspector\tmwxConditionPathActivePanel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="oldtreemaker\source\tmwxgui\tmwxinspector\tmwxConditionPathAngleFixedPanel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="oldtreemaker\source\tmwxgui\tmwxinspector\tmwxConditionPathAngleQuantPanel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="oldtreemaker\source\tmwxgui\tmwxinspector\tmwxConditionPathComboPanel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="oldtreemaker\source\tmwxgui\tmwxinspector\tmwxCreasePanel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="oldtreemaker\source\tmwxgui\tmwxinspector\tmwxEdgePanel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="oldtreemaker\source\tmwxgui\tmwxinspector\tmwxFacetPanel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="oldtreemaker\source\tmwxgui\tmwxinspector\tmwxGroupPanel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="oldtreemaker\source\tmwxgui\tmwxinspector\tmwxInspectorFrame.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="oldtreemaker\source\tmwxgui\tmwxinspector\tmwxInspectorPanel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="oldtreemaker\source\tmwxgui\tmwxinspector\tmwxNodePanel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="oldtreemaker\source\tmwxgui\tmwxinspector\tmwxPathPanel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="oldtreemaker\source\tmwxgui\tmwxinspector\tmwxPolyPanel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="oldtreemaker\source\tmwxgui\tmwxinspector\tmwxTreePanel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="oldtreemaker\source\tmwxgui\tmwxinspector\tmwxVertexPanel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="oldtreemaker\source\tmwxgui\tmwxlogframe\tmwxLogFrame.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="oldtreemaker\source\tmwxgui\tmwxoptimizerdialog\tmwxOptimizerDialog_cmn.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="oldtreemaker\source\tmwxgui\tmwxoptimizerdialog\tmwxOptimizerDialog_gtk.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="oldtreemaker\source\tmwxgui\tmwxoptimizerdialog\tmwxOptimizerDialog_mac.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="oldtreemaker\source\tmwxgui\tmwxoptimizerdialog\tmwxOptimizerDialog_msw.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="oldtreemaker\source\tmwxgui\tmwxpalette\tmwxButtonMini.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="oldtreemaker\source\tmwxgui\tmwxpalette\tmwxButtonSmall.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="oldtreemaker\source\tmwxgui\tmwxpalette\tmwxCheckBox.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="oldtreemaker\source\tmwxgui\tmwxpalette\tmwxCheckBoxSmall.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="oldtreemaker\source\tmwxgui\tmwxpalette\tmwxPaletteFrame.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="oldtreemaker\source\tmwxgui\tmwxpalette\tmwxPalettePanel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="oldtreemaker\source\tmwxgui\tmwxpalette\tmwxRadioBoxSmall.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="oldtreemaker\source\tmwxgui\tmwxpalette\tmwxStaticText.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="oldtreemaker\source\tmwxgui\tmwxpalette\tmwxTextCtrl.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="oldtreemaker\source\tmwxgui\tmwxviewsettings\tmwxViewSettings.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="oldtreemaker\source\tmwxgui\tmwxviewsettings\tmwxViewSettingsFrame.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="oldtreemaker\source\tmwxgui\tmwxviewsettings\tmwxViewSettingsPanel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="oldtreemaker\msw\setup0.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="oldtreemaker\source\tmHeader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="oldtreemaker\source\tmTree.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="oldtreemaker\source\tmVersion.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="oldtreemaker\source\test\tmnlcotester\tmNLCOTester.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="oldtreemaker\source\tmmodel\tmModel.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="oldtreemaker\source\tmmodel\tmModel_fwd.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="oldtreemaker\source\tmmodel\tmnlco\tmNLCO.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="oldtreemaker\source\tmmodel\tmnlco\tmNLCO_alm.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="oldtreemaker\source\tmmodel\tmnlco\tmNLCO_cfsqp.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="oldtreemaker\source\tmmodel\tmnlco\tmNLCO_rfsqp.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="oldtreemaker\source\tmmodel\tmnlco\tmNLCO_wnlib.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="oldtreemaker\source\tmmodel\tmoptimizers\tmConstraintFns.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="oldtreemaker\source\tmmodel\tmoptimizers\tmEdgeOptimizer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="oldtreemaker\source\tmmodel\tmoptimizers\tmOptimizer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="oldtreemaker\source\tmmodel\tmoptimizers\tmScaleOptimizer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="oldtreemaker\source\tmmodel\tmoptimizers\tmStrainOptimizer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="oldtreemaker\source\tmmodel\tmptrclasses\tmArray.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="oldtreemaker\source\tmmodel\tmptrclasses\tmArrayIterator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="oldtreemaker\source\tmmodel\tmptrclasses\tmDpptr.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="oldtreemaker\source\tmmodel\tmptrclasses\tmDpptrArray.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="oldtreemaker\source\tmmodel\tmptrclasses\tmDpptrSrc.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="oldtreemaker\source\tmmodel\tmptrclasses\tmDpptrTarget.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="oldtreemaker\source\tmmodel\tmptrclasses\tmPtrClasses.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="oldtreemaker\source\tmmodel\tmsolvers\tmMatrix.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="oldtreemaker\source\tmmodel\tmsolvers\tmNewtonRaphson.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="oldtreemaker\source\tmmodel\tmsolvers\tmStubFinder.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="oldtreemaker\source\tmmodel\tmtreeclasses\tmCluster.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="oldtreemaker\source\tmmodel\tmtreeclasses\tmCondition.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="oldtreemaker\source\tmmodel\tmtreeclasses\tmConditionEdgeLengthFixed.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="oldtreemaker\source\tmmodel\tmtreeclasses\tmConditionEdgesSameStrain.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="oldtreemaker\source\tmmodel\tmtreeclasses\tmConditionNodeCombo.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="oldtreemaker\source\tmmodel\tmtreeclasses\tmConditionNodeFixed.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="oldtreemaker\source\tmmodel\tmtreeclasses\tmConditionNodeOnCorner.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="oldtreemaker\source\tmmodel\tmtreeclasses\tmConditionNodeOnEdge.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="oldtreemaker\source\tmmodel\tmtreeclasses\tmConditionNodesCollinear.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="oldtreemaker\source\tmmodel\tmtreeclasses\tmConditionNodesPaired.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="oldtreemaker\source\tmmodel\tmtreeclasses\tmConditionNodeSymmetric.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="oldtreemaker\source\tmmodel\tmtreeclasses\tmConditionOwner.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="oldtreemaker\source\tmmodel\tmtreeclasses\tmConditionPathActive.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="oldtreemaker\source\tmmodel\tmtreeclasses\tmConditionPathAngleFixed.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="oldtreemaker\source\tmmodel\tmtreeclasses\tmConditionPathAngleQuant.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="oldtreemaker\source\tmmodel\tmtreeclasses\tmConditionPathCombo.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="oldtreemaker\source\tmmodel\tmtreeclasses\tmCrease.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="oldtreemaker\source\tmmodel\tmtreeclasses\tmCreaseOwner.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="oldtreemaker\source\tmmodel\tmtreeclasses\tmEdge.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="oldtreemaker\source\tmmodel\tmtreeclasses\tmEdgeOwner.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="oldtreemaker\source\tmmodel\tmtreeclasses\tmFacet.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="oldtreemaker\source\tmmodel\tmtreeclasses\tmFacetOwner.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="oldtreemaker\source\tmmodel\tmtreeclasses\tmNode.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="oldtreemaker\source\tmmodel\tmtreeclasses\tmNodeOwner.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="oldtreemaker\source\tmmodel\tmtreeclasses\tmPart.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="oldtreemaker\source\tmmodel\tmtreeclasses\tmPath.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="oldtreemaker\source\tmmodel\tmtreeclasses\tmPathOwner.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="oldtreemaker\source\tmmodel\tmtreeclasses\tmPoint.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="oldtreemaker\source\tmmodel\tmtreeclasses\tmPoly.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="oldtreemaker\source\tmmodel\tmtreeclasses\tmPolyOwner.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="oldtreemaker\source\tmmodel\tmtreeclasses\tmTree.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="oldtreemaker\source\tmmodel\tmtreeclasses\tmTreeClasses.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="oldtreemaker\source\tmmodel\tmtreeclasses\tmTreeCleaner.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="oldtreemaker\source\tmmodel\tmtreeclasses\tmVertex.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="oldtreemaker\source\tmmodel\tmtreeclasses\tmVertexOwner.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="oldtreemaker\source\tmmodel\wnlib\cmp\wncmp.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="oldtreemaker\source\tmmodel\wnlib\conjdir\wncnjdn.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="oldtreemaker\source\tmmodel\wnlib\conjdir\wnconj.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="oldtreemaker\source\tmmodel\wnlib\conjdir\wnconjd.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="oldtreemaker\source\tmmodel\wnlib\conjdir\wnnlp.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="oldtreemaker\source\tmmodel\wnlib\conjdir\wnparvect.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="oldtreemaker\source\tmmodel\wnlib\conjdir\wntol.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="oldtreemaker\source\tmmodel\wnlib\cpy\wncpy.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="oldtreemaker\source\tmmodel\wnlib\list\wnsll.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="oldtreemaker\source\tmmodel\wnlib\low\wnabs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="oldtreemaker\source\tmmodel\wnlib\low\wnasrt.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="oldtreemaker\source\tmmodel\wnlib\low\wncons.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="oldtreemaker\source\tmmodel\wnlib\low\wnerr.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="oldtreemaker\source\tmmodel\wnlib\low\wnlib.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="oldtreemaker\source\tmmodel\wnlib\low\wnmax.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="oldtreemaker\source\tmmodel\wnlib\low\wnport.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="oldtreemaker\source\tmmodel\wnlib\low\wnsqr.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="oldtreemaker\source\tmmodel\wnlib\low\wnswap.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="oldtreemaker\source\tmmodel\wnlib\mat\wnmat.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="oldtreemaker\source\tmmodel\wnlib\mem\wnmbtr.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="oldtreemaker\source\tmmodel\wnlib\mem\wnmem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="oldtreemaker\source\tmmodel\wnlib\mem\wnmemb.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="oldtreemaker\source\tmmodel\wnlib\random\wnrnd.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="oldtreemaker\source\tmmodel\wnlib\random\wnrndd.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="oldtreemaker\source\tmmodel\wnlib\random\wnrtab.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="oldtreemaker\source\tmmodel\wnlib\vect\wnpoly.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="oldtreemaker\source\tmmodel\wnlib\vect\wnvect.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="oldtreemaker\source\tmwxgui\tmwxcommon\tmwxApp.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="oldtreemaker\source\tmwxgui\tmwxcommon\tmwxCommand.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="oldtreemaker\source\tmwxgui\tmwxcommon\tmwxDocManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="oldtreemaker\source\tmwxgui\tmwxcommon\tmwxGetUserInputDialog.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="oldtreemaker\source\tmwxgui\tmwxcommon\tmwxGUI_fwd.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="oldtreemaker\source\tmwxgui\tmwxcommon\tmwxPersistentFrame.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="oldtreemaker\source\tmwxgui\tmwxcommon\tmwxStr.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="oldtreemaker\source\tmwxgui\tmwxdocview\tmwxDesignCanvas.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="oldtreemaker\source\tmwxgui\tmwxdocview\tmwxDesignFrame.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="oldtreemaker\source\tmwxgui\tmwxdocview\tmwxDoc.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="oldtreemaker\source\tmwxgui\tmwxdocview\tmwxPrintout.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="oldtreemaker\source\tmwxgui\tmwxdocview\tmwxView.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="oldtreemaker\source\tmwxgui\tmwxfoldedform\tmwxFoldedFormFrame.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="oldtreemaker\source\tmwxgui\tmwxhtmlhelp\tmwxHtmlHelpController.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="oldtreemaker\source\tmwxgui\tmwxhtmlhelp\tmwxHtmlHelpFrame.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="oldtreemaker\source\tmwxgui\tmwxinspector\tmwxConditionEdgeLengthFixedPanel.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="oldtreemaker\source\tmwxgui\tmwxinspector\tmwxConditionEdgesSameStrainPanel.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="oldtreemaker\source\tmwxgui\tmwxinspector\tmwxConditionListBox.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="oldtreemaker\source\tmwxgui\tmwxinspector\tmwxConditionNodeComboPanel.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="oldtreemaker\source\tmwxgui\tmwxinspector\tmwxConditionNodeFixedPanel.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="oldtreemaker\source\tmwxgui\tmwxinspector\tmwxConditionNodeOnCornerPanel.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="oldtreemaker\source\tmwxgui\tmwxinspector\tmwxConditionNodeOnEdgePanel.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="oldtreemaker\source\tmwxgui\tmwxinspector\tmwxConditionNodesCollinearPanel.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="oldtreemaker\source\tmwxgui\tmwxinspector\tmwxConditionNodesPairedPanel.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="oldtreemaker\source\tmwxgui\tmwxinspector\tmwxConditionNodeSymmetricPanel.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="oldtreemaker\source\tmwxgui\tmwxinspector\tmwxConditionPathActivePanel.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="oldtreemaker\source\tmwxgui\tmwxinspector\tmwxConditionPathAngleFixedPanel.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="oldtreemaker\source\tmwxgui\tmwxinspector\tmwxConditionPathAngleQuantPanel.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="oldtreemaker\source\tmwxgui\tmwxinspector\tmwxConditionPathComboPanel.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="oldtreemaker\source\tmwxgui\tmwxinspector\tmwxCreasePanel.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="oldtreemaker\source\tmwxgui\tmwxinspector\tmwxEdgePanel.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="oldtreemaker\source\tmwxgui\tmwxinspector\tmwxFacetPanel.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="oldtreemaker\source\tmwxgui\tmwxinspector\tmwxGroupPanel.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="oldtreemaker\source\tmwxgui\tmwxinspector\tmwxInspectorFrame.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="oldtreemaker\source\tmwxgui\tmwxinspector\tmwxInspectorPanel.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="oldtreemaker\source\tmwxgui\tmwxinspector\tmwxNodePanel.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="oldtreemaker\source\tmwxgui\tmwxinspector\tmwxPathPanel.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="oldtreemaker\source\tmwxgui\tmwxinspector\tmwxPolyPanel.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="oldtreemaker\source\tmwxgui\tmwxinspector\tmwxTreePanel.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="oldtreemaker\source\tmwxgui\tmwxinspector\tmwxVertexPanel.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="oldtreemaker\source\tmwxgui\tmwxlogframe\tmwxLogFrame.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="oldtreemaker\source\tmwxgui\tmwxoptimizerdialog\tmwxOptimizerDialog.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="oldtreemaker\source\tmwxgui\tmwxpalette\tmwxButtonMini.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="oldtreemaker\source\tmwxgui\tmwxpalette\tmwxButtonSmall.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="oldtreemaker\source\tmwxgui\tmwxpalette\tmwxCheckBox.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="oldtreemaker\source\tmwxgui\tmwxpalette\tmwxCheckBoxSmall.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="oldtreemaker\source\tmwxgui\tmwxpalette\tmwxPaletteFrame.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="oldtreemaker\source\tmwxgui\tmwxpalette\tmwxPalettePanel.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="oldtreemaker\source\tmwxgui\tmwxpalette\tmwxRadioBoxSmall.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="oldtreemaker\source\tmwxgui\tmwxpalette\tmwxStaticText.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="oldtreemaker\source\tmwxgui\tmwxpalette\tmwxTextCtrl.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="oldtreemaker\source\tmwxgui\tmwxviewsettings\tmwxViewSettings.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="oldtreemaker\source\tmwxgui\tmwxviewsettings\tmwxViewSettingsFrame.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="oldtreemaker\source\tmwxgui\tmwxviewsettings\tmwxViewSettingsPanel.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="oldtreemaker\msw\wx_res.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="oldtreemaker\source\about\about.htm" />
+    <None Include="oldtreemaker\source\help\background.htm" />
+    <None Include="oldtreemaker\source\help\index.htm" />
+    <None Include="oldtreemaker\source\help\menus.htm" />
+    <None Include="oldtreemaker\source\help\overview.htm" />
+    <None Include="oldtreemaker\source\help\tips_1.htm" />
+    <None Include="oldtreemaker\source\help\tips_2.htm" />
+    <None Include="oldtreemaker\source\help\tips_3.htm" />
+    <None Include="oldtreemaker\source\help\tips_4.htm" />
+    <None Include="oldtreemaker\source\help\tips_5.htm" />
+    <None Include="oldtreemaker\source\help\tutorial_1.htm" />
+    <None Include="oldtreemaker\source\help\tutorial_2.htm" />
+    <None Include="oldtreemaker\source\help\tutorial_3.htm" />
+    <None Include="oldtreemaker\source\help\windows.htm" />
+  </ItemGroup>
+</Project>
