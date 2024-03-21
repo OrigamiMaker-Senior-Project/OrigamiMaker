@@ -3,9 +3,9 @@ File:         tmDpptrSrc.h
 Project:      TreeMaker 5.x
 Purpose:      Header file for class tmDpptrSrc
 Author:       Robert J. Lang
-Modified by:  
+Modified by:
 Created:      2003-11-15
-Copyright:    ©2003 Robert J. Lang. All Rights Reserved.
+Copyright:    ?2003 Robert J. Lang. All Rights Reserved.
 *******************************************************************************/
 
 #ifndef _TMDPPTRSRC_H_
@@ -21,17 +21,17 @@ type tmDpptrTarget
 class tmDpptrSrc
 {
 public:
-  virtual ~tmDpptrSrc() {};
+    virtual ~tmDpptrSrc() {};
 protected:
-  // Used by subclasses
-  void DstAddMeAsDpptrSrc(tmDpptrTarget* aDpptrTarget) {
-    aDpptrTarget->AddDpptrSrc(this);};
-  void DstRemoveMeAsDpptrSrc(tmDpptrTarget* aDpptrTarget) {
-    aDpptrTarget->RemoveDpptrSrc(this);};
-  // Implemented by subclasses
-  virtual void RemoveDpptrTarget(tmDpptrTarget*) {};
+    // Used by subclasses
+    void DstAddMeAsDpptrSrc(tmDpptrTarget* aDpptrTarget) {
+        aDpptrTarget->AddDpptrSrc(this);};
+    void DstRemoveMeAsDpptrSrc(const tmDpptrTarget* aDpptrTarget) {
+        const_cast<tmDpptrTarget*>(aDpptrTarget)->RemoveDpptrSrc(this);};
+    // Implemented by subclasses
+    virtual void RemoveDpptrTarget(const tmDpptrTarget*) {};
 private:
-  friend class tmDpptrTarget;
+    friend class tmDpptrTarget;
 };
 
 #endif // _TMDPPTRSRC_H_

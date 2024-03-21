@@ -3,6 +3,9 @@
 
 #include <QMainWindow>
 
+// Forward declaration
+class CanvasWidget;
+
 QT_BEGIN_NAMESPACE
 namespace Ui {
 class MainWindow;
