@@ -6,14 +6,15 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+
+    // Connect the CanvasWidget to the main window
+    CanvasWidget *canvas = findChild<CanvasWidget *>();
+    if (canvas) {
+        // You can set up any necessary connections or initializations for the canvas here
+    }
 }
 
 MainWindow::~MainWindow()
 {
     delete ui;
-}
-
-void MainWindow::on_pushButton_clicked()
-{
-    ui->label->setText("hello world");
 }
