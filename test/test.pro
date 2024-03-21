@@ -12,11 +12,13 @@ SOURCES += \
     canvaswidget.cpp \
     main.cpp \
     mainwindow.cpp \
+    tmDoc.cpp \
     tmHeader.cpp
 
 HEADERS += \
     canvaswidget.h \
     mainwindow.h \
+    tmDoc.h \
     tmHeader.h
 
 FORMS += \
