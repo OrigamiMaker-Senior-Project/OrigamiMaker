@@ -1,1 +1,20 @@
-//css file 
+QWidget {
+    background-color: #f5f5f5;
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+QPushButton {
+    background-color: #333;
+    color: #fff;
+    border-radius: 4px;
+}
+
+QLineEdit {
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+QTableWidget::item:selected {
+    background-color: #333;
+    color: #fff;
+}

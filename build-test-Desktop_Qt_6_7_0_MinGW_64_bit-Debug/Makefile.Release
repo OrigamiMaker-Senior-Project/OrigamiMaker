@@ -56,7 +56,7 @@ OBJECTS       = release/main.o \
 		release/mainwindow.o \
 		release/moc_mainwindow.o
 
-DIST          =  ..\test\mainwindow.h ..\test\main.cpp \
+DIST          = stylesheet.css ..\test\mainwindow.h ..\test\main.cpp \
 		..\test\mainwindow.cpp
 QMAKE_TARGET  = test
 DESTDIR        = release\ #avoid trailing-slash linebreak
@@ -514,7 +514,10 @@ release/main.o: ../test/main.cpp ../test/mainwindow.h \
 		C:/Qt/6.7.0/mingw_64/include/QtGui/qguiapplication_platform.h \
 		C:/Qt/6.7.0/mingw_64/include/QtWidgets/qtabwidget.h \
 		C:/Qt/6.7.0/mingw_64/include/QtWidgets/QApplication \
-		C:/Qt/6.7.0/mingw_64/include/QtWidgets/qapplication.h
+		C:/Qt/6.7.0/mingw_64/include/QtWidgets/qapplication.h \
+		C:/Qt/6.7.0/mingw_64/include/QtCore/QFile \
+		C:/Qt/6.7.0/mingw_64/include/QtCore/qfile.h \
+		C:/Qt/6.7.0/mingw_64/include/QtCore/qfiledevice.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\main.o ..\test\main.cpp
 
 release/mainwindow.o: ../test/mainwindow.cpp ../test/mainwindow.h \
@@ -707,11 +710,55 @@ release/mainwindow.o: ../test/mainwindow.cpp ../test/mainwindow.h \
 		C:/Qt/6.7.0/mingw_64/include/QtGui/qguiapplication_platform.h \
 		C:/Qt/6.7.0/mingw_64/include/QtWidgets/qtabwidget.h \
 		ui_mainwindow.h \
+		C:/Qt/6.7.0/mingw_64/include/QtCore/QVariant \
+		C:/Qt/6.7.0/mingw_64/include/QtWidgets/QApplication \
+		C:/Qt/6.7.0/mingw_64/include/QtWidgets/qapplication.h \
+		C:/Qt/6.7.0/mingw_64/include/QtWidgets/QCheckBox \
+		C:/Qt/6.7.0/mingw_64/include/QtWidgets/qcheckbox.h \
+		C:/Qt/6.7.0/mingw_64/include/QtWidgets/qabstractbutton.h \
+		C:/Qt/6.7.0/mingw_64/include/QtWidgets/QComboBox \
+		C:/Qt/6.7.0/mingw_64/include/QtWidgets/qcombobox.h \
+		C:/Qt/6.7.0/mingw_64/include/QtWidgets/qabstractitemdelegate.h \
+		C:/Qt/6.7.0/mingw_64/include/QtWidgets/qstyleoption.h \
+		C:/Qt/6.7.0/mingw_64/include/QtWidgets/qabstractspinbox.h \
+		C:/Qt/6.7.0/mingw_64/include/QtGui/qvalidator.h \
+		C:/Qt/6.7.0/mingw_64/include/QtCore/qregularexpression.h \
+		C:/Qt/6.7.0/mingw_64/include/QtWidgets/qslider.h \
+		C:/Qt/6.7.0/mingw_64/include/QtWidgets/qabstractslider.h \
+		C:/Qt/6.7.0/mingw_64/include/QtWidgets/qstyle.h \
+		C:/Qt/6.7.0/mingw_64/include/QtWidgets/qtabbar.h \
+		C:/Qt/6.7.0/mingw_64/include/QtWidgets/qrubberband.h \
+		C:/Qt/6.7.0/mingw_64/include/QtWidgets/qframe.h \
+		C:/Qt/6.7.0/mingw_64/include/QtCore/qabstractitemmodel.h \
+		C:/Qt/6.7.0/mingw_64/include/QtWidgets/QFrame \
+		C:/Qt/6.7.0/mingw_64/include/QtWidgets/QGridLayout \
+		C:/Qt/6.7.0/mingw_64/include/QtWidgets/qgridlayout.h \
+		C:/Qt/6.7.0/mingw_64/include/QtWidgets/qlayout.h \
+		C:/Qt/6.7.0/mingw_64/include/QtWidgets/qlayoutitem.h \
+		C:/Qt/6.7.0/mingw_64/include/QtWidgets/qboxlayout.h \
+		C:/Qt/6.7.0/mingw_64/include/QtWidgets/QGroupBox \
+		C:/Qt/6.7.0/mingw_64/include/QtWidgets/qgroupbox.h \
 		C:/Qt/6.7.0/mingw_64/include/QtWidgets/QLabel \
 		C:/Qt/6.7.0/mingw_64/include/QtWidgets/qlabel.h \
-		C:/Qt/6.7.0/mingw_64/include/QtWidgets/qframe.h \
 		C:/Qt/6.7.0/mingw_64/include/QtGui/qpicture.h \
 		C:/Qt/6.7.0/mingw_64/include/QtGui/qtextdocument.h \
+		C:/Qt/6.7.0/mingw_64/include/QtWidgets/QLineEdit \
+		C:/Qt/6.7.0/mingw_64/include/QtWidgets/qlineedit.h \
+		C:/Qt/6.7.0/mingw_64/include/QtGui/qtextcursor.h \
+		C:/Qt/6.7.0/mingw_64/include/QtGui/qtextformat.h \
+		C:/Qt/6.7.0/mingw_64/include/QtGui/qpen.h \
+		C:/Qt/6.7.0/mingw_64/include/QtGui/qtextoption.h \
+		C:/Qt/6.7.0/mingw_64/include/QtWidgets/QMenuBar \
+		C:/Qt/6.7.0/mingw_64/include/QtWidgets/qmenubar.h \
+		C:/Qt/6.7.0/mingw_64/include/QtWidgets/qmenu.h \
+		C:/Qt/6.7.0/mingw_64/include/QtWidgets/QPushButton \
+		C:/Qt/6.7.0/mingw_64/include/QtWidgets/qpushbutton.h \
+		C:/Qt/6.7.0/mingw_64/include/QtWidgets/QScrollArea \
+		C:/Qt/6.7.0/mingw_64/include/QtWidgets/qscrollarea.h \
+		C:/Qt/6.7.0/mingw_64/include/QtWidgets/qabstractscrollarea.h \
+		C:/Qt/6.7.0/mingw_64/include/QtWidgets/QStatusBar \
+		C:/Qt/6.7.0/mingw_64/include/QtWidgets/qstatusbar.h \
+		C:/Qt/6.7.0/mingw_64/include/QtWidgets/QWidget \
 		C:/Qt/6.7.0/mingw_64/include/QtGui/QPixmap
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\mainwindow.o ..\test\mainwindow.cpp
 
