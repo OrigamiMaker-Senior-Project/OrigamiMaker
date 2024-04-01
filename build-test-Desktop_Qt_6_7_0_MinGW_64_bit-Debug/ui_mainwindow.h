@@ -21,6 +21,7 @@
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
+#include <QtWidgets/QRadioButton>
 #include <QtWidgets/QScrollArea>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QWidget>
@@ -65,9 +66,7 @@ public:
     QLineEdit *lineEdit_15;
     QLineEdit *lineEdit_14;
     QLabel *label_15;
-    QComboBox *comboBox_2;
     QLineEdit *lineEdit_7;
-    QComboBox *comboBox;
     QLabel *label_10;
     QLabel *label_14;
     QLineEdit *lineEdit_12;
@@ -77,6 +76,8 @@ public:
     QLineEdit *lineEdit_16;
     QLabel *label_7;
     QLabel *label_13;
+    QRadioButton *radioButton_2;
+    QRadioButton *radioButton;
     QScrollArea *conditionsScrollArea;
     QWidget *scrollAreaWidgetContents;
     QGridLayout *gridLayout_2;
@@ -236,7 +237,7 @@ public:
         inspectorScrollArea->setWidgetResizable(true);
         scrollAreaWidgetContents_2 = new QWidget();
         scrollAreaWidgetContents_2->setObjectName("scrollAreaWidgetContents_2");
-        scrollAreaWidgetContents_2->setGeometry(QRect(0, 0, 269, 236));
+        scrollAreaWidgetContents_2->setGeometry(QRect(0, -57, 331, 205));
         gridLayout = new QGridLayout(scrollAreaWidgetContents_2);
         gridLayout->setObjectName("gridLayout");
         lineEdit_15 = new QLineEdit(scrollAreaWidgetContents_2);
@@ -254,24 +255,10 @@ public:
 
         gridLayout->addWidget(label_15, 3, 0, 1, 1);
 
-        comboBox_2 = new QComboBox(scrollAreaWidgetContents_2);
-        comboBox_2->addItem(QString());
-        comboBox_2->addItem(QString());
-        comboBox_2->setObjectName("comboBox_2");
-
-        gridLayout->addWidget(comboBox_2, 5, 0, 1, 1);
-
         lineEdit_7 = new QLineEdit(scrollAreaWidgetContents_2);
         lineEdit_7->setObjectName("lineEdit_7");
 
         gridLayout->addWidget(lineEdit_7, 0, 1, 1, 1);
-
-        comboBox = new QComboBox(scrollAreaWidgetContents_2);
-        comboBox->addItem(QString());
-        comboBox->addItem(QString());
-        comboBox->setObjectName("comboBox");
-
-        gridLayout->addWidget(comboBox, 6, 0, 1, 1);
 
         label_10 = new QLabel(scrollAreaWidgetContents_2);
         label_10->setObjectName("label_10");
@@ -318,6 +305,16 @@ public:
 
         gridLayout->addWidget(label_13, 2, 0, 1, 1);
 
+        radioButton_2 = new QRadioButton(scrollAreaWidgetContents_2);
+        radioButton_2->setObjectName("radioButton_2");
+
+        gridLayout->addWidget(radioButton_2, 6, 1, 1, 1);
+
+        radioButton = new QRadioButton(scrollAreaWidgetContents_2);
+        radioButton->setObjectName("radioButton");
+
+        gridLayout->addWidget(radioButton, 6, 0, 1, 1);
+
         inspectorScrollArea->setWidget(scrollAreaWidgetContents_2);
         conditionsScrollArea = new QScrollArea(sideMenuGroupBox);
         conditionsScrollArea->setObjectName("conditionsScrollArea");
@@ -325,7 +322,7 @@ public:
         conditionsScrollArea->setWidgetResizable(true);
         scrollAreaWidgetContents = new QWidget();
         scrollAreaWidgetContents->setObjectName("scrollAreaWidgetContents");
-        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 269, 345));
+        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 295, 437));
         gridLayout_2 = new QGridLayout(scrollAreaWidgetContents);
         gridLayout_2->setObjectName("gridLayout_2");
         checkBox_10 = new QCheckBox(scrollAreaWidgetContents);
@@ -405,7 +402,7 @@ public:
         viewSettingsScrollArea->setWidgetResizable(true);
         scrollAreaWidgetContents_3 = new QWidget();
         scrollAreaWidgetContents_3->setObjectName("scrollAreaWidgetContents_3");
-        scrollAreaWidgetContents_3->setGeometry(QRect(0, 0, 269, 262));
+        scrollAreaWidgetContents_3->setGeometry(QRect(0, 0, 248, 358));
         gridLayout_3 = new QGridLayout(scrollAreaWidgetContents_3);
         gridLayout_3->setObjectName("gridLayout_3");
         checkBox_12 = new QCheckBox(scrollAreaWidgetContents_3);
@@ -478,7 +475,7 @@ public:
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
-        menubar->setGeometry(QRect(0, 0, 920, 24));
+        menubar->setGeometry(QRect(0, 0, 920, 26));
         MainWindow->setMenuBar(menubar);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName("statusbar");
@@ -512,13 +509,7 @@ public:
         lineEdit_15->setText(QCoreApplication::translate("MainWindow", "0", nullptr));
         lineEdit_14->setText(QCoreApplication::translate("MainWindow", "0", nullptr));
         label_15->setText(QCoreApplication::translate("MainWindow", "Angle =", nullptr));
-        comboBox_2->setItemText(0, QCoreApplication::translate("MainWindow", "Linear", nullptr));
-        comboBox_2->setItemText(1, QCoreApplication::translate("MainWindow", "item 2", nullptr));
-
         lineEdit_7->setText(QCoreApplication::translate("MainWindow", "0", nullptr));
-        comboBox->setItemText(0, QCoreApplication::translate("MainWindow", "Diagonal", nullptr));
-        comboBox->setItemText(1, QCoreApplication::translate("MainWindow", "item 2", nullptr));
-
         label_10->setText(QCoreApplication::translate("MainWindow", "Height =", nullptr));
         label_14->setText(QCoreApplication::translate("MainWindow", "Y =", nullptr));
         lineEdit_12->setText(QCoreApplication::translate("MainWindow", "0", nullptr));
@@ -528,6 +519,8 @@ public:
         lineEdit_16->setText(QString());
         label_7->setText(QCoreApplication::translate("MainWindow", "Width =", nullptr));
         label_13->setText(QCoreApplication::translate("MainWindow", "X =", nullptr));
+        radioButton_2->setText(QCoreApplication::translate("MainWindow", "Diagonal", nullptr));
+        radioButton->setText(QCoreApplication::translate("MainWindow", "Linear", nullptr));
         checkBox_10->setText(QCoreApplication::translate("MainWindow", "Angle Fixed", nullptr));
         checkBox->setText(QCoreApplication::translate("MainWindow", "3 Nodes Colinear", nullptr));
         label_19->setText(QString());
