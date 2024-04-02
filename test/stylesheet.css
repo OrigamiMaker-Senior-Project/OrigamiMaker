@@ -1,17 +1,24 @@
 QWidget {
-    background-color: #f5f5f5;
-    font-family: "Segoe UI", Arial, sans-serif;
+    /*background-color: #f5f5f5;
+    font-family: "Segoe UI", Arial, sans-serif;*/
+}
+
+QGroupBox {
+    height: auto;
 }
 
 QPushButton {
     background-color: #333;
     color: #fff;
-    border-radius: 4px;
+    border-radius: 8px;
+    height: 16px;
+    margin-right: 4px;
+
 }
 
 QLineEdit {
-    border-radius: 4px;
-    border: 1px solid #ccc;
+    /*border-radius: 4px;
+    border: 1px solid #ccc;*/
 }
 
 QTableWidget::item:selected {

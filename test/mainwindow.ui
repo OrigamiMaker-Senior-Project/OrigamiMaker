@@ -376,6 +376,12 @@
     <property name="title">
      <string/>
     </property>
+    <property name="flat">
+     <bool>false</bool>
+    </property>
+    <property name="checkable">
+     <bool>false</bool>
+    </property>
     <widget class="QLabel" name="label">
      <property name="geometry">
       <rect>
@@ -390,6 +396,9 @@
      </property>
     </widget>
     <widget class="QScrollArea" name="inspectorScrollArea">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
      <property name="geometry">
       <rect>
        <x>0</x>
@@ -397,6 +406,21 @@
        <width>271</width>
        <height>171</height>
       </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Expanding">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>300</width>
+       <height>200</height>
+      </size>
+     </property>
+     <property name="accessibleName">
+      <string>inspector box</string>
      </property>
      <property name="widgetResizable">
       <bool>true</bool>
@@ -411,45 +435,16 @@
        </rect>
       </property>
       <layout class="QGridLayout" name="gridLayout">
-       <item row="2" column="3">
-        <widget class="QLineEdit" name="lineEdit_15">
-         <property name="text">
-          <string>0</string>
+       <item row="3" column="1">
+        <widget class="QLineEdit" name="lineEdit_16">
+         <property name="maximumSize">
+          <size>
+           <width>64</width>
+           <height>16777215</height>
+          </size>
          </property>
-        </widget>
-       </item>
-       <item row="2" column="1">
-        <widget class="QLineEdit" name="lineEdit_14">
          <property name="text">
-          <string>0</string>
-         </property>
-        </widget>
-       </item>
-       <item row="3" column="0">
-        <widget class="QLabel" name="label_15">
-         <property name="text">
-          <string>Angle =</string>
-         </property>
-        </widget>
-       </item>
-       <item row="5" column="0">
-        <widget class="QComboBox" name="comboBox_2">
-         <item>
-          <property name="text">
-           <string>Linear</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>item 2</string>
-          </property>
-         </item>
-        </widget>
-       </item>
-       <item row="0" column="1">
-        <widget class="QLineEdit" name="lineEdit_7">
-         <property name="text">
-          <string>0</string>
+          <string/>
          </property>
         </widget>
        </item>
@@ -467,31 +462,48 @@
          </item>
         </widget>
        </item>
-       <item row="0" column="2">
-        <widget class="QLabel" name="label_10">
-         <property name="text">
-          <string>Height =</string>
+       <item row="2" column="1">
+        <widget class="QLineEdit" name="lineEdit_14">
+         <property name="maximumSize">
+          <size>
+           <width>64</width>
+           <height>64</height>
+          </size>
          </property>
-        </widget>
-       </item>
-       <item row="2" column="2">
-        <widget class="QLabel" name="label_14">
-         <property name="text">
-          <string>Y =</string>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="1">
-        <widget class="QLineEdit" name="lineEdit_12">
          <property name="text">
           <string>0</string>
          </property>
         </widget>
        </item>
-       <item row="1" column="0">
-        <widget class="QLabel" name="label_12">
+       <item row="1" column="1">
+        <widget class="QLineEdit" name="lineEdit_12">
+         <property name="maximumSize">
+          <size>
+           <width>64</width>
+           <height>64</height>
+          </size>
+         </property>
          <property name="text">
-          <string>Scale =</string>
+          <string>0</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="0">
+        <widget class="QLabel" name="label_symmetry">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>128</width>
+           <height>128</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>Symmetry</string>
          </property>
         </widget>
        </item>
@@ -502,32 +514,137 @@
          </property>
         </widget>
        </item>
-       <item row="4" column="0">
-        <widget class="QLabel" name="label_16">
+       <item row="2" column="2">
+        <widget class="QLabel" name="label_Y">
          <property name="text">
-          <string>Symmetry</string>
-         </property>
-        </widget>
-       </item>
-       <item row="3" column="1">
-        <widget class="QLineEdit" name="lineEdit_16">
-         <property name="text">
-          <string/>
+          <string>Y =</string>
          </property>
         </widget>
        </item>
        <item row="0" column="0">
-        <widget class="QLabel" name="label_7">
+        <widget class="QLabel" name="label_width">
+         <property name="enabled">
+          <bool>true</bool>
+         </property>
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>128</width>
+           <height>128</height>
+          </size>
+         </property>
          <property name="text">
           <string>Width =</string>
          </property>
         </widget>
        </item>
+       <item row="0" column="2">
+        <widget class="QLabel" name="label_height">
+         <property name="text">
+          <string>Height =</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="3">
+        <widget class="QLineEdit" name="lineEdit_15">
+         <property name="text">
+          <string>0</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLabel" name="label_scale">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>16</width>
+           <height>16</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>128</width>
+           <height>128</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>Scale =</string>
+         </property>
+        </widget>
+       </item>
        <item row="2" column="0">
-        <widget class="QLabel" name="label_13">
+        <widget class="QLabel" name="label_X">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>128</width>
+           <height>128</height>
+          </size>
+         </property>
          <property name="text">
           <string>X =</string>
          </property>
+        </widget>
+       </item>
+       <item row="3" column="0">
+        <widget class="QLabel" name="label_angle">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>128</width>
+           <height>128</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>Angle =</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QLineEdit" name="lineEdit_7">
+         <property name="maximumSize">
+          <size>
+           <width>64</width>
+           <height>64</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>0</string>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="0">
+        <widget class="QComboBox" name="comboBox_2">
+         <item>
+          <property name="text">
+           <string>Linear</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>item 2</string>
+          </property>
+         </item>
         </widget>
        </item>
       </layout>
@@ -551,7 +668,7 @@
         <x>0</x>
         <y>0</y>
         <width>269</width>
-        <height>345</height>
+        <height>323</height>
        </rect>
       </property>
       <layout class="QGridLayout" name="gridLayout_2">
