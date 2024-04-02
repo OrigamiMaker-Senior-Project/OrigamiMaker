@@ -78,21 +78,21 @@ public:
     QScrollArea *inspectorScrollArea;
     QWidget *scrollAreaWidgetContents_2;
     QGridLayout *gridLayout;
-    QLabel *label_angle;
-    QRadioButton *radioButton;
     QLineEdit *lineEdit_7;
     QLineEdit *lineEdit_15;
-    QLineEdit *lineEdit_8;
     QLabel *label_symmetry;
     QLabel *label_scale;
     QLabel *label_width;
-    QRadioButton *radioButton_2;
-    QLineEdit *lineEdit_17;
-    QLabel *label_height;
     QLineEdit *lineEdit_14;
     QLineEdit *lineEdit_12;
     QLabel *label_X;
     QLabel *label_Y;
+    QLabel *label_height;
+    QLineEdit *lineEdit_8;
+    QLabel *label_angle;
+    QLineEdit *lineEdit_17;
+    QRadioButton *radioButton;
+    QRadioButton *radioButton_2;
     QScrollArea *conditionsScrollArea;
     QWidget *scrollAreaWidgetContents;
     QGridLayout *gridLayout_2;
@@ -138,6 +138,11 @@ public:
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName("MainWindow");
         MainWindow->resize(973, 643);
+        QSizePolicy sizePolicy(QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Expanding);
+        sizePolicy.setHorizontalStretch(0);
+        sizePolicy.setVerticalStretch(0);
+        sizePolicy.setHeightForWidth(MainWindow->sizePolicy().hasHeightForWidth());
+        MainWindow->setSizePolicy(sizePolicy);
         actionNew_Ctrl_N = new QAction(MainWindow);
         actionNew_Ctrl_N->setObjectName("actionNew_Ctrl_N");
         actionOpen_Ctrl_O = new QAction(MainWindow);
@@ -200,9 +205,13 @@ public:
         actionAbout_TreeMaker->setObjectName("actionAbout_TreeMaker");
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName("centralwidget");
+        sizePolicy.setHeightForWidth(centralwidget->sizePolicy().hasHeightForWidth());
+        centralwidget->setSizePolicy(sizePolicy);
         drawingAreaGroupBox = new QGroupBox(centralwidget);
         drawingAreaGroupBox->setObjectName("drawingAreaGroupBox");
         drawingAreaGroupBox->setGeometry(QRect(0, 0, 651, 591));
+        sizePolicy.setHeightForWidth(drawingAreaGroupBox->sizePolicy().hasHeightForWidth());
+        drawingAreaGroupBox->setSizePolicy(sizePolicy);
         groupBox_plan = new QGroupBox(drawingAreaGroupBox);
         groupBox_plan->setObjectName("groupBox_plan");
         groupBox_plan->setGeometry(QRect(590, 0, 61, 61));
@@ -234,11 +243,15 @@ public:
         frame = new QFrame(centralwidget);
         frame->setObjectName("frame");
         frame->setGeometry(QRect(650, 0, 321, 591));
+        sizePolicy.setHeightForWidth(frame->sizePolicy().hasHeightForWidth());
+        frame->setSizePolicy(sizePolicy);
         frame->setFrameShape(QFrame::StyledPanel);
         frame->setFrameShadow(QFrame::Raised);
         sideMenuGroupBox = new QGroupBox(frame);
         sideMenuGroupBox->setObjectName("sideMenuGroupBox");
         sideMenuGroupBox->setGeometry(QRect(0, 0, 321, 591));
+        sizePolicy.setHeightForWidth(sideMenuGroupBox->sizePolicy().hasHeightForWidth());
+        sideMenuGroupBox->setSizePolicy(sizePolicy);
         sideMenuGroupBox->setFlat(false);
         sideMenuGroupBox->setCheckable(false);
         label = new QLabel(sideMenuGroupBox);
@@ -248,34 +261,18 @@ public:
         inspectorScrollArea->setObjectName("inspectorScrollArea");
         inspectorScrollArea->setEnabled(true);
         inspectorScrollArea->setGeometry(QRect(0, 30, 321, 161));
-        QSizePolicy sizePolicy(QSizePolicy::Policy::Fixed, QSizePolicy::Policy::Expanding);
-        sizePolicy.setHorizontalStretch(0);
-        sizePolicy.setVerticalStretch(0);
-        sizePolicy.setHeightForWidth(inspectorScrollArea->sizePolicy().hasHeightForWidth());
-        inspectorScrollArea->setSizePolicy(sizePolicy);
+        QSizePolicy sizePolicy1(QSizePolicy::Policy::Fixed, QSizePolicy::Policy::Expanding);
+        sizePolicy1.setHorizontalStretch(0);
+        sizePolicy1.setVerticalStretch(0);
+        sizePolicy1.setHeightForWidth(inspectorScrollArea->sizePolicy().hasHeightForWidth());
+        inspectorScrollArea->setSizePolicy(sizePolicy1);
         inspectorScrollArea->setMaximumSize(QSize(16777215, 200));
         inspectorScrollArea->setWidgetResizable(true);
         scrollAreaWidgetContents_2 = new QWidget();
         scrollAreaWidgetContents_2->setObjectName("scrollAreaWidgetContents_2");
-        scrollAreaWidgetContents_2->setGeometry(QRect(0, 0, 319, 219));
+        scrollAreaWidgetContents_2->setGeometry(QRect(0, 0, 319, 159));
         gridLayout = new QGridLayout(scrollAreaWidgetContents_2);
         gridLayout->setObjectName("gridLayout");
-        label_angle = new QLabel(scrollAreaWidgetContents_2);
-        label_angle->setObjectName("label_angle");
-        QSizePolicy sizePolicy1(QSizePolicy::Policy::Minimum, QSizePolicy::Policy::Preferred);
-        sizePolicy1.setHorizontalStretch(0);
-        sizePolicy1.setVerticalStretch(0);
-        sizePolicy1.setHeightForWidth(label_angle->sizePolicy().hasHeightForWidth());
-        label_angle->setSizePolicy(sizePolicy1);
-        label_angle->setMaximumSize(QSize(128, 128));
-
-        gridLayout->addWidget(label_angle, 8, 0, 1, 1);
-
-        radioButton = new QRadioButton(scrollAreaWidgetContents_2);
-        radioButton->setObjectName("radioButton");
-
-        gridLayout->addWidget(radioButton, 11, 0, 1, 1);
-
         lineEdit_7 = new QLineEdit(scrollAreaWidgetContents_2);
         lineEdit_7->setObjectName("lineEdit_7");
         lineEdit_7->setMaximumSize(QSize(64, 64));
@@ -288,24 +285,21 @@ public:
 
         gridLayout->addWidget(lineEdit_15, 4, 4, 1, 1);
 
-        lineEdit_8 = new QLineEdit(scrollAreaWidgetContents_2);
-        lineEdit_8->setObjectName("lineEdit_8");
-        lineEdit_8->setMaximumSize(QSize(64, 64));
-
-        gridLayout->addWidget(lineEdit_8, 1, 2, 1, 1);
-
         label_symmetry = new QLabel(scrollAreaWidgetContents_2);
         label_symmetry->setObjectName("label_symmetry");
-        sizePolicy1.setHeightForWidth(label_symmetry->sizePolicy().hasHeightForWidth());
-        label_symmetry->setSizePolicy(sizePolicy1);
+        QSizePolicy sizePolicy2(QSizePolicy::Policy::Minimum, QSizePolicy::Policy::Preferred);
+        sizePolicy2.setHorizontalStretch(0);
+        sizePolicy2.setVerticalStretch(0);
+        sizePolicy2.setHeightForWidth(label_symmetry->sizePolicy().hasHeightForWidth());
+        label_symmetry->setSizePolicy(sizePolicy2);
         label_symmetry->setMaximumSize(QSize(128, 128));
 
         gridLayout->addWidget(label_symmetry, 9, 0, 1, 1);
 
         label_scale = new QLabel(scrollAreaWidgetContents_2);
         label_scale->setObjectName("label_scale");
-        sizePolicy1.setHeightForWidth(label_scale->sizePolicy().hasHeightForWidth());
-        label_scale->setSizePolicy(sizePolicy1);
+        sizePolicy2.setHeightForWidth(label_scale->sizePolicy().hasHeightForWidth());
+        label_scale->setSizePolicy(sizePolicy2);
         label_scale->setMinimumSize(QSize(16, 16));
         label_scale->setMaximumSize(QSize(128, 128));
 
@@ -314,27 +308,11 @@ public:
         label_width = new QLabel(scrollAreaWidgetContents_2);
         label_width->setObjectName("label_width");
         label_width->setEnabled(true);
-        sizePolicy1.setHeightForWidth(label_width->sizePolicy().hasHeightForWidth());
-        label_width->setSizePolicy(sizePolicy1);
+        sizePolicy2.setHeightForWidth(label_width->sizePolicy().hasHeightForWidth());
+        label_width->setSizePolicy(sizePolicy2);
         label_width->setMaximumSize(QSize(128, 128));
 
         gridLayout->addWidget(label_width, 0, 0, 1, 1);
-
-        radioButton_2 = new QRadioButton(scrollAreaWidgetContents_2);
-        radioButton_2->setObjectName("radioButton_2");
-
-        gridLayout->addWidget(radioButton_2, 11, 2, 1, 1);
-
-        lineEdit_17 = new QLineEdit(scrollAreaWidgetContents_2);
-        lineEdit_17->setObjectName("lineEdit_17");
-        lineEdit_17->setMaximumSize(QSize(64, 64));
-
-        gridLayout->addWidget(lineEdit_17, 8, 2, 1, 1);
-
-        label_height = new QLabel(scrollAreaWidgetContents_2);
-        label_height->setObjectName("label_height");
-
-        gridLayout->addWidget(label_height, 1, 0, 1, 1);
 
         lineEdit_14 = new QLineEdit(scrollAreaWidgetContents_2);
         lineEdit_14->setObjectName("lineEdit_14");
@@ -350,8 +328,8 @@ public:
 
         label_X = new QLabel(scrollAreaWidgetContents_2);
         label_X->setObjectName("label_X");
-        sizePolicy1.setHeightForWidth(label_X->sizePolicy().hasHeightForWidth());
-        label_X->setSizePolicy(sizePolicy1);
+        sizePolicy2.setHeightForWidth(label_X->sizePolicy().hasHeightForWidth());
+        label_X->setSizePolicy(sizePolicy2);
         label_X->setMaximumSize(QSize(128, 128));
         label_X->setIndent(-2);
 
@@ -361,6 +339,41 @@ public:
         label_Y->setObjectName("label_Y");
 
         gridLayout->addWidget(label_Y, 4, 3, 1, 1);
+
+        label_height = new QLabel(scrollAreaWidgetContents_2);
+        label_height->setObjectName("label_height");
+
+        gridLayout->addWidget(label_height, 0, 3, 1, 1);
+
+        lineEdit_8 = new QLineEdit(scrollAreaWidgetContents_2);
+        lineEdit_8->setObjectName("lineEdit_8");
+        lineEdit_8->setMaximumSize(QSize(64, 64));
+
+        gridLayout->addWidget(lineEdit_8, 0, 4, 1, 1);
+
+        label_angle = new QLabel(scrollAreaWidgetContents_2);
+        label_angle->setObjectName("label_angle");
+        sizePolicy2.setHeightForWidth(label_angle->sizePolicy().hasHeightForWidth());
+        label_angle->setSizePolicy(sizePolicy2);
+        label_angle->setMaximumSize(QSize(128, 128));
+
+        gridLayout->addWidget(label_angle, 2, 3, 1, 1);
+
+        lineEdit_17 = new QLineEdit(scrollAreaWidgetContents_2);
+        lineEdit_17->setObjectName("lineEdit_17");
+        lineEdit_17->setMaximumSize(QSize(64, 64));
+
+        gridLayout->addWidget(lineEdit_17, 2, 4, 1, 1);
+
+        radioButton = new QRadioButton(scrollAreaWidgetContents_2);
+        radioButton->setObjectName("radioButton");
+
+        gridLayout->addWidget(radioButton, 9, 2, 1, 1);
+
+        radioButton_2 = new QRadioButton(scrollAreaWidgetContents_2);
+        radioButton_2->setObjectName("radioButton_2");
+
+        gridLayout->addWidget(radioButton_2, 9, 3, 1, 1);
 
         inspectorScrollArea->setWidget(scrollAreaWidgetContents_2);
         conditionsScrollArea = new QScrollArea(sideMenuGroupBox);
@@ -619,21 +632,21 @@ public:
 #if QT_CONFIG(accessibility)
         inspectorScrollArea->setAccessibleName(QCoreApplication::translate("MainWindow", "inspector box", nullptr));
 #endif // QT_CONFIG(accessibility)
-        label_angle->setText(QCoreApplication::translate("MainWindow", "Angle =", nullptr));
-        radioButton->setText(QCoreApplication::translate("MainWindow", "Linear", nullptr));
         lineEdit_7->setText(QCoreApplication::translate("MainWindow", "0", nullptr));
         lineEdit_15->setText(QCoreApplication::translate("MainWindow", "0", nullptr));
-        lineEdit_8->setText(QCoreApplication::translate("MainWindow", "0", nullptr));
         label_symmetry->setText(QCoreApplication::translate("MainWindow", "Symmetry", nullptr));
         label_scale->setText(QCoreApplication::translate("MainWindow", "Scale =", nullptr));
         label_width->setText(QCoreApplication::translate("MainWindow", "Width =", nullptr));
-        radioButton_2->setText(QCoreApplication::translate("MainWindow", "Diagonal", nullptr));
-        lineEdit_17->setText(QCoreApplication::translate("MainWindow", "0", nullptr));
-        label_height->setText(QCoreApplication::translate("MainWindow", "Height =", nullptr));
         lineEdit_14->setText(QCoreApplication::translate("MainWindow", "0", nullptr));
         lineEdit_12->setText(QCoreApplication::translate("MainWindow", "0", nullptr));
         label_X->setText(QCoreApplication::translate("MainWindow", "X =", nullptr));
         label_Y->setText(QCoreApplication::translate("MainWindow", "Y =", nullptr));
+        label_height->setText(QCoreApplication::translate("MainWindow", "Height =", nullptr));
+        lineEdit_8->setText(QCoreApplication::translate("MainWindow", "0", nullptr));
+        label_angle->setText(QCoreApplication::translate("MainWindow", "Angle =", nullptr));
+        lineEdit_17->setText(QCoreApplication::translate("MainWindow", "0", nullptr));
+        radioButton->setText(QCoreApplication::translate("MainWindow", "Linear", nullptr));
+        radioButton_2->setText(QCoreApplication::translate("MainWindow", "Diagonal", nullptr));
         checkBox_10->setText(QCoreApplication::translate("MainWindow", "Angle Fixed", nullptr));
         checkBox->setText(QCoreApplication::translate("MainWindow", "3 Nodes Colinear", nullptr));
         label_19->setText(QString());
