@@ -82,24 +82,6 @@ public:
     QFrame *line_11;
     QGroupBox *sideMenuGroupBox;
     QLabel *label;
-    QScrollArea *inspectorScrollArea;
-    QWidget *scrollAreaWidgetContents_2;
-    QGridLayout *gridLayout;
-    QLabel *label_angle;
-    QRadioButton *radioButton;
-    QLineEdit *lineEdit_7;
-    QLineEdit *lineEdit_15;
-    QLineEdit *lineEdit_8;
-    QLabel *label_symmetry;
-    QLabel *label_scale;
-    QLabel *label_width;
-    QRadioButton *radioButton_2;
-    QLineEdit *lineEdit_17;
-    QLabel *label_height;
-    QLineEdit *lineEdit_14;
-    QLineEdit *lineEdit_12;
-    QLabel *label_X;
-    QLabel *label_Y;
     QScrollArea *conditionsScrollArea;
     QWidget *scrollAreaWidgetContents;
     QGridLayout *gridLayout_2;
@@ -133,6 +115,24 @@ public:
     QComboBox *comboBox_3;
     QLabel *label_8;
     QLabel *label_9;
+    QScrollArea *inspectorScrollArea;
+    QWidget *scrollAreaWidgetContents_2;
+    QGridLayout *gridLayout;
+    QLabel *label_angle;
+    QRadioButton *radioButton;
+    QLineEdit *lineEdit_7;
+    QLineEdit *lineEdit_15;
+    QLineEdit *lineEdit_8;
+    QLabel *label_symmetry;
+    QLabel *label_scale;
+    QLabel *label_width;
+    QRadioButton *radioButton_2;
+    QLineEdit *lineEdit_17;
+    QLabel *label_height;
+    QLineEdit *lineEdit_14;
+    QLineEdit *lineEdit_12;
+    QLabel *label_X;
+    QLabel *label_Y;
     QMenuBar *menubar;
     QMenu *menuFile;
     QMenu *menuEdit;
@@ -286,20 +286,176 @@ public:
         label = new QLabel(sideMenuGroupBox);
         label->setObjectName("label");
         label->setGeometry(QRect(10, 0, 121, 20));
+        conditionsScrollArea = new QScrollArea(sideMenuGroupBox);
+        conditionsScrollArea->setObjectName("conditionsScrollArea");
+        conditionsScrollArea->setGeometry(QRect(0, 210, 321, 181));
+        conditionsScrollArea->setWidgetResizable(true);
+        scrollAreaWidgetContents = new QWidget();
+        scrollAreaWidgetContents->setObjectName("scrollAreaWidgetContents");
+        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 298, 437));
+        gridLayout_2 = new QGridLayout(scrollAreaWidgetContents);
+        gridLayout_2->setObjectName("gridLayout_2");
+        checkBox_10 = new QCheckBox(scrollAreaWidgetContents);
+        checkBox_10->setObjectName("checkBox_10");
+
+        gridLayout_2->addWidget(checkBox_10, 15, 0, 1, 1);
+
+        checkBox = new QCheckBox(scrollAreaWidgetContents);
+        checkBox->setObjectName("checkBox");
+
+        gridLayout_2->addWidget(checkBox, 9, 0, 1, 1);
+
+        label_19 = new QLabel(scrollAreaWidgetContents);
+        label_19->setObjectName("label_19");
+
+        gridLayout_2->addWidget(label_19, 6, 0, 1, 1);
+
+        checkBox_8 = new QCheckBox(scrollAreaWidgetContents);
+        checkBox_8->setObjectName("checkBox_8");
+
+        gridLayout_2->addWidget(checkBox_8, 12, 0, 1, 1);
+
+        label_2 = new QLabel(scrollAreaWidgetContents);
+        label_2->setObjectName("label_2");
+
+        gridLayout_2->addWidget(label_2, 0, 0, 1, 1);
+
+        checkBox_9 = new QCheckBox(scrollAreaWidgetContents);
+        checkBox_9->setObjectName("checkBox_9");
+
+        gridLayout_2->addWidget(checkBox_9, 11, 0, 1, 1);
+
+        checkBox_3 = new QCheckBox(scrollAreaWidgetContents);
+        checkBox_3->setObjectName("checkBox_3");
+
+        gridLayout_2->addWidget(checkBox_3, 4, 0, 1, 1);
+
+        checkBox_7 = new QCheckBox(scrollAreaWidgetContents);
+        checkBox_7->setObjectName("checkBox_7");
+
+        gridLayout_2->addWidget(checkBox_7, 10, 0, 1, 1);
+
+        checkBox_2 = new QCheckBox(scrollAreaWidgetContents);
+        checkBox_2->setObjectName("checkBox_2");
+
+        gridLayout_2->addWidget(checkBox_2, 2, 0, 1, 1);
+
+        label_18 = new QLabel(scrollAreaWidgetContents);
+        label_18->setObjectName("label_18");
+
+        gridLayout_2->addWidget(label_18, 13, 0, 1, 1);
+
+        checkBox_5 = new QCheckBox(scrollAreaWidgetContents);
+        checkBox_5->setObjectName("checkBox_5");
+
+        gridLayout_2->addWidget(checkBox_5, 7, 0, 1, 1);
+
+        checkBox_6 = new QCheckBox(scrollAreaWidgetContents);
+        checkBox_6->setObjectName("checkBox_6");
+
+        gridLayout_2->addWidget(checkBox_6, 1, 0, 1, 1);
+
+        checkBox_11 = new QCheckBox(scrollAreaWidgetContents);
+        checkBox_11->setObjectName("checkBox_11");
+
+        gridLayout_2->addWidget(checkBox_11, 14, 0, 1, 1);
+
+        checkBox_4 = new QCheckBox(scrollAreaWidgetContents);
+        checkBox_4->setObjectName("checkBox_4");
+
+        gridLayout_2->addWidget(checkBox_4, 5, 0, 1, 1);
+
+        conditionsScrollArea->setWidget(scrollAreaWidgetContents);
+        viewSettingsScrollArea = new QScrollArea(sideMenuGroupBox);
+        viewSettingsScrollArea->setObjectName("viewSettingsScrollArea");
+        viewSettingsScrollArea->setGeometry(QRect(0, 410, 321, 171));
+        viewSettingsScrollArea->setWidgetResizable(true);
+        scrollAreaWidgetContents_3 = new QWidget();
+        scrollAreaWidgetContents_3->setObjectName("scrollAreaWidgetContents_3");
+        scrollAreaWidgetContents_3->setGeometry(QRect(0, 0, 298, 358));
+        gridLayout_3 = new QGridLayout(scrollAreaWidgetContents_3);
+        gridLayout_3->setObjectName("gridLayout_3");
+        checkBox_12 = new QCheckBox(scrollAreaWidgetContents_3);
+        checkBox_12->setObjectName("checkBox_12");
+
+        gridLayout_3->addWidget(checkBox_12, 1, 0, 1, 1);
+
+        checkBox_14 = new QCheckBox(scrollAreaWidgetContents_3);
+        checkBox_14->setObjectName("checkBox_14");
+
+        gridLayout_3->addWidget(checkBox_14, 4, 0, 1, 1);
+
+        checkBox_13 = new QCheckBox(scrollAreaWidgetContents_3);
+        checkBox_13->setObjectName("checkBox_13");
+
+        gridLayout_3->addWidget(checkBox_13, 5, 0, 1, 1);
+
+        checkBox_17 = new QCheckBox(scrollAreaWidgetContents_3);
+        checkBox_17->setObjectName("checkBox_17");
+
+        gridLayout_3->addWidget(checkBox_17, 6, 0, 1, 1);
+
+        checkBox_19 = new QCheckBox(scrollAreaWidgetContents_3);
+        checkBox_19->setObjectName("checkBox_19");
+
+        gridLayout_3->addWidget(checkBox_19, 8, 0, 1, 1);
+
+        checkBox_18 = new QCheckBox(scrollAreaWidgetContents_3);
+        checkBox_18->setObjectName("checkBox_18");
+
+        gridLayout_3->addWidget(checkBox_18, 7, 0, 1, 1);
+
+        checkBox_16 = new QCheckBox(scrollAreaWidgetContents_3);
+        checkBox_16->setObjectName("checkBox_16");
+
+        gridLayout_3->addWidget(checkBox_16, 2, 0, 1, 1);
+
+        checkBox_20 = new QCheckBox(scrollAreaWidgetContents_3);
+        checkBox_20->setObjectName("checkBox_20");
+
+        gridLayout_3->addWidget(checkBox_20, 9, 0, 1, 1);
+
+        checkBox_15 = new QCheckBox(scrollAreaWidgetContents_3);
+        checkBox_15->setObjectName("checkBox_15");
+
+        gridLayout_3->addWidget(checkBox_15, 3, 0, 1, 1);
+
+        checkBox_21 = new QCheckBox(scrollAreaWidgetContents_3);
+        checkBox_21->setObjectName("checkBox_21");
+
+        gridLayout_3->addWidget(checkBox_21, 10, 0, 1, 1);
+
+        comboBox_3 = new QComboBox(scrollAreaWidgetContents_3);
+        comboBox_3->addItem(QString());
+        comboBox_3->addItem(QString());
+        comboBox_3->addItem(QString());
+        comboBox_3->addItem(QString());
+        comboBox_3->addItem(QString());
+        comboBox_3->setObjectName("comboBox_3");
+
+        gridLayout_3->addWidget(comboBox_3, 0, 0, 1, 1);
+
+        viewSettingsScrollArea->setWidget(scrollAreaWidgetContents_3);
+        label_8 = new QLabel(sideMenuGroupBox);
+        label_8->setObjectName("label_8");
+        label_8->setGeometry(QRect(10, 190, 151, 20));
+        label_9 = new QLabel(sideMenuGroupBox);
+        label_9->setObjectName("label_9");
+        label_9->setGeometry(QRect(10, 390, 121, 20));
         inspectorScrollArea = new QScrollArea(sideMenuGroupBox);
         inspectorScrollArea->setObjectName("inspectorScrollArea");
         inspectorScrollArea->setEnabled(true);
-        inspectorScrollArea->setGeometry(QRect(0, 30, 300, 161));
-        QSizePolicy sizePolicy(QSizePolicy::Policy::Fixed, QSizePolicy::Policy::Expanding);
+        inspectorScrollArea->setGeometry(QRect(0, 30, 321, 161));
+        QSizePolicy sizePolicy(QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Expanding);
         sizePolicy.setHorizontalStretch(0);
         sizePolicy.setVerticalStretch(0);
         sizePolicy.setHeightForWidth(inspectorScrollArea->sizePolicy().hasHeightForWidth());
         inspectorScrollArea->setSizePolicy(sizePolicy);
-        inspectorScrollArea->setMaximumSize(QSize(300, 200));
+        inspectorScrollArea->setMaximumSize(QSize(500, 200));
         inspectorScrollArea->setWidgetResizable(true);
         scrollAreaWidgetContents_2 = new QWidget();
         scrollAreaWidgetContents_2->setObjectName("scrollAreaWidgetContents_2");
-        scrollAreaWidgetContents_2->setGeometry(QRect(0, 0, 284, 238));
+        scrollAreaWidgetContents_2->setGeometry(QRect(0, 0, 298, 238));
         gridLayout = new QGridLayout(scrollAreaWidgetContents_2);
         gridLayout->setObjectName("gridLayout");
         label_angle = new QLabel(scrollAreaWidgetContents_2);
@@ -405,162 +561,6 @@ public:
         gridLayout->addWidget(label_Y, 4, 3, 1, 1);
 
         inspectorScrollArea->setWidget(scrollAreaWidgetContents_2);
-        conditionsScrollArea = new QScrollArea(sideMenuGroupBox);
-        conditionsScrollArea->setObjectName("conditionsScrollArea");
-        conditionsScrollArea->setGeometry(QRect(0, 210, 321, 181));
-        conditionsScrollArea->setWidgetResizable(true);
-        scrollAreaWidgetContents = new QWidget();
-        scrollAreaWidgetContents->setObjectName("scrollAreaWidgetContents");
-        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 298, 437));
-        gridLayout_2 = new QGridLayout(scrollAreaWidgetContents);
-        gridLayout_2->setObjectName("gridLayout_2");
-        checkBox_10 = new QCheckBox(scrollAreaWidgetContents);
-        checkBox_10->setObjectName("checkBox_10");
-
-        gridLayout_2->addWidget(checkBox_10, 15, 0, 1, 1);
-
-        checkBox = new QCheckBox(scrollAreaWidgetContents);
-        checkBox->setObjectName("checkBox");
-
-        gridLayout_2->addWidget(checkBox, 9, 0, 1, 1);
-
-        label_19 = new QLabel(scrollAreaWidgetContents);
-        label_19->setObjectName("label_19");
-
-        gridLayout_2->addWidget(label_19, 6, 0, 1, 1);
-
-        checkBox_8 = new QCheckBox(scrollAreaWidgetContents);
-        checkBox_8->setObjectName("checkBox_8");
-
-        gridLayout_2->addWidget(checkBox_8, 12, 0, 1, 1);
-
-        label_2 = new QLabel(scrollAreaWidgetContents);
-        label_2->setObjectName("label_2");
-
-        gridLayout_2->addWidget(label_2, 0, 0, 1, 1);
-
-        checkBox_9 = new QCheckBox(scrollAreaWidgetContents);
-        checkBox_9->setObjectName("checkBox_9");
-
-        gridLayout_2->addWidget(checkBox_9, 11, 0, 1, 1);
-
-        checkBox_3 = new QCheckBox(scrollAreaWidgetContents);
-        checkBox_3->setObjectName("checkBox_3");
-
-        gridLayout_2->addWidget(checkBox_3, 4, 0, 1, 1);
-
-        checkBox_7 = new QCheckBox(scrollAreaWidgetContents);
-        checkBox_7->setObjectName("checkBox_7");
-
-        gridLayout_2->addWidget(checkBox_7, 10, 0, 1, 1);
-
-        checkBox_2 = new QCheckBox(scrollAreaWidgetContents);
-        checkBox_2->setObjectName("checkBox_2");
-
-        gridLayout_2->addWidget(checkBox_2, 2, 0, 1, 1);
-
-        label_18 = new QLabel(scrollAreaWidgetContents);
-        label_18->setObjectName("label_18");
-
-        gridLayout_2->addWidget(label_18, 13, 0, 1, 1);
-
-        checkBox_5 = new QCheckBox(scrollAreaWidgetContents);
-        checkBox_5->setObjectName("checkBox_5");
-
-        gridLayout_2->addWidget(checkBox_5, 7, 0, 1, 1);
-
-        checkBox_6 = new QCheckBox(scrollAreaWidgetContents);
-        checkBox_6->setObjectName("checkBox_6");
-
-        gridLayout_2->addWidget(checkBox_6, 1, 0, 1, 1);
-
-        checkBox_11 = new QCheckBox(scrollAreaWidgetContents);
-        checkBox_11->setObjectName("checkBox_11");
-
-        gridLayout_2->addWidget(checkBox_11, 14, 0, 1, 1);
-
-        checkBox_4 = new QCheckBox(scrollAreaWidgetContents);
-        checkBox_4->setObjectName("checkBox_4");
-
-        gridLayout_2->addWidget(checkBox_4, 5, 0, 1, 1);
-
-        conditionsScrollArea->setWidget(scrollAreaWidgetContents);
-        viewSettingsScrollArea = new QScrollArea(sideMenuGroupBox);
-        viewSettingsScrollArea->setObjectName("viewSettingsScrollArea");
-        viewSettingsScrollArea->setGeometry(QRect(0, 410, 321, 151));
-        viewSettingsScrollArea->setWidgetResizable(true);
-        scrollAreaWidgetContents_3 = new QWidget();
-        scrollAreaWidgetContents_3->setObjectName("scrollAreaWidgetContents_3");
-        scrollAreaWidgetContents_3->setGeometry(QRect(0, 0, 298, 358));
-        gridLayout_3 = new QGridLayout(scrollAreaWidgetContents_3);
-        gridLayout_3->setObjectName("gridLayout_3");
-        checkBox_12 = new QCheckBox(scrollAreaWidgetContents_3);
-        checkBox_12->setObjectName("checkBox_12");
-
-        gridLayout_3->addWidget(checkBox_12, 1, 0, 1, 1);
-
-        checkBox_14 = new QCheckBox(scrollAreaWidgetContents_3);
-        checkBox_14->setObjectName("checkBox_14");
-
-        gridLayout_3->addWidget(checkBox_14, 4, 0, 1, 1);
-
-        checkBox_13 = new QCheckBox(scrollAreaWidgetContents_3);
-        checkBox_13->setObjectName("checkBox_13");
-
-        gridLayout_3->addWidget(checkBox_13, 5, 0, 1, 1);
-
-        checkBox_17 = new QCheckBox(scrollAreaWidgetContents_3);
-        checkBox_17->setObjectName("checkBox_17");
-
-        gridLayout_3->addWidget(checkBox_17, 6, 0, 1, 1);
-
-        checkBox_19 = new QCheckBox(scrollAreaWidgetContents_3);
-        checkBox_19->setObjectName("checkBox_19");
-
-        gridLayout_3->addWidget(checkBox_19, 8, 0, 1, 1);
-
-        checkBox_18 = new QCheckBox(scrollAreaWidgetContents_3);
-        checkBox_18->setObjectName("checkBox_18");
-
-        gridLayout_3->addWidget(checkBox_18, 7, 0, 1, 1);
-
-        checkBox_16 = new QCheckBox(scrollAreaWidgetContents_3);
-        checkBox_16->setObjectName("checkBox_16");
-
-        gridLayout_3->addWidget(checkBox_16, 2, 0, 1, 1);
-
-        checkBox_20 = new QCheckBox(scrollAreaWidgetContents_3);
-        checkBox_20->setObjectName("checkBox_20");
-
-        gridLayout_3->addWidget(checkBox_20, 9, 0, 1, 1);
-
-        checkBox_15 = new QCheckBox(scrollAreaWidgetContents_3);
-        checkBox_15->setObjectName("checkBox_15");
-
-        gridLayout_3->addWidget(checkBox_15, 3, 0, 1, 1);
-
-        checkBox_21 = new QCheckBox(scrollAreaWidgetContents_3);
-        checkBox_21->setObjectName("checkBox_21");
-
-        gridLayout_3->addWidget(checkBox_21, 10, 0, 1, 1);
-
-        comboBox_3 = new QComboBox(scrollAreaWidgetContents_3);
-        comboBox_3->addItem(QString());
-        comboBox_3->addItem(QString());
-        comboBox_3->addItem(QString());
-        comboBox_3->addItem(QString());
-        comboBox_3->addItem(QString());
-        comboBox_3->setObjectName("comboBox_3");
-
-        gridLayout_3->addWidget(comboBox_3, 0, 0, 1, 1);
-
-        viewSettingsScrollArea->setWidget(scrollAreaWidgetContents_3);
-        label_8 = new QLabel(sideMenuGroupBox);
-        label_8->setObjectName("label_8");
-        label_8->setGeometry(QRect(10, 190, 151, 20));
-        label_9 = new QLabel(sideMenuGroupBox);
-        label_9->setObjectName("label_9");
-        label_9->setGeometry(QRect(10, 390, 121, 20));
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
@@ -658,24 +658,6 @@ public:
         label_6->setText(QCoreApplication::translate("MainWindow", "Tree", nullptr));
         sideMenuGroupBox->setTitle(QString());
         label->setText(QCoreApplication::translate("MainWindow", "Inspector", nullptr));
-#if QT_CONFIG(accessibility)
-        inspectorScrollArea->setAccessibleName(QCoreApplication::translate("MainWindow", "inspector box", nullptr));
-#endif // QT_CONFIG(accessibility)
-        label_angle->setText(QCoreApplication::translate("MainWindow", "Angle =", nullptr));
-        radioButton->setText(QCoreApplication::translate("MainWindow", "Linear", nullptr));
-        lineEdit_7->setText(QCoreApplication::translate("MainWindow", "0", nullptr));
-        lineEdit_15->setText(QCoreApplication::translate("MainWindow", "0", nullptr));
-        lineEdit_8->setText(QCoreApplication::translate("MainWindow", "0", nullptr));
-        label_symmetry->setText(QCoreApplication::translate("MainWindow", "Symmetry", nullptr));
-        label_scale->setText(QCoreApplication::translate("MainWindow", "Scale =", nullptr));
-        label_width->setText(QCoreApplication::translate("MainWindow", "Width =", nullptr));
-        radioButton_2->setText(QCoreApplication::translate("MainWindow", "Diagonal", nullptr));
-        lineEdit_17->setText(QCoreApplication::translate("MainWindow", "0", nullptr));
-        label_height->setText(QCoreApplication::translate("MainWindow", "Height =", nullptr));
-        lineEdit_14->setText(QCoreApplication::translate("MainWindow", "0", nullptr));
-        lineEdit_12->setText(QCoreApplication::translate("MainWindow", "0", nullptr));
-        label_X->setText(QCoreApplication::translate("MainWindow", "X =", nullptr));
-        label_Y->setText(QCoreApplication::translate("MainWindow", "Y =", nullptr));
         checkBox_10->setText(QCoreApplication::translate("MainWindow", "Angle Fixed", nullptr));
         checkBox->setText(QCoreApplication::translate("MainWindow", "3 Nodes Colinear", nullptr));
         label_19->setText(QString());
@@ -708,6 +690,24 @@ public:
 
         label_8->setText(QCoreApplication::translate("MainWindow", "Conditions", nullptr));
         label_9->setText(QCoreApplication::translate("MainWindow", "View Settings", nullptr));
+#if QT_CONFIG(accessibility)
+        inspectorScrollArea->setAccessibleName(QCoreApplication::translate("MainWindow", "inspector box", nullptr));
+#endif // QT_CONFIG(accessibility)
+        label_angle->setText(QCoreApplication::translate("MainWindow", "Angle =", nullptr));
+        radioButton->setText(QCoreApplication::translate("MainWindow", "Linear", nullptr));
+        lineEdit_7->setText(QCoreApplication::translate("MainWindow", "0", nullptr));
+        lineEdit_15->setText(QCoreApplication::translate("MainWindow", "0", nullptr));
+        lineEdit_8->setText(QCoreApplication::translate("MainWindow", "0", nullptr));
+        label_symmetry->setText(QCoreApplication::translate("MainWindow", "Symmetry", nullptr));
+        label_scale->setText(QCoreApplication::translate("MainWindow", "Scale =", nullptr));
+        label_width->setText(QCoreApplication::translate("MainWindow", "Width =", nullptr));
+        radioButton_2->setText(QCoreApplication::translate("MainWindow", "Diagonal", nullptr));
+        lineEdit_17->setText(QCoreApplication::translate("MainWindow", "0", nullptr));
+        label_height->setText(QCoreApplication::translate("MainWindow", "Height =", nullptr));
+        lineEdit_14->setText(QCoreApplication::translate("MainWindow", "0", nullptr));
+        lineEdit_12->setText(QCoreApplication::translate("MainWindow", "0", nullptr));
+        label_X->setText(QCoreApplication::translate("MainWindow", "X =", nullptr));
+        label_Y->setText(QCoreApplication::translate("MainWindow", "Y =", nullptr));
         menuFile->setTitle(QCoreApplication::translate("MainWindow", "File", nullptr));
         menuEdit->setTitle(QCoreApplication::translate("MainWindow", "Edit", nullptr));
         menuView->setTitle(QCoreApplication::translate("MainWindow", "View", nullptr));
