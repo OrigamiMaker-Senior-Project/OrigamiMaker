@@ -10,6 +10,7 @@
 #define UI_MAINWINDOW_H
 
 #include <QtCore/QVariant>
+#include <QtGui/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QCheckBox>
 #include <QtWidgets/QComboBox>
@@ -19,8 +20,8 @@
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QMainWindow>
+#include <QtWidgets/QMenu>
 #include <QtWidgets/QMenuBar>
-#include <QtWidgets/QPushButton>
 #include <QtWidgets/QScrollArea>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QWidget>
@@ -43,17 +44,8 @@ public:
     QGroupBox *groupBox_7;
     QLabel *label_6;
     QFrame *line_2;
-    QFrame *line_3;
-    QFrame *line_4;
-    QFrame *line_5;
     QFrame *line_6;
     QFrame *line_7;
-    QGroupBox *menuGroupBox;
-    QPushButton *pushButton;
-    QPushButton *pushButton_2;
-    QPushButton *pushButton_4;
-    QPushButton *pushButton_3;
-    QPushButton *pushButton_5;
     QFrame *line_9;
     QFrame *line_10;
     QFrame *line_11;
@@ -111,6 +103,10 @@ public:
     QLabel *label_8;
     QLabel *label_9;
     QMenuBar *menubar;
+    QMenu *menuFile;
+    QMenu *menuEdit;
+    QMenu *menuView;
+    QMenu *menuHelp;
     QStatusBar *statusbar;
 
     void setupUi(QMainWindow *MainWindow)
@@ -127,7 +123,7 @@ public:
         line->setFrameShadow(QFrame::Shadow::Sunken);
         drawingAreaGroupBox = new QGroupBox(centralwidget);
         drawingAreaGroupBox->setObjectName("drawingAreaGroupBox");
-        drawingAreaGroupBox->setGeometry(QRect(-1, 29, 651, 561));
+        drawingAreaGroupBox->setGeometry(QRect(-1, -1, 651, 591));
         groupBox_4 = new QGroupBox(drawingAreaGroupBox);
         groupBox_4->setObjectName("groupBox_4");
         groupBox_4->setGeometry(QRect(590, 0, 61, 61));
@@ -166,21 +162,6 @@ public:
         line_2->setGeometry(QRect(0, 0, 118, 3));
         line_2->setFrameShape(QFrame::Shape::HLine);
         line_2->setFrameShadow(QFrame::Shadow::Sunken);
-        line_3 = new QFrame(drawingAreaGroupBox);
-        line_3->setObjectName("line_3");
-        line_3->setGeometry(QRect(100, 0, 118, 3));
-        line_3->setFrameShape(QFrame::Shape::HLine);
-        line_3->setFrameShadow(QFrame::Shadow::Sunken);
-        line_4 = new QFrame(drawingAreaGroupBox);
-        line_4->setObjectName("line_4");
-        line_4->setGeometry(QRect(200, 0, 118, 3));
-        line_4->setFrameShape(QFrame::Shape::HLine);
-        line_4->setFrameShadow(QFrame::Shadow::Sunken);
-        line_5 = new QFrame(drawingAreaGroupBox);
-        line_5->setObjectName("line_5");
-        line_5->setGeometry(QRect(310, 0, 118, 3));
-        line_5->setFrameShape(QFrame::Shape::HLine);
-        line_5->setFrameShadow(QFrame::Shadow::Sunken);
         line_6 = new QFrame(drawingAreaGroupBox);
         line_6->setObjectName("line_6");
         line_6->setGeometry(QRect(420, 0, 118, 3));
@@ -191,24 +172,6 @@ public:
         line_7->setGeometry(QRect(520, 0, 118, 3));
         line_7->setFrameShape(QFrame::Shape::HLine);
         line_7->setFrameShadow(QFrame::Shadow::Sunken);
-        menuGroupBox = new QGroupBox(centralwidget);
-        menuGroupBox->setObjectName("menuGroupBox");
-        menuGroupBox->setGeometry(QRect(0, 0, 921, 31));
-        pushButton = new QPushButton(menuGroupBox);
-        pushButton->setObjectName("pushButton");
-        pushButton->setGeometry(QRect(10, 0, 100, 32));
-        pushButton_2 = new QPushButton(menuGroupBox);
-        pushButton_2->setObjectName("pushButton_2");
-        pushButton_2->setGeometry(QRect(110, 0, 100, 32));
-        pushButton_4 = new QPushButton(menuGroupBox);
-        pushButton_4->setObjectName("pushButton_4");
-        pushButton_4->setGeometry(QRect(210, 0, 100, 32));
-        pushButton_3 = new QPushButton(menuGroupBox);
-        pushButton_3->setObjectName("pushButton_3");
-        pushButton_3->setGeometry(QRect(310, 0, 100, 32));
-        pushButton_5 = new QPushButton(menuGroupBox);
-        pushButton_5->setObjectName("pushButton_5");
-        pushButton_5->setGeometry(QRect(760, 0, 151, 32));
         line_9 = new QFrame(centralwidget);
         line_9->setObjectName("line_9");
         line_9->setGeometry(QRect(650, 30, 118, 3));
@@ -226,7 +189,7 @@ public:
         line_11->setFrameShadow(QFrame::Shadow::Sunken);
         sideMenuGroupBox = new QGroupBox(centralwidget);
         sideMenuGroupBox->setObjectName("sideMenuGroupBox");
-        sideMenuGroupBox->setGeometry(QRect(650, 30, 271, 561));
+        sideMenuGroupBox->setGeometry(QRect(650, 0, 271, 591));
         sideMenuGroupBox->setFlat(false);
         sideMenuGroupBox->setCheckable(false);
         label = new QLabel(sideMenuGroupBox);
@@ -245,7 +208,7 @@ public:
         inspectorScrollArea->setWidgetResizable(true);
         scrollAreaWidgetContents_2 = new QWidget();
         scrollAreaWidgetContents_2->setObjectName("scrollAreaWidgetContents_2");
-        scrollAreaWidgetContents_2->setGeometry(QRect(0, 0, 269, 236));
+        scrollAreaWidgetContents_2->setGeometry(QRect(0, 0, 329, 240));
         gridLayout = new QGridLayout(scrollAreaWidgetContents_2);
         gridLayout->setObjectName("gridLayout");
         lineEdit_16 = new QLineEdit(scrollAreaWidgetContents_2);
@@ -358,7 +321,7 @@ public:
         conditionsScrollArea->setWidgetResizable(true);
         scrollAreaWidgetContents = new QWidget();
         scrollAreaWidgetContents->setObjectName("scrollAreaWidgetContents");
-        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 269, 323));
+        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 295, 437));
         gridLayout_2 = new QGridLayout(scrollAreaWidgetContents);
         gridLayout_2->setObjectName("gridLayout_2");
         checkBox_10 = new QCheckBox(scrollAreaWidgetContents);
@@ -438,7 +401,7 @@ public:
         viewSettingsScrollArea->setWidgetResizable(true);
         scrollAreaWidgetContents_3 = new QWidget();
         scrollAreaWidgetContents_3->setObjectName("scrollAreaWidgetContents_3");
-        scrollAreaWidgetContents_3->setGeometry(QRect(0, 0, 269, 262));
+        scrollAreaWidgetContents_3->setGeometry(QRect(0, 0, 248, 358));
         gridLayout_3 = new QGridLayout(scrollAreaWidgetContents_3);
         gridLayout_3->setObjectName("gridLayout_3");
         checkBox_12 = new QCheckBox(scrollAreaWidgetContents_3);
@@ -511,11 +474,24 @@ public:
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
-        menubar->setGeometry(QRect(0, 0, 920, 24));
+        menubar->setGeometry(QRect(0, 0, 920, 26));
+        menuFile = new QMenu(menubar);
+        menuFile->setObjectName("menuFile");
+        menuEdit = new QMenu(menubar);
+        menuEdit->setObjectName("menuEdit");
+        menuView = new QMenu(menubar);
+        menuView->setObjectName("menuView");
+        menuHelp = new QMenu(menubar);
+        menuHelp->setObjectName("menuHelp");
         MainWindow->setMenuBar(menubar);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName("statusbar");
         MainWindow->setStatusBar(statusbar);
+
+        menubar->addAction(menuFile->menuAction());
+        menubar->addAction(menuEdit->menuAction());
+        menubar->addAction(menuView->menuAction());
+        menubar->addAction(menuHelp->menuAction());
 
         retranslateUi(MainWindow);
 
@@ -534,12 +510,6 @@ public:
         label_5->setText(QCoreApplication::translate("MainWindow", "Design", nullptr));
         groupBox_7->setTitle(QString());
         label_6->setText(QCoreApplication::translate("MainWindow", "Tree", nullptr));
-        menuGroupBox->setTitle(QString());
-        pushButton->setText(QCoreApplication::translate("MainWindow", "File", nullptr));
-        pushButton_2->setText(QCoreApplication::translate("MainWindow", "Edit", nullptr));
-        pushButton_4->setText(QCoreApplication::translate("MainWindow", "View", nullptr));
-        pushButton_3->setText(QCoreApplication::translate("MainWindow", "Help", nullptr));
-        pushButton_5->setText(QCoreApplication::translate("MainWindow", "Build Crease Pattern", nullptr));
         sideMenuGroupBox->setTitle(QString());
         label->setText(QCoreApplication::translate("MainWindow", "Inspector", nullptr));
 #if QT_CONFIG(accessibility)
@@ -596,6 +566,10 @@ public:
 
         label_8->setText(QCoreApplication::translate("MainWindow", "Conditions", nullptr));
         label_9->setText(QCoreApplication::translate("MainWindow", "View Settings", nullptr));
+        menuFile->setTitle(QCoreApplication::translate("MainWindow", "File", nullptr));
+        menuEdit->setTitle(QCoreApplication::translate("MainWindow", "Edit", nullptr));
+        menuView->setTitle(QCoreApplication::translate("MainWindow", "View", nullptr));
+        menuHelp->setTitle(QCoreApplication::translate("MainWindow", "Help", nullptr));
     } // retranslateUi
 
 };

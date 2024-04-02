@@ -31,9 +31,9 @@
     <property name="geometry">
      <rect>
       <x>-1</x>
-      <y>29</y>
+      <y>-1</y>
       <width>651</width>
-      <height>561</height>
+      <height>591</height>
      </rect>
     </property>
     <property name="title">
@@ -181,45 +181,6 @@
       <enum>Qt::Horizontal</enum>
      </property>
     </widget>
-    <widget class="Line" name="line_3">
-     <property name="geometry">
-      <rect>
-       <x>100</x>
-       <y>0</y>
-       <width>118</width>
-       <height>3</height>
-      </rect>
-     </property>
-     <property name="orientation">
-      <enum>Qt::Horizontal</enum>
-     </property>
-    </widget>
-    <widget class="Line" name="line_4">
-     <property name="geometry">
-      <rect>
-       <x>200</x>
-       <y>0</y>
-       <width>118</width>
-       <height>3</height>
-      </rect>
-     </property>
-     <property name="orientation">
-      <enum>Qt::Horizontal</enum>
-     </property>
-    </widget>
-    <widget class="Line" name="line_5">
-     <property name="geometry">
-      <rect>
-       <x>310</x>
-       <y>0</y>
-       <width>118</width>
-       <height>3</height>
-      </rect>
-     </property>
-     <property name="orientation">
-      <enum>Qt::Horizontal</enum>
-     </property>
-    </widget>
     <widget class="Line" name="line_6">
      <property name="geometry">
       <rect>
@@ -244,84 +205,6 @@
      </property>
      <property name="orientation">
       <enum>Qt::Horizontal</enum>
-     </property>
-    </widget>
-   </widget>
-   <widget class="QGroupBox" name="menuGroupBox">
-    <property name="geometry">
-     <rect>
-      <x>0</x>
-      <y>0</y>
-      <width>921</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="title">
-     <string/>
-    </property>
-    <widget class="QPushButton" name="pushButton">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>0</y>
-       <width>100</width>
-       <height>32</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>File</string>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="pushButton_2">
-     <property name="geometry">
-      <rect>
-       <x>110</x>
-       <y>0</y>
-       <width>100</width>
-       <height>32</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>Edit</string>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="pushButton_4">
-     <property name="geometry">
-      <rect>
-       <x>210</x>
-       <y>0</y>
-       <width>100</width>
-       <height>32</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>View</string>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="pushButton_3">
-     <property name="geometry">
-      <rect>
-       <x>310</x>
-       <y>0</y>
-       <width>100</width>
-       <height>32</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>Help</string>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="pushButton_5">
-     <property name="geometry">
-      <rect>
-       <x>760</x>
-       <y>0</y>
-       <width>151</width>
-       <height>32</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>Build Crease Pattern</string>
      </property>
     </widget>
    </widget>
@@ -368,9 +251,9 @@
     <property name="geometry">
      <rect>
       <x>650</x>
-      <y>30</y>
+      <y>0</y>
       <width>271</width>
-      <height>561</height>
+      <height>591</height>
      </rect>
     </property>
     <property name="title">
@@ -430,8 +313,8 @@
        <rect>
         <x>0</x>
         <y>0</y>
-        <width>269</width>
-        <height>236</height>
+        <width>329</width>
+        <height>240</height>
        </rect>
       </property>
       <layout class="QGridLayout" name="gridLayout">
@@ -667,8 +550,8 @@
        <rect>
         <x>0</x>
         <y>0</y>
-        <width>269</width>
-        <height>323</height>
+        <width>295</width>
+        <height>437</height>
        </rect>
       </property>
       <layout class="QGridLayout" name="gridLayout_2">
@@ -790,8 +673,8 @@
        <rect>
         <x>0</x>
         <y>0</y>
-        <width>269</width>
-        <height>262</height>
+        <width>248</width>
+        <height>358</height>
        </rect>
       </property>
       <layout class="QGridLayout" name="gridLayout_3">
@@ -931,9 +814,33 @@
      <x>0</x>
      <y>0</y>
      <width>920</width>
-     <height>24</height>
+     <height>26</height>
     </rect>
    </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>File</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menuEdit">
+    <property name="title">
+     <string>Edit</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menuView">
+    <property name="title">
+     <string>View</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menuHelp">
+    <property name="title">
+     <string>Help</string>
+    </property>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menuEdit"/>
+   <addaction name="menuView"/>
+   <addaction name="menuHelp"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
