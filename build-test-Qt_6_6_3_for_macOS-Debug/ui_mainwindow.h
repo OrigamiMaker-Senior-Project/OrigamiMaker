@@ -513,7 +513,7 @@ public:
         drawingAreaGroupBox->setSizePolicy(sizePolicy);
         view_options = new QFrame(drawingAreaGroupBox);
         view_options->setObjectName("view_options");
-        view_options->setGeometry(QRect(370, 0, 241, 61));
+        view_options->setGeometry(QRect(0, 0, 241, 61));
         view_options->setFrameShape(QFrame::StyledPanel);
         view_options->setFrameShadow(QFrame::Raised);
         groupBox_plan = new QGroupBox(view_options);

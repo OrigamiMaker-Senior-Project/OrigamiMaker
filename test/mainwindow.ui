@@ -636,7 +636,7 @@
       <widget class="QFrame" name="view_options">
        <property name="geometry">
         <rect>
-         <x>370</x>
+         <x>0</x>
          <y>0</y>
          <width>241</width>
          <height>61</height>
