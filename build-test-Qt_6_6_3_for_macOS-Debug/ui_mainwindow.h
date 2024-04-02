@@ -64,7 +64,6 @@ public:
     QAction *actionAbout_TreeMaker;
     QWidget *centralwidget;
     QGridLayout *gridLayout_4;
-    QFrame *frame;
     QGroupBox *sideMenuGroupBox;
     QLabel *label;
     QScrollArea *inspectorScrollArea;
@@ -212,18 +211,11 @@ public:
         centralwidget->setSizePolicy(sizePolicy);
         gridLayout_4 = new QGridLayout(centralwidget);
         gridLayout_4->setObjectName("gridLayout_4");
-        frame = new QFrame(centralwidget);
-        frame->setObjectName("frame");
-        sizePolicy.setHeightForWidth(frame->sizePolicy().hasHeightForWidth());
-        frame->setSizePolicy(sizePolicy);
-        frame->setMinimumSize(QSize(321, 0));
-        frame->setFrameShape(QFrame::StyledPanel);
-        frame->setFrameShadow(QFrame::Raised);
-        sideMenuGroupBox = new QGroupBox(frame);
+        sideMenuGroupBox = new QGroupBox(centralwidget);
         sideMenuGroupBox->setObjectName("sideMenuGroupBox");
-        sideMenuGroupBox->setGeometry(QRect(0, 0, 321, 591));
         sizePolicy.setHeightForWidth(sideMenuGroupBox->sizePolicy().hasHeightForWidth());
         sideMenuGroupBox->setSizePolicy(sizePolicy);
+        sideMenuGroupBox->setMinimumSize(QSize(322, 0));
         sideMenuGroupBox->setFlat(false);
         sideMenuGroupBox->setCheckable(false);
         label = new QLabel(sideMenuGroupBox);
@@ -505,15 +497,16 @@ public:
         label_9->setObjectName("label_9");
         label_9->setGeometry(QRect(10, 420, 121, 20));
 
-        gridLayout_4->addWidget(frame, 0, 1, 1, 1, Qt::AlignRight);
+        gridLayout_4->addWidget(sideMenuGroupBox, 0, 1, 1, 1, Qt::AlignRight);
 
         drawingAreaGroupBox = new QGroupBox(centralwidget);
         drawingAreaGroupBox->setObjectName("drawingAreaGroupBox");
         sizePolicy.setHeightForWidth(drawingAreaGroupBox->sizePolicy().hasHeightForWidth());
         drawingAreaGroupBox->setSizePolicy(sizePolicy);
+        drawingAreaGroupBox->setMinimumSize(QSize(645, 0));
         view_options = new QFrame(drawingAreaGroupBox);
         view_options->setObjectName("view_options");
-        view_options->setGeometry(QRect(0, 0, 241, 61));
+        view_options->setGeometry(QRect(10, 10, 241, 61));
         view_options->setFrameShape(QFrame::StyledPanel);
         view_options->setFrameShadow(QFrame::Raised);
         groupBox_plan = new QGroupBox(view_options);
