@@ -31,6 +31,17 @@ QT_BEGIN_NAMESPACE
 class Ui_MainWindow
 {
 public:
+    QAction *actionNew_Ctrl_N;
+    QAction *actionOpen_Ctrl_O;
+    QAction *actionClose_Ctrl_S;
+    QAction *actionSave_Ctrl_S;
+    QAction *actionSave_As_Ctrl_Alt_S;
+    QAction *actionRevert;
+    QAction *actionPrint_Ctrl_P;
+    QAction *actionPrint_Setup;
+    QAction *actionPrint_Preview_Ctrl_Alt_P;
+    QAction *actionPreferences;
+    QAction *actionExit_Alt_X;
     QWidget *centralwidget;
     QFrame *line;
     QGroupBox *drawingAreaGroupBox;
@@ -114,6 +125,28 @@ public:
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName("MainWindow");
         MainWindow->resize(920, 641);
+        actionNew_Ctrl_N = new QAction(MainWindow);
+        actionNew_Ctrl_N->setObjectName("actionNew_Ctrl_N");
+        actionOpen_Ctrl_O = new QAction(MainWindow);
+        actionOpen_Ctrl_O->setObjectName("actionOpen_Ctrl_O");
+        actionClose_Ctrl_S = new QAction(MainWindow);
+        actionClose_Ctrl_S->setObjectName("actionClose_Ctrl_S");
+        actionSave_Ctrl_S = new QAction(MainWindow);
+        actionSave_Ctrl_S->setObjectName("actionSave_Ctrl_S");
+        actionSave_As_Ctrl_Alt_S = new QAction(MainWindow);
+        actionSave_As_Ctrl_Alt_S->setObjectName("actionSave_As_Ctrl_Alt_S");
+        actionRevert = new QAction(MainWindow);
+        actionRevert->setObjectName("actionRevert");
+        actionPrint_Ctrl_P = new QAction(MainWindow);
+        actionPrint_Ctrl_P->setObjectName("actionPrint_Ctrl_P");
+        actionPrint_Setup = new QAction(MainWindow);
+        actionPrint_Setup->setObjectName("actionPrint_Setup");
+        actionPrint_Preview_Ctrl_Alt_P = new QAction(MainWindow);
+        actionPrint_Preview_Ctrl_Alt_P->setObjectName("actionPrint_Preview_Ctrl_Alt_P");
+        actionPreferences = new QAction(MainWindow);
+        actionPreferences->setObjectName("actionPreferences");
+        actionExit_Alt_X = new QAction(MainWindow);
+        actionExit_Alt_X->setObjectName("actionExit_Alt_X");
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName("centralwidget");
         line = new QFrame(centralwidget);
@@ -492,6 +525,18 @@ public:
         menubar->addAction(menuEdit->menuAction());
         menubar->addAction(menuView->menuAction());
         menubar->addAction(menuHelp->menuAction());
+        menuFile->addAction(actionNew_Ctrl_N);
+        menuFile->addAction(actionOpen_Ctrl_O);
+        menuFile->addAction(actionClose_Ctrl_S);
+        menuFile->addAction(actionSave_Ctrl_S);
+        menuFile->addAction(actionSave_As_Ctrl_Alt_S);
+        menuFile->addAction(actionRevert);
+        menuFile->addSeparator();
+        menuFile->addAction(actionPrint_Ctrl_P);
+        menuFile->addAction(actionPrint_Setup);
+        menuFile->addAction(actionPrint_Preview_Ctrl_Alt_P);
+        menuFile->addAction(actionPreferences);
+        menuFile->addAction(actionExit_Alt_X);
 
         retranslateUi(MainWindow);
 
@@ -501,6 +546,17 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "MainWindow", nullptr));
+        actionNew_Ctrl_N->setText(QCoreApplication::translate("MainWindow", "New (Ctrl+N)", nullptr));
+        actionOpen_Ctrl_O->setText(QCoreApplication::translate("MainWindow", "Open (Ctrl+O)", nullptr));
+        actionClose_Ctrl_S->setText(QCoreApplication::translate("MainWindow", "Close (Ctrl+W)", nullptr));
+        actionSave_Ctrl_S->setText(QCoreApplication::translate("MainWindow", "Save (Ctrl+S)", nullptr));
+        actionSave_As_Ctrl_Alt_S->setText(QCoreApplication::translate("MainWindow", "Save As (Ctrl+Alt+S)", nullptr));
+        actionRevert->setText(QCoreApplication::translate("MainWindow", "Revert", nullptr));
+        actionPrint_Ctrl_P->setText(QCoreApplication::translate("MainWindow", "Print (Ctrl+P)", nullptr));
+        actionPrint_Setup->setText(QCoreApplication::translate("MainWindow", "Print Setup", nullptr));
+        actionPrint_Preview_Ctrl_Alt_P->setText(QCoreApplication::translate("MainWindow", "Print Preview (Ctrl+Alt+P)", nullptr));
+        actionPreferences->setText(QCoreApplication::translate("MainWindow", "Preferences", nullptr));
+        actionExit_Alt_X->setText(QCoreApplication::translate("MainWindow", "Exit (Alt+X)", nullptr));
         drawingAreaGroupBox->setTitle(QString());
         groupBox_4->setTitle(QString());
         label_3->setText(QCoreApplication::translate("MainWindow", "Plan", nullptr));
