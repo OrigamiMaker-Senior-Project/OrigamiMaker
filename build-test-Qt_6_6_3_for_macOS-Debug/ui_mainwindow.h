@@ -139,12 +139,13 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName("MainWindow");
-        MainWindow->resize(973, 643);
+        MainWindow->resize(1000, 643);
         QSizePolicy sizePolicy(QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Expanding);
         sizePolicy.setHorizontalStretch(0);
         sizePolicy.setVerticalStretch(0);
         sizePolicy.setHeightForWidth(MainWindow->sizePolicy().hasHeightForWidth());
         MainWindow->setSizePolicy(sizePolicy);
+        MainWindow->setMinimumSize(QSize(1000, 500));
         actionNew_Ctrl_N = new QAction(MainWindow);
         actionNew_Ctrl_N->setObjectName("actionNew_Ctrl_N");
         actionOpen_Ctrl_O = new QAction(MainWindow);
@@ -549,7 +550,7 @@ public:
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
-        menubar->setGeometry(QRect(0, 0, 973, 24));
+        menubar->setGeometry(QRect(0, 0, 1000, 24));
         menuFile = new QMenu(menubar);
         menuFile->setObjectName("menuFile");
         menuEdit = new QMenu(menubar);
