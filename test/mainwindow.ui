@@ -838,16 +838,30 @@
     <property name="title">
      <string>Edit</string>
     </property>
+    <addaction name="actionUndo_Drag_Ctrl_Z"/>
+    <addaction name="actionRedo_Ctrl_Y"/>
+    <addaction name="separator"/>
+    <addaction name="actionCut_Ctrl_X"/>
+    <addaction name="actionCopy_Ctrl_C"/>
+    <addaction name="actionPaste_Ctrl_V"/>
+    <addaction name="actionClear"/>
+    <addaction name="separator"/>
    </widget>
    <widget class="QMenu" name="menuView">
     <property name="title">
      <string>View</string>
     </property>
+    <addaction name="actionFit_to_Screen_Ctrl_Shift_F"/>
+    <addaction name="actionFit_to_Width_Ctrl_Shift_W"/>
+    <addaction name="actionFit_to_Height_Ctrl_Shift_H"/>
+    <addaction name="actionSet_Paper_Size_Ctrl_Shift_Y"/>
    </widget>
    <widget class="QMenu" name="menuHelp">
     <property name="title">
      <string>Help</string>
     </property>
+    <addaction name="actionTreeMaker_Help_F1"/>
+    <addaction name="actionAbout_TreeMaker"/>
    </widget>
    <addaction name="menuFile"/>
    <addaction name="menuEdit"/>
@@ -908,6 +922,101 @@
   <action name="actionExit_Alt_X">
    <property name="text">
     <string>Exit (Alt+X)</string>
+   </property>
+  </action>
+  <action name="actionUndo_Drag_Ctrl_Z">
+   <property name="text">
+    <string>Undo Drag (Ctrl+Z)</string>
+   </property>
+  </action>
+  <action name="actionRedo_Ctrl_Y">
+   <property name="text">
+    <string>Redo (Ctrl+Y)</string>
+   </property>
+  </action>
+  <action name="actionCut_Ctrl_X">
+   <property name="text">
+    <string>Cut (Ctrl+X)</string>
+   </property>
+  </action>
+  <action name="actionCopy_Ctrl_C">
+   <property name="text">
+    <string>Copy (Ctrl+C)</string>
+   </property>
+  </action>
+  <action name="actionPaste_Ctrl_V">
+   <property name="text">
+    <string>Paste (Ctrl+V)</string>
+   </property>
+  </action>
+  <action name="actionClear">
+   <property name="text">
+    <string>Clear</string>
+   </property>
+  </action>
+  <action name="actionShow_Hide_Inspector_Ctrl_I">
+   <property name="text">
+    <string>Show/Hide Inspector (Ctrl+I)</string>
+   </property>
+  </action>
+  <action name="actionShow_Hide_View_Settings_Ctrl_G">
+   <property name="text">
+    <string>Show/Hide View Settings (Ctrl+G)</string>
+   </property>
+  </action>
+  <action name="actionShow_Hide_Folded_Form_Ctrl_F">
+   <property name="text">
+    <string>Show/Hide Folded Form (Ctrl+F)</string>
+   </property>
+  </action>
+  <action name="actionTree_View_Ctrl_Shift_T">
+   <property name="text">
+    <string>Tree View (Ctrl+Shift+T)</string>
+   </property>
+  </action>
+  <action name="actionDesign_View_Ctrl_Shift_D">
+   <property name="text">
+    <string>Design View (Ctrl+Shift+D)</string>
+   </property>
+  </action>
+  <action name="actionCreases_View_Ctrl_Shift_C">
+   <property name="text">
+    <string>Creases View (Ctrl+Shift+C)</string>
+   </property>
+  </action>
+  <action name="actionPlan_View_Ctrl_Shift_P">
+   <property name="text">
+    <string>Plan View (Ctrl+Shift+P)</string>
+   </property>
+  </action>
+  <action name="actionFit_to_Screen_Ctrl_Shift_F">
+   <property name="text">
+    <string>Fit to Screen (Ctrl+Shift+F)</string>
+   </property>
+  </action>
+  <action name="actionFit_to_Width_Ctrl_Shift_W">
+   <property name="text">
+    <string>Fit to Width (Ctrl+Shift+W)</string>
+   </property>
+  </action>
+  <action name="actionFit_to_Height_Ctrl_Shift_H">
+   <property name="text">
+    <string>Fit to Height (Ctrl+Shift+H)</string>
+   </property>
+  </action>
+  <action name="actionSet_Paper_Size_Ctrl_Shift_Y">
+   <property name="text">
+    <string>Set Paper Size (Ctrl+Shift+Y)</string>
+   </property>
+  </action>
+  <action name="actionTreeMaker_Help_F1">
+   <property name="text">
+    <string>TreeMaker Help (F1)</string>
+   </property>
+  </action>
+  <action name="actionAbout_TreeMaker">
+   <property name="text">
+    <string>About TreeMaker</string>
    </property>
   </action>
  </widget>
