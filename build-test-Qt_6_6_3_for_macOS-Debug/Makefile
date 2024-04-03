@@ -52,12 +52,16 @@ OBJECTS_DIR   = ./
 
 ####### Files
 
-SOURCES       = ../test/main.cpp \
+SOURCES       = ../test/CanvasWidget.cpp \
+		../test/main.cpp \
 		../test/mainwindow.cpp qrc_resources.cpp \
+		moc_CanvasWidget.cpp \
 		moc_mainwindow.cpp
-OBJECTS       = main.o \
+OBJECTS       = CanvasWidget.o \
+		main.o \
 		mainwindow.o \
 		qrc_resources.o \
+		moc_CanvasWidget.o \
 		moc_mainwindow.o
 DIST          = ../test/stylesheet.css \
 		../../../../Qt/6.6.3/macos/mkspecs/features/spec_pre.prf \
@@ -255,6 +259,7 @@ DIST          = ../test/stylesheet.css \
 		../../../../Qt/6.6.3/macos/mkspecs/features/qt_config.prf \
 		../../../../Qt/6.6.3/macos/mkspecs/macx-clang/qmake.conf \
 		../../../../Qt/6.6.3/macos/mkspecs/features/spec_post.prf \
+		../test/.qmake.stash \
 		../../../../Qt/6.6.3/macos/mkspecs/features/exclusive_builds.prf \
 		../../../../Qt/6.6.3/macos/mkspecs/features/mac/sdk.prf \
 		../../../../Qt/6.6.3/macos/mkspecs/features/toolchain.prf \
@@ -284,7 +289,9 @@ DIST          = ../test/stylesheet.css \
 		../../../../Qt/6.6.3/macos/mkspecs/features/exceptions.prf \
 		../../../../Qt/6.6.3/macos/mkspecs/features/yacc.prf \
 		../../../../Qt/6.6.3/macos/mkspecs/features/lex.prf \
-		../test/test.pro ../test/mainwindow.h ../test/main.cpp \
+		../test/test.pro ../test/CanvasWidget.h \
+		../test/mainwindow.h ../test/CanvasWidget.cpp \
+		../test/main.cpp \
 		../test/mainwindow.cpp
 QMAKE_TARGET  = test
 DESTDIR       = 
@@ -294,7 +301,7 @@ TARGET        = test.app/Contents/MacOS/test
 EXPORT_QMAKE_MAC_SDK = macosx
 EXPORT_QMAKE_MAC_SDK_VERSION = 14.2
 EXPORT_QMAKE_XCODE_DEVELOPER_PATH = /Applications/Xcode.app/Contents/Developer
-EXPORT__QMAKE_STASH_ = 
+EXPORT__QMAKE_STASH_ = /Users/natalie/Documents/GitHub/OrigamiMaker/build-test-Qt_6_6_3_for_macOS-Debug/.qmake.stash
 EXPORT_VALID_ARCHS = x86_64 arm64
 EXPORT_DEFAULT_ARCHS = x86_64
 EXPORT_ARCHS = $(filter $(EXPORT_VALID_ARCHS), $(if $(ARCHS), $(ARCHS), $(if $(EXPORT_DEFAULT_ARCHS), $(EXPORT_DEFAULT_ARCHS), $(EXPORT_VALID_ARCHS))))
@@ -505,6 +512,7 @@ Makefile: ../test/test.pro ../../../../Qt/6.6.3/macos/mkspecs/macx-clang/qmake.c
 		../../../../Qt/6.6.3/macos/mkspecs/features/qt_config.prf \
 		../../../../Qt/6.6.3/macos/mkspecs/macx-clang/qmake.conf \
 		../../../../Qt/6.6.3/macos/mkspecs/features/spec_post.prf \
+		.qmake.stash \
 		../../../../Qt/6.6.3/macos/mkspecs/features/exclusive_builds.prf \
 		../../../../Qt/6.6.3/macos/mkspecs/features/mac/sdk.prf \
 		../../../../Qt/6.6.3/macos/mkspecs/features/toolchain.prf \
@@ -735,6 +743,7 @@ Makefile: ../test/test.pro ../../../../Qt/6.6.3/macos/mkspecs/macx-clang/qmake.c
 ../../../../Qt/6.6.3/macos/mkspecs/features/qt_config.prf:
 ../../../../Qt/6.6.3/macos/mkspecs/macx-clang/qmake.conf:
 ../../../../Qt/6.6.3/macos/mkspecs/features/spec_post.prf:
+.qmake.stash:
 ../../../../Qt/6.6.3/macos/mkspecs/features/exclusive_builds.prf:
 ../../../../Qt/6.6.3/macos/mkspecs/features/mac/sdk.prf:
 ../../../../Qt/6.6.3/macos/mkspecs/features/toolchain.prf:
@@ -794,8 +803,8 @@ distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents ../test/resources.qrc $(DISTDIR)/
-	$(COPY_FILE) --parents ../test/mainwindow.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../test/main.cpp ../test/mainwindow.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../test/CanvasWidget.h ../test/mainwindow.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../test/CanvasWidget.cpp ../test/main.cpp ../test/mainwindow.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents ../test/mainwindow.ui $(DISTDIR)/
 
 
@@ -806,6 +815,7 @@ clean: compiler_clean
 
 distclean: clean 
 	-$(DEL_FILE) -r test.app
+	-$(DEL_FILE) .qmake.stash
 	-$(DEL_FILE) Makefile
 
 
@@ -830,12 +840,21 @@ qrc_resources.cpp: ../test/resources.qrc \
 		../test/stylesheet.css
 	/Users/natalie/Qt/6.6.3/macos/libexec/rcc -name resources --no-zstd ../test/resources.qrc -o qrc_resources.cpp
 
-compiler_moc_header_make_all: moc_mainwindow.cpp
+compiler_moc_header_make_all: moc_CanvasWidget.cpp moc_mainwindow.cpp
 compiler_moc_header_clean:
-	-$(DEL_FILE) moc_mainwindow.cpp
+	-$(DEL_FILE) moc_CanvasWidget.cpp moc_mainwindow.cpp
+moc_CanvasWidget.cpp: ../test/CanvasWidget.h \
+		../../../../Qt/6.6.3/macos/lib/QtWidgets.framework/Headers/QWidget \
+		../../../../Qt/6.6.3/macos/lib/QtWidgets.framework/Headers/qwidget.h \
+		../../../../Qt/6.6.3/macos/libexec/moc
+	/Users/natalie/Qt/6.6.3/macos/libexec/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -D__APPLE_CC__ -D__cplusplus=199711L -D__APPLE_CC__=6000 -D__clang__ -D__clang_major__=15 -D__clang_minor__=0 -D__clang_patchlevel__=0 -D__GNUC__=4 -D__GNUC_MINOR__=2 -D__GNUC_PATCHLEVEL__=1 -I/Users/natalie/Qt/6.6.3/macos/mkspecs/macx-clang -I/Users/natalie/Documents/GitHub/OrigamiMaker/test -I/Users/natalie/Qt/6.6.3/macos/lib/QtWidgets.framework/Headers -I/Users/natalie/Qt/6.6.3/macos/lib/QtGui.framework/Headers -I/Users/natalie/Qt/6.6.3/macos/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/15.0.0/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -F/Users/natalie/Qt/6.6.3/macos/lib ../test/CanvasWidget.h -o moc_CanvasWidget.cpp
+
 moc_mainwindow.cpp: ../test/mainwindow.h \
 		../../../../Qt/6.6.3/macos/lib/QtWidgets.framework/Headers/QMainWindow \
 		../../../../Qt/6.6.3/macos/lib/QtWidgets.framework/Headers/qmainwindow.h \
+		../test/CanvasWidget.h \
+		../../../../Qt/6.6.3/macos/lib/QtWidgets.framework/Headers/QWidget \
+		../../../../Qt/6.6.3/macos/lib/QtWidgets.framework/Headers/qwidget.h \
 		../../../../Qt/6.6.3/macos/libexec/moc
 	/Users/natalie/Qt/6.6.3/macos/libexec/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -D__APPLE_CC__ -D__cplusplus=199711L -D__APPLE_CC__=6000 -D__clang__ -D__clang_major__=15 -D__clang_minor__=0 -D__clang_patchlevel__=0 -D__GNUC__=4 -D__GNUC_MINOR__=2 -D__GNUC_PATCHLEVEL__=1 -I/Users/natalie/Qt/6.6.3/macos/mkspecs/macx-clang -I/Users/natalie/Documents/GitHub/OrigamiMaker/test -I/Users/natalie/Qt/6.6.3/macos/lib/QtWidgets.framework/Headers -I/Users/natalie/Qt/6.6.3/macos/lib/QtGui.framework/Headers -I/Users/natalie/Qt/6.6.3/macos/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/15.0.0/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -F/Users/natalie/Qt/6.6.3/macos/lib ../test/mainwindow.h -o moc_mainwindow.cpp
 
@@ -862,9 +881,19 @@ compiler_clean: compiler_rcc_clean compiler_moc_header_clean compiler_uic_clean
 
 ####### Compile
 
+CanvasWidget.o: ../test/CanvasWidget.cpp ../test/CanvasWidget.h \
+		../../../../Qt/6.6.3/macos/lib/QtWidgets.framework/Headers/QWidget \
+		../../../../Qt/6.6.3/macos/lib/QtWidgets.framework/Headers/qwidget.h \
+		../../../../Qt/6.6.3/macos/lib/QtGui.framework/Headers/QPainter \
+		../../../../Qt/6.6.3/macos/lib/QtGui.framework/Headers/qpainter.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o CanvasWidget.o ../test/CanvasWidget.cpp
+
 main.o: ../test/main.cpp ../test/mainwindow.h \
 		../../../../Qt/6.6.3/macos/lib/QtWidgets.framework/Headers/QMainWindow \
 		../../../../Qt/6.6.3/macos/lib/QtWidgets.framework/Headers/qmainwindow.h \
+		../test/CanvasWidget.h \
+		../../../../Qt/6.6.3/macos/lib/QtWidgets.framework/Headers/QWidget \
+		../../../../Qt/6.6.3/macos/lib/QtWidgets.framework/Headers/qwidget.h \
 		../../../../Qt/6.6.3/macos/lib/QtWidgets.framework/Headers/QApplication \
 		../../../../Qt/6.6.3/macos/lib/QtWidgets.framework/Headers/qapplication.h \
 		../../../../Qt/6.6.3/macos/lib/QtCore.framework/Headers/QFile \
@@ -876,6 +905,9 @@ main.o: ../test/main.cpp ../test/mainwindow.h \
 mainwindow.o: ../test/mainwindow.cpp ../test/mainwindow.h \
 		../../../../Qt/6.6.3/macos/lib/QtWidgets.framework/Headers/QMainWindow \
 		../../../../Qt/6.6.3/macos/lib/QtWidgets.framework/Headers/qmainwindow.h \
+		../test/CanvasWidget.h \
+		../../../../Qt/6.6.3/macos/lib/QtWidgets.framework/Headers/QWidget \
+		../../../../Qt/6.6.3/macos/lib/QtWidgets.framework/Headers/qwidget.h \
 		ui_mainwindow.h \
 		../../../../Qt/6.6.3/macos/lib/QtWidgets.framework/Headers/QLabel \
 		../../../../Qt/6.6.3/macos/lib/QtWidgets.framework/Headers/qlabel.h \
@@ -887,6 +919,9 @@ mainwindow.o: ../test/mainwindow.cpp ../test/mainwindow.h \
 
 qrc_resources.o: qrc_resources.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o qrc_resources.o qrc_resources.cpp
+
+moc_CanvasWidget.o: moc_CanvasWidget.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_CanvasWidget.o moc_CanvasWidget.cpp
 
 moc_mainwindow.o: moc_mainwindow.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_mainwindow.o moc_mainwindow.cpp

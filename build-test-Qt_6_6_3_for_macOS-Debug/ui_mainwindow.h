@@ -26,6 +26,7 @@
 #include <QtWidgets/QScrollArea>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QWidget>
+#include "CanvasWidget.h"
 
 QT_BEGIN_NAMESPACE
 
@@ -127,6 +128,7 @@ public:
     QLabel *label_5;
     QGroupBox *groupBox_tree;
     QLabel *label_6;
+    CanvasWidget *canvas;
     QMenuBar *menubar;
     QMenu *menuFile;
     QMenu *menuEdit;
@@ -537,6 +539,9 @@ public:
         label_6->setObjectName("label_6");
         label_6->setGeometry(QRect(0, 40, 61, 20));
         label_6->setAlignment(Qt::AlignCenter);
+        canvas = new CanvasWidget(drawingAreaGroupBox);
+        canvas->setObjectName("canvas");
+        canvas->setGeometry(QRect(-1, -1, 641, 571));
 
         gridLayout_4->addWidget(drawingAreaGroupBox, 0, 0, 1, 1);
 

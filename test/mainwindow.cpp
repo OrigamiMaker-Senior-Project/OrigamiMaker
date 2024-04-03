@@ -1,4 +1,5 @@
 #include "mainwindow.h"
+#include "CanvasWidget.h"
 #include "ui_mainwindow.h"
 #include <QLabel>
 #include <QPixmap>
@@ -16,6 +17,10 @@ MainWindow::MainWindow(QWidget *parent)
     QString styleSheet = QLatin1String(styleFile.readAll());
     this->setStyleSheet(styleSheet);
 
+
+    // Create the canvas widget and add it to a specific section of the main window
+    canvasWidget = new CanvasWidget(this);
+    // setCentralWidget(canvasWidget);
 }
 
 MainWindow::~MainWindow()

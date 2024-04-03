@@ -749,6 +749,16 @@
         </widget>
        </widget>
       </widget>
+      <widget class="canvas_widget" name="canvas" native="true">
+       <property name="geometry">
+        <rect>
+         <x>-1</x>
+         <y>-1</y>
+         <width>641</width>
+         <height>571</height>
+        </rect>
+       </property>
+      </widget>
      </widget>
     </item>
    </layout>
@@ -965,6 +975,14 @@
    </property>
   </action>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>canvas_widget</class>
+   <extends>QWidget</extends>
+   <header>canvas_widget.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>
