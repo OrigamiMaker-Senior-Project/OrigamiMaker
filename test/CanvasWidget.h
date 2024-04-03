@@ -15,7 +15,7 @@ protected:
     void mousePressEvent(QMouseEvent *event) override;
 
 private:
-    QVector<QPoint> points; // Store the points to be drawn
+    QVector<QPoint> points; // Store the points coordinates
 
 signals:
 };

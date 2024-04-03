@@ -14,8 +14,13 @@ void CanvasWidget::paintEvent(QPaintEvent *event) {
     int pointSize = 5;          // Adjust the size as needed
 
     // Draw all points
-    for (const auto& point : points) {
-        painter.drawEllipse(point, pointSize, pointSize);
+    for (int i = 0; i < points.size(); ++i) {
+        painter.drawEllipse(points[i], pointSize, pointSize);
+
+        // Draw lines between consecutive points
+        if (i > 0) {
+            painter.drawLine(points[i - 1], points[i]);
+        }
     }
 }
 
