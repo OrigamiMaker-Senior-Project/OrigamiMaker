@@ -758,6 +758,105 @@
          <height>571</height>
         </rect>
        </property>
+       <widget class="QGroupBox" name="showFoldedFormGroupBox">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>70</y>
+          <width>241</width>
+          <height>51</height>
+         </rect>
+        </property>
+        <property name="title">
+         <string/>
+        </property>
+        <layout class="QHBoxLayout" name="horizontalLayout">
+         <item>
+          <widget class="QLabel" name="showFoldedFormLabel">
+           <property name="text">
+            <string>Show Folded View</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QToolButton" name="showFoldedFormButton">
+           <property name="text">
+            <string>...</string>
+           </property>
+           <property name="arrowType">
+            <enum>Qt::DownArrow</enum>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QGroupBox" name="foldedFormImageGroupBox">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>70</y>
+          <width>241</width>
+          <height>151</height>
+         </rect>
+        </property>
+        <property name="title">
+         <string/>
+        </property>
+        <widget class="QLabel" name="foldedFormImage">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>241</width>
+           <height>151</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="pixmap">
+          <pixmap resource="resources.qrc">:/images/folded_image.jpg</pixmap>
+         </property>
+         <property name="scaledContents">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </widget>
+       <widget class="QGroupBox" name="hideFoldedFormGroupBox">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>220</y>
+          <width>241</width>
+          <height>51</height>
+         </rect>
+        </property>
+        <property name="title">
+         <string/>
+        </property>
+        <layout class="QHBoxLayout" name="horizontalLayout_2">
+         <item>
+          <widget class="QLabel" name="hideFoldedFormLabel">
+           <property name="text">
+            <string>Hide Folded View</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QToolButton" name="hideFoldedFormButton">
+           <property name="text">
+            <string>...</string>
+           </property>
+           <property name="arrowType">
+            <enum>Qt::DownArrow</enum>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+       <zorder>foldedFormImageGroupBox</zorder>
+       <zorder>showFoldedFormGroupBox</zorder>
+       <zorder>hideFoldedFormGroupBox</zorder>
       </widget>
      </widget>
     </item>
@@ -983,6 +1082,8 @@
    <container>1</container>
   </customwidget>
  </customwidgets>
- <resources/>
+ <resources>
+  <include location="resources.qrc"/>
+ </resources>
  <connections/>
 </ui>

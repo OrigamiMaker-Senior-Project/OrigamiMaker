@@ -18,6 +18,11 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+private slots:
+    void on_showFoldedFormButton_clicked();
+
+    void on_hideFoldedFormButton_clicked();
+
 private:
     Ui::MainWindow *ui;
     CanvasWidget *canvasWidget;
