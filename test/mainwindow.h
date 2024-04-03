@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QPropertyAnimation>
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -17,7 +18,14 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+private slots:
+
+    void on_hideFoldedImageButton_clicked();
+
+    void on_showFoldedImageButton_clicked();
+
 private:
     Ui::MainWindow *ui;
+    QPropertyAnimation *animation;
 };
 #endif // MAINWINDOW_H

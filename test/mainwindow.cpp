@@ -16,9 +16,26 @@ MainWindow::MainWindow(QWidget *parent)
     QString styleSheet = QLatin1String(styleFile.readAll());
     this->setStyleSheet(styleSheet);
 
+    ui->hideDropDown->hide();
+    ui->foldedImageGroupBox->hide();
 }
 
 MainWindow::~MainWindow()
 {
     delete ui;
 }
+void MainWindow::on_hideFoldedImageButton_clicked()
+{
+    ui->foldedImageGroupBox->hide();
+    ui->hideDropDown->hide();
+    ui->showDropDown->show();
+}
+
+
+void MainWindow::on_showFoldedImageButton_clicked()
+{
+    ui->foldedImageGroupBox->show();
+    ui->hideDropDown->show();
+    ui->showDropDown->hide();
+}
+
