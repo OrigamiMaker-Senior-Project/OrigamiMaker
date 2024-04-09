@@ -13,13 +13,31 @@ SOURCES += \
     main.cpp \
     mainwindow.cpp \
     tmDoc.cpp \
-    tmHeader.cpp
+    tmHeader.cpp \
+    tmModel/tmCluster.cpp \
+    tmModel/tmEdge.cpp \
+    tmModel/tmNode.cpp \
+    tmModel/tmPart.cpp \
+    tmModel/tmTree.cpp
 
 HEADERS += \
     canvaswidget.h \
     mainwindow.h \
     tmDoc.h \
-    tmHeader.h
+    tmHeader.h \
+    tmModel/tmArray.h \
+    tmModel/tmArrayIterator.h \
+    tmModel/tmCluster.h \
+    tmModel/tmDpptr.h \
+    tmModel/tmDpptrArray.h \
+    tmModel/tmDpptrSrc.h \
+    tmModel/tmEdge.h \
+    tmModel/tmModel.h \
+    tmModel/tmModel_fwd.h \
+    tmModel/tmNode.h \
+    tmModel/tmPart.h \
+    tmModel/tmPoint.h \
+    tmModel/tmTree.h
 
 FORMS += \
     mainwindow.ui

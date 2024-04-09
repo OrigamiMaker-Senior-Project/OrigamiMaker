@@ -1,8 +1,15 @@
 {
   "ExpandedNodes": [
     "",
-    "\\OldTreeMaker"
+    "\\OldTreeMaker",
+    "\\OldTreeMaker\\Source",
+    "\\OldTreeMaker\\Source\\tmModel",
+    "\\OldTreeMaker\\Source\\tmModel\\tmPtrClasses",
+    "\\OldTreeMaker\\Source\\tmModel\\tmTreeClasses",
+    "\\OldTreeMaker\\Source\\tmwxGUI",
+    "\\OldTreeMaker\\Source\\tmwxGUI\\tmwxDocView",
+    "\\test"
   ],
-  "SelectedNode": "\\OldTreeMaker\\README.txt",
+  "SelectedNode": "\\OldTreeMaker\\Source\\tmModel\\tmTreeClasses\\tmPart.h",
   "PreviewInSolutionExplorer": false
 }

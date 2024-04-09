@@ -3,9 +3,9 @@ File:         tmDpptrArray.h
 Project:      TreeMaker 5.x
 Purpose:      Header file for dangle-proof array of pointers
 Author:       Robert J. Lang
-Modified by:  
+Modified by:
 Created:      2003-11-15
-Copyright:    ©2003 Robert J. Lang. All Rights Reserved.
+Copyright:    ?2003 Robert J. Lang. All Rights Reserved.
 *******************************************************************************/
 
 #ifndef _TMDPPTRARRAY_H_
@@ -77,24 +77,26 @@ public:
   typedef typename tmArray<T*>::difference_type difference_type;
   typedef T* value_type;
 
+
+
   // It's useful to have a ptr-to-T type defined
   typedef T* ptr_t;
-  
+
   // Constructor/destructor
   tmDpptrArray() {};
   tmDpptrArray(const tmDpptrArray<T>& aList);
   tmDpptrArray(const tmArray<T*>& aList);
   ~tmDpptrArray();
-  
+
   // Assignment
   const tmDpptrArray& operator=(const tmDpptrArray<T>& aList);
   const tmDpptrArray& operator=(const tmArray<T*>& aList);
-  
+
   // Cast to ancestor: allow only read-only cast.
 #if TM_OVERLOAD_CASTS
   operator const tmArray<T*>() const {return *this;};
 #endif // TM_OVERLOAD_CASTS
-  
+
   // Subscripting returns read-only reference to array element so you can't
   // overwrite an element and circumvent bookkeeping.
   const ptr_t& operator[](std::size_t i) const {
@@ -105,29 +107,29 @@ public:
   // Modifying operations
   void push_back(T* p);
   void push_front(T* p);
-  void union_with(T* p);    
+  void union_with(T* p);
   void erase_remove(T* p);
   void replace_with(T*& told, T*& tnew);
   void clear();
   void InsertItemAt(std::size_t n, T* p);
   void ReplaceItemAt(std::size_t n, T* p);
   void KillItems();
-  void merge_with(const tmArray<T*>& aList);    
+  void merge_with(const tmArray<T*>& aList);
   void union_with(const tmArray<T*>& aList);
   void intersect_with(const tmArray<T*>& aList);
 private:
   // used in implementation
   void RemoveDpptrTarget(tmDpptrTarget* aDpptrTarget);
-  
+
   // non-const overload not allowed (if compiler allows overloading)
 #if TM_OVERLOAD_CASTS
   operator tmArray<T*>();
 #endif // TM_OVERLOAD_CASTS
-  
+
   // tmArray<T> members, not yet supported
   void assign_all(const ptr_t& t);
   tmDpptrArray<T>& RemoveItemAt(std::size_t n);
-  
+
   // vector<T> members, not yet supported
   void pop_back();
   void pop_front();
@@ -198,16 +200,6 @@ const tmDpptrArray<T>& tmDpptrArray<T>::operator=(const tmArray<T*>& aList)
   merge_with(aList);
 }
 
-
-/*****
-Destructor. Inform all objects that they're no longer referenced by us
-*****/
-template <class T>
-tmDpptrArray<T>::~tmDpptrArray()
-{
-  for (std::size_t i = 0; i < this->size(); ++i) 
-    DstRemoveMeAsDpptrSrc((*this)[i]);
-}
 
 
 /*****
@@ -284,7 +276,7 @@ Remove all items and inform referenced objects
 template <class T>
 void tmDpptrArray<T>::clear()
 {
-  for (std::size_t i = 0; i < this->size(); ++i) 
+  for (std::size_t i = 0; i < this->size(); ++i)
     DstRemoveMeAsDpptrSrc((*this)[i]);
   tmArray<T*>::clear();
 }
@@ -333,7 +325,7 @@ Combine two lists including duplicates
 template <class T>
 void tmDpptrArray<T>::merge_with(const tmArray<T*>& aList)
 {
-  for (std::size_t i = 0; i < aList.size(); ++i) 
+  for (std::size_t i = 0; i < aList.size(); ++i)
     push_back(aList[i]);
 }
 
@@ -344,7 +336,7 @@ Combine two lists, not including duplicates
 template <class T>
 void tmDpptrArray<T>::union_with(const tmArray<T*>& aList)
 {
-  for (std::size_t i = 0; i < aList.size(); ++i) 
+  for (std::size_t i = 0; i < aList.size(); ++i)
     union_with(aList[i]);
 }
 
@@ -375,7 +367,7 @@ Called by:
 template <class T>
 void tmDpptrArray<T>::RemoveDpptrTarget(tmDpptrTarget* aDpptrTarget)
 {
-  tmArray<T*>::erase(std::remove_if(this->begin(), this->end(), 
+  tmArray<T*>::erase(std::remove_if(this->begin(), this->end(),
     DpptrTarget_EqualTo<T>(aDpptrTarget)), this->end());
 }
 

@@ -27,7 +27,8 @@ protected:
     void DstAddMeAsDpptrSrc(tmDpptrTarget* aDpptrTarget) {
         aDpptrTarget->AddDpptrSrc(this);};
     void DstRemoveMeAsDpptrSrc(const tmDpptrTarget* aDpptrTarget) {
-        const_cast<tmDpptrTarget*>(aDpptrTarget)->RemoveDpptrSrc(this);};
+        aDpptrTarget->RemoveDpptrSrc(this);
+    };
     // Implemented by subclasses
     virtual void RemoveDpptrTarget(const tmDpptrTarget*) {};
 private:

@@ -3,9 +3,9 @@ File:         tmDpptrTarget.cpp
 Project:      TreeMaker 5.x
 Purpose:      Implementation file for class tmDpptrTarget
 Author:       Robert J. Lang
-Modified by:  
+Modified by:
 Created:      2003-11-22
-Copyright:    ©2003 Robert J. Lang. All Rights Reserved.
+Copyright:    ?2003 Robert J. Lang. All Rights Reserved.
 *******************************************************************************/
 
 #include "tmDpptrTarget.h"
@@ -17,9 +17,9 @@ using namespace std;
 
 /*
 A tmDpptrTarget is an object that can be the target of a tmDpptrSrc object, which is
-a dangle-proof pointer. The tmDpptrTarget keeps a list of all DpptrSrcs that point to it. 
-When the tmDpptrTarget is deleted, it notifies the tmDpptrSrc, which nulls its pointer. 
-When a tmDpptrSrc is destroyed (or reassigned), it notifies the tmDpptrTarget which 
+a dangle-proof pointer. The tmDpptrTarget keeps a list of all DpptrSrcs that point to it.
+When the tmDpptrTarget is deleted, it notifies the tmDpptrSrc, which nulls its pointer.
+When a tmDpptrSrc is destroyed (or reassigned), it notifies the tmDpptrTarget which
 removes the tmDpptr from its list of DpptrSrcs. Thus, no tmDpptrSrc will ever dangle,
 that is, point incorrectly into memory.
 */
@@ -97,7 +97,7 @@ called by:
 tmDpptrSrc::DstRemoveMeAsDpptrSrc(tmDpptrTarget*)
 *****/
 
-void tmDpptrTarget::RemoveDpptrSrc(tmDpptrSrc* r)
+void tmDpptrTarget::RemoveDpptrSrc(const tmDpptrSrc* r) const
 {
-  mDpptrSrcs.erase(remove(mDpptrSrcs.begin(), mDpptrSrcs.end(), r), mDpptrSrcs.end());
+    mDpptrSrcs.erase(remove(mDpptrSrcs.begin(), mDpptrSrcs.end(), r), mDpptrSrcs.end());
 }

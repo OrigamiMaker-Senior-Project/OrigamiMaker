@@ -28,9 +28,9 @@ public:
     virtual ~tmDpptrTarget();
     std::size_t GetNumSrcs() {return mDpptrSrcs.size();};
 private:
-    std::vector<tmDpptrSrc*> mDpptrSrcs;  // list of objects pointing at me
+    mutable std::vector<tmDpptrSrc*> mDpptrSrcs;  // list of objects pointing at me
     void AddDpptrSrc(tmDpptrSrc* r);    // add a pointer-to-me
-    void RemoveDpptrSrc(tmDpptrSrc* r);    // remove a pointer-to-me
+    void RemoveDpptrSrc(const tmDpptrSrc* r) const;    // remove a pointer-to-me
     friend class tmDpptrSrc;        // gives access to AddDpptrSrc() and RemoveDpptrSrc()
 };
 

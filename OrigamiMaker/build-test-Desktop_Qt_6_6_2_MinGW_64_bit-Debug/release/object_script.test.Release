@@ -1,0 +1,13 @@
+release/canvaswidget.o
+release/main.o
+release/mainwindow.o
+release/tmDoc.o
+release/tmHeader.o
+release/tmCluster.o
+release/tmEdge.o
+release/tmNode.o
+release/tmPart.o
+release/tmTree.o
+release/moc_canvaswidget.o
+release/moc_mainwindow.o
+release/moc_tmDoc.o

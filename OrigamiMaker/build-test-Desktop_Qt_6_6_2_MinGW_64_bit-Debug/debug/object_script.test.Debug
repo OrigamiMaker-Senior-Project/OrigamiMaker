@@ -1,0 +1,13 @@
+debug/canvaswidget.o
+debug/main.o
+debug/mainwindow.o
+debug/tmDoc.o
+debug/tmHeader.o
+debug/tmCluster.o
+debug/tmEdge.o
+debug/tmNode.o
+debug/tmPart.o
+debug/tmTree.o
+debug/moc_canvaswidget.o
+debug/moc_mainwindow.o
+debug/moc_tmDoc.o

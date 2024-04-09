@@ -5,7 +5,7 @@ Purpose:      Header file for class tmTree
 Author:       Robert J. Lang
 Modified by:  
 Created:      2003-11-21
-Copyright:    ©2003 Robert J. Lang. All Rights Reserved.
+Copyright:    ï¿½2003 Robert J. Lang. All Rights Reserved.
 *******************************************************************************/
 
 #ifndef _TMTREE_H_
@@ -29,6 +29,7 @@ Copyright:    ©2003 Robert J. Lang. All Rights Reserved.
 #include "tmArray.h"
 #include "tmArrayIterator.h"
 #include "tmCondition.h"
+#include "tmTreeCleaner.h"
 
 
 /**********
