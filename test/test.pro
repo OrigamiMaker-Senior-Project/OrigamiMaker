@@ -18,7 +18,46 @@ SOURCES += \
     tmModel/tmEdge.cpp \
     tmModel/tmNode.cpp \
     tmModel/tmPart.cpp \
-    tmModel/tmTree.cpp
+    tmModel/tmTree.cpp \
+    tmModel/tmCondition.cpp \
+    tmModel/tmConditionEdgeLengthFixed.cpp \
+    tmModel/tmConditionEdgesSameStrain.cpp \
+    tmModel/tmConditionNodeCombo.cpp \
+    tmModel/tmConditionNodeFixed.cpp \
+    tmModel/tmConditionNodeOnCorner.cpp \
+    tmModel/tmConditionNodeOnEdge.cpp \
+    tmModel/tmConditionNodesCollinear.cpp \
+    tmModel/tmConditionNodesPaired.cpp \
+    tmModel/tmConditionNodeSymmetric.cpp \
+    tmModel/tmConditionOwner.cpp \
+    tmModel/tmConditionPathActive.cpp \
+    tmModel/tmConditionPathAngleFixed.cpp \
+    tmModel/tmConditionPathAngleQuant.cpp \
+    tmModel/tmConditionPathCombo.cpp \
+    tmModel/tmCrease.cpp \
+    tmModel/tmCreaseOwner.cpp \
+    tmModel/tmDpptrArray.cpp \
+    tmModel/tmDpptrTarget.cpp \
+    tmModel/tmEdgeOwner.cpp \
+    tmModel/tmFacet.cpp \
+    tmModel/tmFacetOwner.cpp \
+    tmModel/tmNodeOwner.cpp \
+    tmModel/tmPath.cpp \
+    tmModel/tmPathOwner.cpp \
+    tmModel/tmPoint.cpp \
+    tmModel/tmPoly.cpp \
+    tmModel/tmPolyOwner.cpp \
+    tmModel/tmVertex.cpp \
+    tmModel/tmVertexOwner.cpp \
+    tmModel/tmConstraintFns.cpp \
+    tmModel/tmEdgeOptimizer.cpp \
+    tmModel/tmOptimizer.cpp \
+    tmModel/tmScaleOptimizer.cpp \
+    tmModel/tmStrainOptimizer.cpp \
+    tmModel/tmStubFinder.cpp \
+    tmModel/tmTree_FacetOrder.cpp \
+    tmModel/tmTree_IO.cpp \
+    tmModel/tmTree_TestTrees.cpp
 
 HEADERS += \
     canvaswidget.h \
@@ -37,7 +76,46 @@ HEADERS += \
     tmModel/tmNode.h \
     tmModel/tmPart.h \
     tmModel/tmPoint.h \
-    tmModel/tmTree.h
+    tmModel/tmTree.h \
+    tmModel/tmCondition.h \
+    tmModel/tmConditionEdgeLengthFixed.h \
+    tmModel/tmConditionEdgesSameStrain.h \
+    tmModel/tmConditionNodeCombo.h \
+    tmModel/tmConditionNodeFixed.h \
+    tmModel/tmConditionNodeOnCorner.h \
+    tmModel/tmConditionNodeOnEdge.h \
+    tmModel/tmConditionNodesCollinear.h \
+    tmModel/tmConditionNodesPaired.h \
+    tmModel/tmConditionNodeSymmetric.h \
+    tmModel/tmConditionOwner.h \
+    tmModel/tmConditionPathActive.h \
+    tmModel/tmConditionPathAngleFixed.h \
+    tmModel/tmConditionPathAngleQuant.h \
+    tmModel/tmConditionPathCombo.h \
+    tmModel/tmCrease.h \
+    tmModel/tmCreaseOwner.h \
+    tmModel/tmDpptrTarget.h \
+    tmModel/tmEdgeOwner.h \
+    tmModel/tmFacet.h \
+    tmModel/tmFacetOwner.h \
+    tmModel/tmNodeOwner.h \
+    tmModel/tmPath.h \
+    tmModel/tmPathOwner.h \
+    tmModel/tmPoly.h \
+    tmModel/tmPolyOwner.h \
+    tmModel/tmVertex.h \
+    tmModel/tmVertexOwner.h \
+    tmModel/tmConstraintFns.h \
+    tmModel/tmEdgeOptimizer.h \
+    tmModel/tmOptimizer.h \
+    tmModel/tmScaleOptimizer.h \
+    tmModel/tmStrainOptimizer.h \
+    tmModel/tmStubFinder.h \
+    tmModel/tmMatrix.h \
+    tmModel/tmNewtonRaphson.h \
+    tmModel/tmPtrClasses.h \
+    tmModel/tmSolvers \
+    tmModel/tmTreeClasses.h
 
 FORMS += \
     mainwindow.ui

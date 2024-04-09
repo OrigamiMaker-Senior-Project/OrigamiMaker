@@ -10,6 +10,14 @@ Copyright:    2003 Robert J. Lang. All Rights Reserved.
 
 #include "tmDpptrArray.h"
 #include "tmDpptrTarget.h"
+#include "tmCondition.h"
+#include "tmFacet.h"
+#include "tmCrease.h"
+#include "tmVertex.h"
+#include "tmPoly.h"
+#include "tmPath.h"
+#include "tmEdge.h"
+#include "tmNode.h"
 
 /*****
 Destructor. Inform all objects that they're no longer referenced by us
@@ -24,3 +32,13 @@ tmDpptrArray<T>::~tmDpptrArray()
         }
     }
 }
+
+// Explicit instantiations for the types used in your code
+template class tmDpptrArray<tmCondition>;
+template class tmDpptrArray<tmFacet>;
+template class tmDpptrArray<tmCrease>;
+template class tmDpptrArray<tmVertex>;
+template class tmDpptrArray<tmPoly>;
+template class tmDpptrArray<tmPath>;
+template class tmDpptrArray<tmEdge>;
+template class tmDpptrArray<tmNode>;

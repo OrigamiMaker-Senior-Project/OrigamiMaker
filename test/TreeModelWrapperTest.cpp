@@ -6,13 +6,47 @@ int main() {
 
     // Test creating nodes
     int node1Id = wrapper.createNode(0.0, 0.0);
+    if (node1Id == -1) {
+        std::cout << "Error creating node 1" << std::endl;
+        return 1;
+    }
+    std::cout << "Created node 1 with ID: " << node1Id << std::endl;
+
     int node2Id = wrapper.createNode(1.0, 0.0);
+    if (node2Id == -1) {
+        std::cout << "Error creating node 2" << std::endl;
+        return 1;
+    }
+    std::cout << "Created node 2 with ID: " << node2Id << std::endl;
+
     int node3Id = wrapper.createNode(0.5, 1.0);
+    if (node3Id == -1) {
+        std::cout << "Error creating node 3" << std::endl;
+        return 1;
+    }
+    std::cout << "Created node 3 with ID: " << node3Id << std::endl;
 
     // Test creating edges
     int edge1Id = wrapper.createEdge(node1Id, node2Id);
+    if (edge1Id == -1) {
+        std::cout << "Error creating edge 1" << std::endl;
+        return 1;
+    }
+    std::cout << "Created edge 1 with ID: " << edge1Id << std::endl;
+
     int edge2Id = wrapper.createEdge(node2Id, node3Id);
+    if (edge2Id == -1) {
+        std::cout << "Error creating edge 2" << std::endl;
+        return 1;
+    }
+    std::cout << "Created edge 2 with ID: " << edge2Id << std::endl;
+
     int edge3Id = wrapper.createEdge(node3Id, node1Id);
+    if (edge3Id == -1) {
+        std::cout << "Error creating edge 3" << std::endl;
+        return 1;
+    }
+    std::cout << "Created edge 3 with ID: " << edge3Id << std::endl;
 
     // Test setting labels
     wrapper.setNodeLabel(node1Id, "Node 1");

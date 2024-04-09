@@ -5,7 +5,7 @@ Purpose:      Implementation file for class tmPolyOwner
 Author:       Robert J. Lang
 Modified by:  
 Created:      2003-12-04
-Copyright:    ©2003 Robert J. Lang. All Rights Reserved.
+Copyright:    ï¿½2003 Robert J. Lang. All Rights Reserved.
 *******************************************************************************/
 
 #include "tmPolyOwner.h"
