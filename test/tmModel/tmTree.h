@@ -41,6 +41,8 @@ The core class of TreeMaker. It contains the full mathematical model.
 class tmTree : public tmPart, private tmCluster, public tmEdgeOwner, 
   public tmPolyOwner, public tmConditionOwner {
 public:
+  // Friends
+  friend class TreeModelWrapper;
   // Exceptions
   // Structural editing errors
   class EX_BAD_KILL_PARTS {

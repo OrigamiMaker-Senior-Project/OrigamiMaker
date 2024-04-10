@@ -10,26 +10,7 @@ Copyright:    �2003 Robert J. Lang. All Rights Reserved.
 
 #include "tmTree.h"
 #include "tmModel.h"
-#include "tmTreeCleaner.h"
-#include "tmNode.h"
-#include "tmEdge.h"
-#include "tmPath.h"
-#include "tmPoly.h"
-#include "tmCrease.h"
-#include "tmFacet.h"
-#include "tmCondition.h"
-#include "tmConditionNodeCombo.h"
-#include "tmConditionEdgeLengthFixed.h"
-#include "tmConditionPathCombo.h"
-#include "tmConditionPathAngleFixed.h"
-#include "tmConditionPathAngleQuant.h"
-#include "tmConditionNodesPaired.h"
-#include "tmConditionNodesCollinear.h"
-#include "tmConditionEdgesSameStrain.h"
-#include "tmConditionNodeOnCorner.h"
-#include "tmConditionNodeOnEdge.h"
-#include "tmConditionNodeSymmetric.h"
-#include "tmConditionPathActive.h"
+
 
 #ifdef TMDEBUG
   #include <fstream>

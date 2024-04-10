@@ -5,7 +5,7 @@ Purpose:      Implementation file for tmTree test tree routines
 Author:       Robert J. Lang
 Modified by:  
 Created:      2003-11-21
-Copyright:    ©2003 Robert J. Lang. All Rights Reserved.
+Copyright:    ï¿½2003 Robert J. Lang. All Rights Reserved.
 *******************************************************************************/
 
 #include "tmTree.h"
