@@ -105,17 +105,21 @@ public:
     QScrollArea *viewSettingsScrollArea;
     QWidget *scrollAreaWidgetContents_3;
     QGridLayout *gridLayout_3;
-    QCheckBox *checkBox_nodes;
-    QCheckBox *checkBox_sub;
-    QCheckBox *checkBox_dots;
     QCheckBox *checkBox_circles;
-    QCheckBox *checkBox_coordinates;
     QCheckBox *checkBox_indicies;
     QCheckBox *checkBox_leaf;
-    QCheckBox *checkBox_elevation;
+    QRadioButton *radioButton_2;
     QCheckBox *checkBox_branch;
+    QRadioButton *radioButton_3;
+    QCheckBox *checkBox_nodes;
+    QRadioButton *radioButton_4;
     QCheckBox *checkBox_labels;
     QComboBox *dropdown_view_settings;
+    QCheckBox *checkBox_sub;
+    QCheckBox *checkBox_coordinates;
+    QCheckBox *checkBox_dots;
+    QCheckBox *checkBox_elevation;
+    QRadioButton *radioButton;
     QLabel *label_conditions;
     QLabel *label_view_settings;
     QGroupBox *drawingAreaGroupBox;
@@ -236,7 +240,7 @@ public:
         inspectorScrollArea->setWidgetResizable(true);
         scrollAreaWidgetContents_2 = new QWidget();
         scrollAreaWidgetContents_2->setObjectName("scrollAreaWidgetContents_2");
-        scrollAreaWidgetContents_2->setGeometry(QRect(0, 0, 319, 159));
+        scrollAreaWidgetContents_2->setGeometry(QRect(0, 0, 328, 145));
         gridLayout = new QGridLayout(scrollAreaWidgetContents_2);
         gridLayout->setObjectName("gridLayout");
         input_width = new QLineEdit(scrollAreaWidgetContents_2);
@@ -348,7 +352,7 @@ public:
         conditionsScrollArea->setWidgetResizable(true);
         scrollAreaWidgetContents = new QWidget();
         scrollAreaWidgetContents->setObjectName("scrollAreaWidgetContents");
-        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 319, 323));
+        scrollAreaWidgetContents->setGeometry(QRect(0, -258, 298, 437));
         gridLayout_2 = new QGridLayout(scrollAreaWidgetContents);
         gridLayout_2->setObjectName("gridLayout_2");
         checkBox_10 = new QCheckBox(scrollAreaWidgetContents);
@@ -428,58 +432,53 @@ public:
         viewSettingsScrollArea->setWidgetResizable(true);
         scrollAreaWidgetContents_3 = new QWidget();
         scrollAreaWidgetContents_3->setObjectName("scrollAreaWidgetContents_3");
-        scrollAreaWidgetContents_3->setGeometry(QRect(0, 0, 319, 262));
+        scrollAreaWidgetContents_3->setGeometry(QRect(0, 0, 349, 389));
         gridLayout_3 = new QGridLayout(scrollAreaWidgetContents_3);
         gridLayout_3->setObjectName("gridLayout_3");
-        checkBox_nodes = new QCheckBox(scrollAreaWidgetContents_3);
-        checkBox_nodes->setObjectName("checkBox_nodes");
-
-        gridLayout_3->addWidget(checkBox_nodes, 1, 0, 1, 1);
-
-        checkBox_sub = new QCheckBox(scrollAreaWidgetContents_3);
-        checkBox_sub->setObjectName("checkBox_sub");
-
-        gridLayout_3->addWidget(checkBox_sub, 4, 0, 1, 1);
-
-        checkBox_dots = new QCheckBox(scrollAreaWidgetContents_3);
-        checkBox_dots->setObjectName("checkBox_dots");
-
-        gridLayout_3->addWidget(checkBox_dots, 5, 0, 1, 1);
-
         checkBox_circles = new QCheckBox(scrollAreaWidgetContents_3);
         checkBox_circles->setObjectName("checkBox_circles");
 
-        gridLayout_3->addWidget(checkBox_circles, 6, 0, 1, 1);
-
-        checkBox_coordinates = new QCheckBox(scrollAreaWidgetContents_3);
-        checkBox_coordinates->setObjectName("checkBox_coordinates");
-
-        gridLayout_3->addWidget(checkBox_coordinates, 8, 0, 1, 1);
+        gridLayout_3->addWidget(checkBox_circles, 13, 0, 1, 1);
 
         checkBox_indicies = new QCheckBox(scrollAreaWidgetContents_3);
         checkBox_indicies->setObjectName("checkBox_indicies");
 
-        gridLayout_3->addWidget(checkBox_indicies, 7, 0, 1, 1);
+        gridLayout_3->addWidget(checkBox_indicies, 14, 0, 1, 1);
 
         checkBox_leaf = new QCheckBox(scrollAreaWidgetContents_3);
         checkBox_leaf->setObjectName("checkBox_leaf");
 
-        gridLayout_3->addWidget(checkBox_leaf, 2, 0, 1, 1);
+        gridLayout_3->addWidget(checkBox_leaf, 9, 0, 1, 1);
 
-        checkBox_elevation = new QCheckBox(scrollAreaWidgetContents_3);
-        checkBox_elevation->setObjectName("checkBox_elevation");
+        radioButton_2 = new QRadioButton(scrollAreaWidgetContents_3);
+        radioButton_2->setObjectName("radioButton_2");
 
-        gridLayout_3->addWidget(checkBox_elevation, 9, 0, 1, 1);
+        gridLayout_3->addWidget(radioButton_2, 1, 0, 1, 1);
 
         checkBox_branch = new QCheckBox(scrollAreaWidgetContents_3);
         checkBox_branch->setObjectName("checkBox_branch");
 
-        gridLayout_3->addWidget(checkBox_branch, 3, 0, 1, 1);
+        gridLayout_3->addWidget(checkBox_branch, 10, 0, 1, 1);
+
+        radioButton_3 = new QRadioButton(scrollAreaWidgetContents_3);
+        radioButton_3->setObjectName("radioButton_3");
+
+        gridLayout_3->addWidget(radioButton_3, 1, 2, 1, 1);
+
+        checkBox_nodes = new QCheckBox(scrollAreaWidgetContents_3);
+        checkBox_nodes->setObjectName("checkBox_nodes");
+
+        gridLayout_3->addWidget(checkBox_nodes, 8, 0, 1, 1);
+
+        radioButton_4 = new QRadioButton(scrollAreaWidgetContents_3);
+        radioButton_4->setObjectName("radioButton_4");
+
+        gridLayout_3->addWidget(radioButton_4, 1, 3, 1, 1);
 
         checkBox_labels = new QCheckBox(scrollAreaWidgetContents_3);
         checkBox_labels->setObjectName("checkBox_labels");
 
-        gridLayout_3->addWidget(checkBox_labels, 10, 0, 1, 1);
+        gridLayout_3->addWidget(checkBox_labels, 17, 0, 1, 1);
 
         dropdown_view_settings = new QComboBox(scrollAreaWidgetContents_3);
         dropdown_view_settings->addItem(QString());
@@ -490,6 +489,31 @@ public:
         dropdown_view_settings->setObjectName("dropdown_view_settings");
 
         gridLayout_3->addWidget(dropdown_view_settings, 0, 0, 1, 1);
+
+        checkBox_sub = new QCheckBox(scrollAreaWidgetContents_3);
+        checkBox_sub->setObjectName("checkBox_sub");
+
+        gridLayout_3->addWidget(checkBox_sub, 11, 0, 1, 1);
+
+        checkBox_coordinates = new QCheckBox(scrollAreaWidgetContents_3);
+        checkBox_coordinates->setObjectName("checkBox_coordinates");
+
+        gridLayout_3->addWidget(checkBox_coordinates, 15, 0, 1, 1);
+
+        checkBox_dots = new QCheckBox(scrollAreaWidgetContents_3);
+        checkBox_dots->setObjectName("checkBox_dots");
+
+        gridLayout_3->addWidget(checkBox_dots, 12, 0, 1, 1);
+
+        checkBox_elevation = new QCheckBox(scrollAreaWidgetContents_3);
+        checkBox_elevation->setObjectName("checkBox_elevation");
+
+        gridLayout_3->addWidget(checkBox_elevation, 16, 0, 1, 1);
+
+        radioButton = new QRadioButton(scrollAreaWidgetContents_3);
+        radioButton->setObjectName("radioButton");
+
+        gridLayout_3->addWidget(radioButton, 1, 1, 1, 1);
 
         viewSettingsScrollArea->setWidget(scrollAreaWidgetContents_3);
         label_conditions = new QLabel(sideMenuGroupBox);
@@ -548,7 +572,7 @@ public:
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
-        menubar->setGeometry(QRect(0, 0, 1000, 24));
+        menubar->setGeometry(QRect(0, 0, 1000, 26));
         menuFile = new QMenu(menubar);
         menuFile->setObjectName("menuFile");
         menuEdit = new QMenu(menubar);
@@ -665,15 +689,14 @@ public:
         checkBox_6->setText(QCoreApplication::translate("MainWindow", "Symmetry Line", nullptr));
         checkBox_11->setText(QCoreApplication::translate("MainWindow", "Active", nullptr));
         checkBox_4->setText(QCoreApplication::translate("MainWindow", "Position", nullptr));
-        checkBox_nodes->setText(QCoreApplication::translate("MainWindow", "Nodes", nullptr));
-        checkBox_sub->setText(QCoreApplication::translate("MainWindow", "Sub", nullptr));
-        checkBox_dots->setText(QCoreApplication::translate("MainWindow", "Dots", nullptr));
         checkBox_circles->setText(QCoreApplication::translate("MainWindow", "Circles", nullptr));
-        checkBox_coordinates->setText(QCoreApplication::translate("MainWindow", "Coordinates", nullptr));
         checkBox_indicies->setText(QCoreApplication::translate("MainWindow", "Indices", nullptr));
         checkBox_leaf->setText(QCoreApplication::translate("MainWindow", "Leaf", nullptr));
-        checkBox_elevation->setText(QCoreApplication::translate("MainWindow", "Elevation", nullptr));
+        radioButton_2->setText(QCoreApplication::translate("MainWindow", "Tree", nullptr));
         checkBox_branch->setText(QCoreApplication::translate("MainWindow", "Branch", nullptr));
+        radioButton_3->setText(QCoreApplication::translate("MainWindow", "Crease", nullptr));
+        checkBox_nodes->setText(QCoreApplication::translate("MainWindow", "Nodes", nullptr));
+        radioButton_4->setText(QCoreApplication::translate("MainWindow", "Plan", nullptr));
         checkBox_labels->setText(QCoreApplication::translate("MainWindow", "Labels", nullptr));
         dropdown_view_settings->setItemText(0, QCoreApplication::translate("MainWindow", "All", nullptr));
         dropdown_view_settings->setItemText(1, QCoreApplication::translate("MainWindow", "Tree", nullptr));
@@ -681,6 +704,11 @@ public:
         dropdown_view_settings->setItemText(3, QCoreApplication::translate("MainWindow", "Crease", nullptr));
         dropdown_view_settings->setItemText(4, QCoreApplication::translate("MainWindow", "Plan", nullptr));
 
+        checkBox_sub->setText(QCoreApplication::translate("MainWindow", "Sub", nullptr));
+        checkBox_coordinates->setText(QCoreApplication::translate("MainWindow", "Coordinates", nullptr));
+        checkBox_dots->setText(QCoreApplication::translate("MainWindow", "Dots", nullptr));
+        checkBox_elevation->setText(QCoreApplication::translate("MainWindow", "Elevation", nullptr));
+        radioButton->setText(QCoreApplication::translate("MainWindow", "Design", nullptr));
         label_conditions->setText(QCoreApplication::translate("MainWindow", "Conditions", nullptr));
         label_view_settings->setText(QCoreApplication::translate("MainWindow", "View Settings", nullptr));
         drawingAreaGroupBox->setTitle(QString());

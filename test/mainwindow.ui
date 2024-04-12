@@ -104,8 +104,8 @@
          <rect>
           <x>0</x>
           <y>0</y>
-          <width>319</width>
-          <height>159</height>
+          <width>328</width>
+          <height>145</height>
          </rect>
         </property>
         <layout class="QGridLayout" name="gridLayout">
@@ -341,9 +341,9 @@
         <property name="geometry">
          <rect>
           <x>0</x>
-          <y>0</y>
-          <width>319</width>
-          <height>323</height>
+          <y>-258</y>
+          <width>298</width>
+          <height>437</height>
          </rect>
         </property>
         <layout class="QGridLayout" name="gridLayout_2">
@@ -465,75 +465,74 @@
          <rect>
           <x>0</x>
           <y>0</y>
-          <width>319</width>
-          <height>262</height>
+          <width>349</width>
+          <height>389</height>
          </rect>
         </property>
         <layout class="QGridLayout" name="gridLayout_3">
-         <item row="1" column="0">
-          <widget class="QCheckBox" name="checkBox_nodes">
-           <property name="text">
-            <string>Nodes</string>
-           </property>
-          </widget>
-         </item>
-         <item row="4" column="0">
-          <widget class="QCheckBox" name="checkBox_sub">
-           <property name="text">
-            <string>Sub</string>
-           </property>
-          </widget>
-         </item>
-         <item row="5" column="0">
-          <widget class="QCheckBox" name="checkBox_dots">
-           <property name="text">
-            <string>Dots</string>
-           </property>
-          </widget>
-         </item>
-         <item row="6" column="0">
+         <item row="14" column="0">
           <widget class="QCheckBox" name="checkBox_circles">
            <property name="text">
             <string>Circles</string>
            </property>
           </widget>
          </item>
-         <item row="8" column="0">
-          <widget class="QCheckBox" name="checkBox_coordinates">
-           <property name="text">
-            <string>Coordinates</string>
-           </property>
-          </widget>
-         </item>
-         <item row="7" column="0">
+         <item row="15" column="0">
           <widget class="QCheckBox" name="checkBox_indicies">
            <property name="text">
             <string>Indices</string>
            </property>
           </widget>
          </item>
-         <item row="2" column="0">
+         <item row="10" column="0">
           <widget class="QCheckBox" name="checkBox_leaf">
            <property name="text">
             <string>Leaf</string>
            </property>
           </widget>
          </item>
-         <item row="9" column="0">
-          <widget class="QCheckBox" name="checkBox_elevation">
+         <item row="1" column="0">
+          <widget class="QRadioButton" name="tree_view">
+           <property name="maximumSize">
+            <size>
+             <width>71</width>
+             <height>16777215</height>
+            </size>
+           </property>
            <property name="text">
-            <string>Elevation</string>
+            <string>Tree</string>
            </property>
           </widget>
          </item>
-         <item row="3" column="0">
+         <item row="11" column="0">
           <widget class="QCheckBox" name="checkBox_branch">
            <property name="text">
             <string>Branch</string>
            </property>
           </widget>
          </item>
-         <item row="10" column="0">
+         <item row="1" column="4">
+          <widget class="QRadioButton" name="crease_view">
+           <property name="text">
+            <string>Crease</string>
+           </property>
+          </widget>
+         </item>
+         <item row="9" column="0">
+          <widget class="QCheckBox" name="checkBox_nodes">
+           <property name="text">
+            <string>Nodes</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="6">
+          <widget class="QRadioButton" name="plan_view">
+           <property name="text">
+            <string>Plan</string>
+           </property>
+          </widget>
+         </item>
+         <item row="18" column="0">
           <widget class="QCheckBox" name="checkBox_labels">
            <property name="text">
             <string>Labels</string>
@@ -567,6 +566,41 @@
              <string>Plan</string>
             </property>
            </item>
+          </widget>
+         </item>
+         <item row="12" column="0">
+          <widget class="QCheckBox" name="checkBox_sub">
+           <property name="text">
+            <string>Sub</string>
+           </property>
+          </widget>
+         </item>
+         <item row="16" column="0">
+          <widget class="QCheckBox" name="checkBox_coordinates">
+           <property name="text">
+            <string>Coordinates</string>
+           </property>
+          </widget>
+         </item>
+         <item row="13" column="0">
+          <widget class="QCheckBox" name="checkBox_dots">
+           <property name="text">
+            <string>Dots</string>
+           </property>
+          </widget>
+         </item>
+         <item row="17" column="0">
+          <widget class="QCheckBox" name="checkBox_elevation">
+           <property name="text">
+            <string>Elevation</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <widget class="QRadioButton" name="design_view">
+           <property name="text">
+            <string>Design</string>
+           </property>
           </widget>
          </item>
         </layout>
@@ -769,7 +803,7 @@
      <x>0</x>
      <y>0</y>
      <width>1000</width>
-     <height>24</height>
+     <height>26</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
