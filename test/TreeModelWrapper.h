@@ -7,6 +7,8 @@
 #include <vector>
 #include <unordered_map>
 #include <algorithm>
+#include <cstdlib>
+#include <cstring>
 
 struct NodeData {
     int id;
@@ -27,13 +29,12 @@ public:
     TreeModelWrapper();
     ~TreeModelWrapper();
 
-    int createNode(double x, double y, int parentNodeId = -1);
-    int splitEdge(int edgeId, double splitRatio);
-    void setNodeLabel(int nodeId, const std::string& label);
-    void setEdgeLabel(int edgeId, const std::string& label);
+    tmNode* createNode(double x, double y, tmNode* parentNode = nullptr);
+    void createNodesFromList(const std::vector<std::pair<double, double>>& nodePositions);
+    tmTree* createTreeFromList(const std::vector<std::pair<double, double>>& nodePositions);
+
     int getNodeCount() const;
     int getEdgeCount() const;
-    std::pair<double, double> getNodePosition(int nodeId) const;
     std::vector<NodeData> getNodeData() const;
     std::vector<EdgeData> getEdgeData() const;
 
@@ -60,15 +61,9 @@ public:
     void setPathsAngleFixed(const tmArray<tmPath*>& paths, tmFloat angle);
     void setPathsAngleQuant(const tmArray<tmPath*>& paths, size_t quant, tmFloat quantOffset);
 
-  tmTree* makeTreeBlank();
-    tmTree* makeTreeUnoptimized();
-    tmTree* makeTreeOptimized();
-    tmTree* makeTreeGusset();
-    tmTree* makeTreeConditioned();
-
     bool isTreeOptimized() const;
     void buildCreasePattern();
-    
+
 private:
     tmTree* tree;
     std::unordered_map<int, tmNode*> nodeMap;

@@ -220,6 +220,7 @@ private:
   friend class tmConditionPathAngleFixed;
   friend class tmConditionPathAngleQuant;
   friend class tmStubFinder;
+  friend class TreeModelWrapper;
 };
 
 #endif // _TMNODE_H_

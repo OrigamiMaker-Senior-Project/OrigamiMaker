@@ -13,121 +13,55 @@ TreeModelWrapper::~TreeModelWrapper()
     delete tree;
 }
 
-int TreeModelWrapper::createNode(double x, double y, int parentNodeId)
+tmNode* TreeModelWrapper::createNode(double x, double y, tmNode* parentNode)
 {
-    tmNode *parentNode = nullptr;
-    if (parentNodeId != -1)
-    {
-        auto it = nodeMap.find(parentNodeId);
-        if (it == nodeMap.end())
-        {
-            std::cerr << "Invalid parent node ID: " << parentNodeId << std::endl;
-            return -1;
-        }
-        parentNode = it->second;
-    }
-
-    tmNode *newNode;
-    tmEdge *newEdge;
+    cleanupAfterEdit();
+    tmNode* newNode;
+    tmEdge* newEdge;
     try
     {
-        tree->AddNode(parentNode, tmPoint(x, y), newNode, newEdge);
+        tree->AddNode(parentNode == nullptr ? nullptr : parentNode, tmPoint(x, y), newNode, newEdge);
     }
-    catch (const std::exception &e)
+    catch (const std::exception& e)
     {
         std::cerr << "Error creating node: " << e.what() << std::endl;
-        return -1;
-    }
-
-    int nodeId = nextNodeId++;
-    nodeMap[nodeId] = newNode;
-    if (newEdge != nullptr)
-    {
-        int edgeId = nextEdgeId++;
-        edgeMap[edgeId] = newEdge;
-        std::cout << "Created edge label: " << std::to_string(edgeId).c_str() << std::endl;
-        newEdge->SetLabel(std::to_string(edgeId).c_str()); // Set the edge label
-        std::cout << "Created edge with ID: " << edgeId << ", Label: " << newEdge->GetLabel() << std::endl;
-    }
-    std::cout << "Setting node Label...." << nodeId << std::endl;
-    newNode->SetLabel(std::to_string(nodeId).c_str());
-    std::cout << "Created node with ID: " << nodeId << ", Label: " << newNode->GetLabel() << std::endl;
-    std::cout << "Node location: (" << x << ", " << y << ")" << std::endl;
-    cleanupAfterEdit();
-    return nodeId;
-}
-
-int TreeModelWrapper::splitEdge(int edgeId, double splitRatio)
-{
-    std::cout << "Splitting edge " << edgeId << " at ratio " << splitRatio << std::endl;
-    auto it = edgeMap.find(edgeId);
-    if (it == edgeMap.end())
-    {
-        std::cerr << "Invalid edge ID: " << edgeId << std::endl;
-        return -1;
-    }
-    tmEdge *edge = it->second;
-
-    tmNode *newNode;
-    try
-    {
-        tree->SplitEdge(edge, splitRatio, newNode);
-    }
-    catch (const std::exception &e)
-    {
-        std::cerr << "Error splitting edge: " << e.what() << std::endl;
-        return -1;
+        return nullptr;
     }
 
     int nodeId = nextNodeId++;
     nodeMap[nodeId] = newNode;
     std::cout << "Created node with ID: " << nodeId << std::endl;
-    std::cout << "Node location: (" << newNode->GetLoc().x << ", " << newNode->GetLoc().y << ")" << std::endl;
-    newNode->SetLabel(std::to_string(nodeId).c_str());
-    // Update the edge map
-    edgeMap.erase(edgeId);
-    for (size_t i = 0; i < newNode->GetEdges().size(); ++i)
-    {
-        tmEdge *newEdge = newNode->GetEdges()[i];
-        int newEdgeId = nextEdgeId++;
-        edgeMap[newEdgeId] = newEdge;
-        newEdge->SetLabel(std::to_string(newEdgeId).c_str());
-        std::cout << "Created edge with ID: " << newEdgeId << std::endl;
-    }
+    //strcpy(newNode->mLabel, std::to_string(nodeId).c_str());
+    //std::cout << "Node label: " << newNode->mLabel << std::endl;
 
-    cleanupAfterEdit();
-    return nodeId;
+    if (newEdge != nullptr)
+    {
+        int edgeId = nextEdgeId++;
+        edgeMap[edgeId] = newEdge;
+        std::cout << "Created edge with ID: " << edgeId << std::endl;
+        //strcpy(newEdge->mLabel, std::to_string(edgeId).c_str());
+        //std::cout << "Edge label: " << newEdge->mLabel << std::endl;
+    }
+    
+    std::cout << "Node count: " << tree->GetNumNodes() << std::endl;
+    return newNode;
 }
 
-void TreeModelWrapper::setNodeLabel(int nodeId, const std::string &label)
+void TreeModelWrapper::createNodesFromList(const std::vector<std::pair<double, double>>& nodePositions)
 {
-    auto it = nodeMap.find(nodeId);
-    if (it != nodeMap.end())
+    std::cout << "Creating nodes from list..." << std::endl;
+    
+    tmNode* parentNode = nullptr;
+    for (const auto& pos : nodePositions)
     {
-        tmNode *node = it->second;
-        node->SetLabel(label.c_str());
-        std::cout << "Set label for node " << nodeId << ": " << label << std::endl;
+        std::cout << "Creating node at (" << pos.first << ", " << pos.second << ")" << std::endl;
+        tmNode* newNode = createNode(pos.first, pos.second, parentNode);
+        if (newNode != nullptr)
+        {
+            parentNode = newNode;
+        }
     }
-    else
-    {
-        std::cerr << "Invalid node ID for setting label: " << nodeId << std::endl;
-    }
-}
-
-void TreeModelWrapper::setEdgeLabel(int edgeId, const std::string &label)
-{
-    std::cout << "Setting label for edge " << edgeId << ": " << label << std::endl;
-    auto it = edgeMap.find(edgeId);
-    if (it != edgeMap.end())
-    {
-        tmEdge *edge = it->second;
-        edge->SetLabel(label.c_str());
-        std::cout << "Set label for edge " << edgeId << ": " << label << std::endl;
-    }
-    else
-    {
-        std::cerr << "Invalid edge ID for setting label: " << edgeId << std::endl;
-    }
+    
 }
 
 int TreeModelWrapper::getNodeCount() const
@@ -144,20 +78,7 @@ int TreeModelWrapper::getEdgeCount() const
     return count;
 }
 
-std::pair<double, double> TreeModelWrapper::getNodePosition(int nodeId) const
-{
-    auto it = nodeMap.find(nodeId);
-    if (it != nodeMap.end())
-    {
-        tmNode *node = it->second;
-        double x = node->GetLoc().x;
-        double y = node->GetLoc().y;
-        std::cout << "Node " << nodeId << " position: (" << x << ", " << y << ")" << std::endl;
-        return std::make_pair(x, y);
-    }
-    std::cerr << "Invalid node ID for getting position: " << nodeId << std::endl;
-    return std::make_pair(0.0, 0.0);
-}
+
 
 std::vector<NodeData> TreeModelWrapper::getNodeData() const
 {
@@ -171,7 +92,7 @@ std::vector<NodeData> TreeModelWrapper::getNodeData() const
         data.id = nodeId;
         data.x = node->GetLoc().x;
         data.y = node->GetLoc().y;
-        data.label = node->GetLabel() ? node->GetLabel() : "";
+        //data.label = node->GetLabel() ? node->GetLabel() : "";
         nodeData.push_back(data);
     }
     std::cout << "Retrieved data for " << nodeData.size() << " nodes" << std::endl;
@@ -182,170 +103,71 @@ std::vector<EdgeData> TreeModelWrapper::getEdgeData() const
 {
     std::cout << "Getting edge data" << std::endl;
     std::vector<EdgeData> edgeData;
-    for (const auto &pair : edgeMap)
+    std::cout << "EdgeMap size: " << edgeMap.size() << std::endl;
+    for (const auto& pair : edgeMap)
     {
-        std::cout << "EdgeMap: " << pair.first << std::endl;
+        std::cout << "Inside EdgeMap" << std::endl;
         int edgeId = pair.first;
-        std::cout << "Getting Edge Id (pair.first)" << edgeId << std::endl;
-        tmEdge *edge = pair.second;
-        std::cout << "Getting Edge Data (pair.second) " << edge << std::endl;
+        tmEdge* edge = pair.second;
         EdgeData data;
         data.id = edgeId;
-        std::cout << "Meow" << std::endl;
-        std::cout << "Getting Node Ids "<< std::endl;
-        // Get the node IDs by searching the nodeMap
-        tmNode *node1 = edge->GetNodes().front();
-        tmNode *node2 = edge->GetNodes().back();
-        std::cout << "The nodes are:" << std::endl;
-        std::cout << "\tNode1: " << node1 << std::endl;
-        std::cout << "\tNode2: " << node2 << std::endl;
-        data.node1Id = -1;
-        data.node2Id = -1;
-        std::cout << "Going through NodeMap  to get ids"<< std::endl;
-        for (const auto &nodePair : nodeMap)
-        {
-            std::cout << "NodeMap: " << nodePair.first << std::endl;
-            if (nodePair.second == node1)
-                data.node1Id = nodePair.first;
-            if (nodePair.second == node2)
-                data.node2Id = nodePair.first;
-            if (data.node1Id != -1 && data.node2Id != -1)
-                break;
-        }
-
-        std::cout << "Getting Label " << std::endl;
-        data.label = edge->GetLabel() ? edge->GetLabel() : "";
+        std::cout << "Getting Nodes for Edge ID: " << edgeId << std::endl;
         
-        std::cout << "Edge " << edgeId << " data: Node " << data.node1Id << " -> Node " << data.node2Id << ", Label: " << data.label << std::endl;
-        edgeData.push_back(data);
+        // Check if the edge pointer is valid
+        if (edge == nullptr) {
+            std::cout << "Edge pointer is null for Edge ID: " << edgeId << std::endl;
+            continue;
+        }
+        
+        // Check if the front node is valid
+        tmNode* frontNode = edge->GetNodes().front();
+        if (frontNode == nullptr) {
+            std::cout << "Front node is null for Edge ID: " << edgeId << std::endl;
+            continue;
+        }
+        
+        // Check if the back node is valid
+        tmNode* backNode = edge->GetNodes().back();
+        if (backNode == nullptr) {
+            std::cout << "Back node is null for Edge ID: " << edgeId << std::endl;
+            continue;
+        }
+        
+        
+        if (frontNode != nullptr && backNode != nullptr)
+        {
+            data.node1Id = frontNode->GetIndex();
+            data.node2Id = backNode->GetIndex();
+            //data.label = edge->GetLabel() ? edge->GetLabel() : "";
+            edgeData.push_back(data);
+        }
     }
     std::cout << "Retrieved data for " << edgeData.size() << " edges" << std::endl;
     return edgeData;
 }
 
-tmTree *TreeModelWrapper::makeTreeBlank()
-{
-    cleanupAfterEdit();
-    tree = tmTree::MakeTreeBlank();
-    nodeMap.clear();
-    edgeMap.clear();
-    nextNodeId = 1;
-    nextEdgeId = 1;
-
-    std::cout << "Created blank tree" << std::endl;
-    return tree;
-}
 
 void TreeModelWrapper::cleanupAfterEdit()
 {
     tree->CleanupAfterEdit();
 }
 
-tmTree *TreeModelWrapper::makeTreeUnoptimized()
+tmTree* TreeModelWrapper::createTreeFromList(const std::vector<std::pair<double, double>>& nodePositions)
 {
+    std::cout << "Creating tree from list..." << std::endl;
     cleanupAfterEdit();
-    tree = tmTree::MakeTreeUnoptimized();
+    tree = new tmTree();
     nodeMap.clear();
     edgeMap.clear();
     nextNodeId = 1;
     nextEdgeId = 1;
-    // Populate nodeMap and edgeMap based on the new tree structure
-    for (size_t i = 0; i < tree->GetNumNodes(); ++i)
-    {
-        tmNode *node = tree->GetNodes()[i];
-        int nodeIndex = node->GetIndex() - 1; // Adjust for 1-based indexing
-        nodeMap[nodeIndex] = node;
-        node->SetLabel(std::to_string(nodeIndex + 1).c_str()); // Set label to the 1-based index
-    }
-    for (size_t i = 0; i < tree->GetNumEdges(); ++i)
-    {
-        tmEdge *edge = tree->GetEdges()[i];
-        int edgeIndex = edge->GetIndex() - 1; // Adjust for 1-based indexing
-        edgeMap[edgeIndex] = edge;
-        edge->SetLabel(std::to_string(edgeIndex + 1).c_str()); // Set label to the 1-based index
-    }
-    std::cout << "Created unoptimized tree with " << tree->GetNumNodes() << " nodes and " << tree->GetNumEdges() << " edges" << std::endl;
-    return tree;
-}
 
-tmTree *TreeModelWrapper::makeTreeOptimized()
-{
-    cleanupAfterEdit();
-    tree = tmTree::MakeTreeOptimized();
-    nodeMap.clear();
-    edgeMap.clear();
-    nextNodeId = 1;
-    nextEdgeId = 1;
-    // Populate nodeMap and edgeMap based on the new tree structure
-    for (size_t i = 0; i < tree->GetNumNodes(); ++i)
-    {
-        tmNode *node = tree->GetNodes()[i];
-        int nodeIndex = node->GetIndex() - 1; // Adjust for 1-based indexing
-        nodeMap[nodeIndex] = node;
-        node->SetLabel(std::to_string(nodeIndex + 1).c_str()); // Set label to the 1-based index
-    }
-    for (size_t i = 0; i < tree->GetNumEdges(); ++i)
-    {
-        tmEdge *edge = tree->GetEdges()[i];
-        int edgeIndex = edge->GetIndex() - 1; // Adjust for 1-based indexing
-        edgeMap[edgeIndex] = edge;
-        edge->SetLabel(std::to_string(edgeIndex + 1).c_str()); // Set label to the 1-based index
-    }
-    std::cout << "Created optimized tree with " << tree->GetNumNodes() << " nodes and " << tree->GetNumEdges() << " edges" << std::endl;
-    return tree;
-}
+    createNodesFromList(nodePositions);
 
-tmTree *TreeModelWrapper::makeTreeGusset()
-{
-    cleanupAfterEdit();
-    tree = tmTree::MakeTreeGusset();
-    nodeMap.clear();
-    edgeMap.clear();
-    nextNodeId = 1;
-    nextEdgeId = 1;
-   // Populate nodeMap and edgeMap based on the new tree structure
-    for (size_t i = 0; i < tree->GetNumNodes(); ++i)
+    if (tree != nullptr)
     {
-        tmNode *node = tree->GetNodes()[i];
-        int nodeIndex = node->GetIndex() - 1; // Adjust for 1-based indexing
-        nodeMap[nodeIndex] = node;
-        node->SetLabel(std::to_string(nodeIndex + 1).c_str()); // Set label to the 1-based index
+        std::cout << "Created tree from list with " << tree->GetNumNodes() << " nodes and " << tree->GetNumEdges() << " edges" << std::endl;
     }
-    for (size_t i = 0; i < tree->GetNumEdges(); ++i)
-    {
-        tmEdge *edge = tree->GetEdges()[i];
-        int edgeIndex = edge->GetIndex() - 1; // Adjust for 1-based indexing
-        edgeMap[edgeIndex] = edge;
-        edge->SetLabel(std::to_string(edgeIndex + 1).c_str()); // Set label to the 1-based index
-    }
-    std::cout << "Created gusset tree with " << tree->GetNumNodes() << " nodes and " << tree->GetNumEdges() << " edges" << std::endl;
-    return tree;
-}
-
-tmTree *TreeModelWrapper::makeTreeConditioned()
-{
-    cleanupAfterEdit();
-    tree = tmTree::MakeTreeConditioned();
-    nodeMap.clear();
-    edgeMap.clear();
-    nextNodeId = 1;
-    nextEdgeId = 1;
-    // Populate nodeMap and edgeMap based on the new tree structure
-    for (size_t i = 0; i < tree->GetNumNodes(); ++i)
-    {
-        tmNode *node = tree->GetNodes()[i];
-        int nodeIndex = node->GetIndex() - 1; // Adjust for 1-based indexing
-        nodeMap[nodeIndex] = node;
-        node->SetLabel(std::to_string(nodeIndex + 1).c_str()); // Set label to the 1-based index
-    }
-    for (size_t i = 0; i < tree->GetNumEdges(); ++i)
-    {
-        tmEdge *edge = tree->GetEdges()[i];
-        int edgeIndex = edge->GetIndex() - 1; // Adjust for 1-based indexing
-        edgeMap[edgeIndex] = edge;
-        edge->SetLabel(std::to_string(edgeIndex + 1).c_str()); // Set label to the 1-based index
-    }
-    std::cout << "Created conditioned tree with " << tree->GetNumNodes() << " nodes and " << tree->GetNumEdges() << " edges" << std::endl;
     return tree;
 }
 
