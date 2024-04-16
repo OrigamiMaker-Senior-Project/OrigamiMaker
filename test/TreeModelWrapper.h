@@ -2,11 +2,10 @@
 #define TREEMODELWRAPPER_H
 
 #include "tmModel/tmTree.h"
-#include "tmModel/tmTreeClasses.h"
+#include <QObject>
 #include <string>
 #include <vector>
 #include <unordered_map>
-#include <algorithm>
 #include <cstdlib>
 #include <cstring>
 
@@ -24,7 +23,8 @@ struct EdgeData {
     std::string label;
 };
 
-class TreeModelWrapper {
+class TreeModelWrapper : public QObject {
+    Q_OBJECT
 public:
     TreeModelWrapper();
     ~TreeModelWrapper();
@@ -63,6 +63,11 @@ public:
 
     bool isTreeOptimized() const;
     void buildCreasePattern();
+
+    void connectSignals(QObject *receiver);
+
+signals:
+    void treeUpdated();
 
 private:
     tmTree* tree;

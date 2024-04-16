@@ -2,59 +2,31 @@
 #define CANVASWIDGET_H
 
 #include <QWidget>
-#include <QPainter>
-#include "./tmModel/tmTree.h"
-#include "./tmModel/tmNode.h"
-#include "./tmModel/tmEdge.h"
-#include "./tmModel/tmPart.h"
-#include "tmDoc.h"
-
-// Forward declarations
-class tmwxDesignFrame;
+#include <QMouseEvent>
 
 class CanvasWidget : public QWidget
 {
     Q_OBJECT
-
 public:
-    explicit CanvasWidget(QWidget* parent = nullptr);
-    ~CanvasWidget();
+    explicit CanvasWidget(QWidget *parent = nullptr);
 
-    void setDoc(tmDoc* doc);
-    void setDesignFrame(tmwxDesignFrame* aFrame);
-    void setSize(const QSize& aSize);
-
-    // tmTree object drawing
-    tmTree* getTree() const;
+    QVector<QPoint> getPoints() const { return points; }
+    QVector<QPair<int, int>> getEdges() const { return edges; }
 
 protected:
-    void paintEvent(QPaintEvent* event) override;
+    void paintEvent(QPaintEvent *event) override;
+    void mousePressEvent(QMouseEvent *event) override;
+    void mouseMoveEvent(QMouseEvent *event) override;
+    void mouseReleaseEvent(QMouseEvent *event) override;
 
 private:
-    tmDoc* mDoc;
-    tmwxDesignFrame* mDesignFrame;
+    QVector<QPoint> points;
+    QVector<QPair<int, int>> edges;
+    int currentPointIndex;
+    bool isDrawingEdge;
 
-    // Coordinate transformation (both drawing and mousing)
-    QPoint treeToDC(const tmPoint& fp) const;
-    tmPoint dcToTree(const QPoint& p) const;
-
-    // Drawing
-    void drawDot(QPainter& painter, const QPoint& loc, const QColor& theColor, int theWidth) const;
-    template <class P>
-    void drawPart(QPainter& painter, P* p, bool isSelected) const;
-
-    // Mousing
-    bool clickOnPoint(const QPoint& where, const tmPoint& q) const;
-    bool clickOnLine(const QPoint& where, const tmPoint& q1, const tmPoint& q2) const;
-    template <class P>
-    P* clickOn(const QPoint& where) const;
+signals:
+    void treeUpdated();
 };
-
-// Template specializations for drawPart
-template <>
-void CanvasWidget::drawPart<tmNode>(QPainter& painter, tmNode* aNode, bool isSelected) const;
-
-template <>
-void CanvasWidget::drawPart<tmEdge>(QPainter& painter, tmEdge* aEdge, bool isSelected) const;
 
 #endif // CANVASWIDGET_H

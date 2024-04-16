@@ -539,7 +539,7 @@ public:
         label_6->setObjectName("label_6");
         label_6->setGeometry(QRect(0, 40, 61, 20));
         label_6->setAlignment(Qt::AlignCenter);
-        canvas = new CanvasWidget(drawingAreaGroupBox);
+        canvas = new class CanvasWidget(drawingAreaGroupBox);
         canvas->setObjectName("canvas");
         canvas->setGeometry(QRect(-1, -1, 641, 571));
 

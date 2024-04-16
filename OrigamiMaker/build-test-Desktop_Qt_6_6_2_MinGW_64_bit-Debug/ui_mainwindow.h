@@ -120,12 +120,13 @@ public:
     QLabel *label_conditions;
     QLabel *label_view_settings;
     QGroupBox *drawingAreaGroupBox;
-    CanvasWidget *canvas;
+    CanvasWidget *CanvasWidget;
     QMenuBar *menubar;
     QMenu *menuFile;
     QMenu *menuEdit;
     QMenu *menuView;
     QMenu *menuHelp;
+    QMenu *menuCreate_Crease_Pattern;
     QStatusBar *statusbar;
 
     void setupUi(QMainWindow *MainWindow)
@@ -340,7 +341,7 @@ public:
         conditionsScrollArea->setWidgetResizable(true);
         scrollAreaWidgetContents = new QWidget();
         scrollAreaWidgetContents->setObjectName("scrollAreaWidgetContents");
-        scrollAreaWidgetContents->setGeometry(QRect(0, -258, 298, 437));
+        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 298, 437));
         gridLayout_2 = new QGridLayout(scrollAreaWidgetContents);
         gridLayout_2->setObjectName("gridLayout_2");
         checkBox_10 = new QCheckBox(scrollAreaWidgetContents);
@@ -509,11 +510,12 @@ public:
         sizePolicy.setHeightForWidth(drawingAreaGroupBox->sizePolicy().hasHeightForWidth());
         drawingAreaGroupBox->setSizePolicy(sizePolicy);
         drawingAreaGroupBox->setMinimumSize(QSize(645, 0));
-        canvas = new CanvasWidget(drawingAreaGroupBox);
-        canvas->setObjectName("canvas");
-        canvas->setGeometry(QRect(0, 0, 641, 571));
-        sizePolicy.setHeightForWidth(canvas->sizePolicy().hasHeightForWidth());
-        canvas->setSizePolicy(sizePolicy);
+        QGroupBox *drawingAreaGroupBox;
+        class CanvasWidget *CanvasWidget;
+        CanvasWidget->setObjectName("CanvasWidget");
+        CanvasWidget->setGeometry(QRect(0, 0, 641, 571));
+        sizePolicy.setHeightForWidth(CanvasWidget->sizePolicy().hasHeightForWidth());
+        CanvasWidget->setSizePolicy(sizePolicy);
 
         gridLayout_4->addWidget(drawingAreaGroupBox, 0, 0, 1, 1);
 
@@ -529,6 +531,8 @@ public:
         menuView->setObjectName("menuView");
         menuHelp = new QMenu(menubar);
         menuHelp->setObjectName("menuHelp");
+        menuCreate_Crease_Pattern = new QMenu(menubar);
+        menuCreate_Crease_Pattern->setObjectName("menuCreate_Crease_Pattern");
         MainWindow->setMenuBar(menubar);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName("statusbar");
@@ -538,6 +542,7 @@ public:
         menubar->addAction(menuEdit->menuAction());
         menubar->addAction(menuView->menuAction());
         menubar->addAction(menuHelp->menuAction());
+        menubar->addAction(menuCreate_Crease_Pattern->menuAction());
         menuFile->addAction(actionNew_Ctrl_N);
         menuFile->addAction(actionOpen_Ctrl_O);
         menuFile->addAction(actionClose_Ctrl_S);
@@ -658,6 +663,7 @@ public:
         menuEdit->setTitle(QCoreApplication::translate("MainWindow", "Edit", nullptr));
         menuView->setTitle(QCoreApplication::translate("MainWindow", "View", nullptr));
         menuHelp->setTitle(QCoreApplication::translate("MainWindow", "Help", nullptr));
+        menuCreate_Crease_Pattern->setTitle(QCoreApplication::translate("MainWindow", "Create Crease Pattern", nullptr));
     } // retranslateUi
 
 };

@@ -341,7 +341,7 @@
         <property name="geometry">
          <rect>
           <x>0</x>
-          <y>-258</y>
+          <y>0</y>
           <width>298</width>
           <height>437</height>
          </rect>
@@ -622,7 +622,7 @@
       <property name="title">
        <string/>
       </property>
-      <widget class="canvas_widget" name="canvas" native="true">
+      <widget class="CanvasWidget" name="CanvasWidget" native="true">
        <property name="geometry">
         <rect>
          <x>0</x>
@@ -697,10 +697,16 @@
     <addaction name="actionTreeMaker_Help_F1"/>
     <addaction name="actionAbout_TreeMaker"/>
    </widget>
+   <widget class="QMenu" name="menuCreate_Crease_Pattern">
+    <property name="title">
+     <string>Create Crease Pattern</string>
+    </property>
+   </widget>
    <addaction name="menuFile"/>
    <addaction name="menuEdit"/>
    <addaction name="menuView"/>
    <addaction name="menuHelp"/>
+   <addaction name="menuCreate_Crease_Pattern"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
   <action name="actionNew_Ctrl_N">
@@ -856,9 +862,9 @@
  </widget>
  <customwidgets>
   <customwidget>
-   <class>canvas_widget</class>
+   <class>CanvasWidget</class>
    <extends>QWidget</extends>
-   <header>canvas_widget.h</header>
+   <header>CanvasWidget.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

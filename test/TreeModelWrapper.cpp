@@ -1,5 +1,9 @@
 #include "TreeModelWrapper.h"
+#include <QDebug>
 #include <iostream>
+#include "mainwindow.h"
+#include "tmModel/tmNode.h"
+#include "tmModel/tmEdge.h"
 
 TreeModelWrapper::TreeModelWrapper()
 {
@@ -11,6 +15,14 @@ TreeModelWrapper::TreeModelWrapper()
 TreeModelWrapper::~TreeModelWrapper()
 {
     delete tree;
+}
+
+void TreeModelWrapper::connectSignals(QObject *receiver)
+{
+    MainWindow* mainWindow = qobject_cast<MainWindow*>(receiver);
+    if (mainWindow) {
+        connect(this, &TreeModelWrapper::treeUpdated, mainWindow, &MainWindow::onTreeUpdated);
+    }
 }
 
 tmNode* TreeModelWrapper::createNode(double x, double y, tmNode* parentNode)
@@ -42,7 +54,7 @@ tmNode* TreeModelWrapper::createNode(double x, double y, tmNode* parentNode)
         //strcpy(newEdge->mLabel, std::to_string(edgeId).c_str());
         //std::cout << "Edge label: " << newEdge->mLabel << std::endl;
     }
-    
+
     std::cout << "Node count: " << tree->GetNumNodes() << std::endl;
     return newNode;
 }

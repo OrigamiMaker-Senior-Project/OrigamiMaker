@@ -509,7 +509,7 @@ public:
         sizePolicy.setHeightForWidth(drawingAreaGroupBox->sizePolicy().hasHeightForWidth());
         drawingAreaGroupBox->setSizePolicy(sizePolicy);
         drawingAreaGroupBox->setMinimumSize(QSize(645, 0));
-        canvas = new CanvasWidget(drawingAreaGroupBox);
+        canvas = = new class CanvasWidget(drawingAreaGroupBox);
         canvas->setObjectName("canvas");
         canvas->setGeometry(QRect(0, 0, 641, 571));
         sizePolicy.setHeightForWidth(canvas->sizePolicy().hasHeightForWidth());

@@ -2,7 +2,7 @@
 #include <QPainter>
 
 CanvasWidget::CanvasWidget(QWidget *parent)
-    : QWidget{parent}
+    : QWidget{parent}, currentPointIndex(-1), isDrawingEdge(false)
 {}
 
 void CanvasWidget::paintEvent(QPaintEvent *event) {
@@ -12,25 +12,61 @@ void CanvasWidget::paintEvent(QPaintEvent *event) {
     // Set color & size of points
     painter.setBrush(Qt::black);
     int pointSize = 5;
+
+    // Draw all edges
+    painter.setPen(QPen(Qt::gray, 1));
+    for (const auto &edge : edges) {
+        painter.drawLine(points[edge.first], points[edge.second]);
+    }
+
     // Draw all points
     for (int i = 0; i < points.size(); ++i) {
-
-        // Draw lines between consecutive points
-        if (i > 0) {
-            // Set line color & width
-            painter.setPen(QPen(Qt::gray, 1));
-            painter.drawLine(points[i - 1], points[i]);
-        }
-
-        if (i != 0)
-            painter.drawEllipse(points[i-1], pointSize, pointSize);     //re-draws previous point so it's on top of line
-        painter.drawEllipse(points[i], pointSize, pointSize);       //draw new point
+        painter.drawEllipse(points[i], pointSize, pointSize);
     }
 }
 
 void CanvasWidget::mousePressEvent(QMouseEvent *event) {
-    // Add clicked point to the list
-    points.append(event->pos());
-    // Trigger a repaint to update the canvas
-    update();
+    if (event->button() == Qt::LeftButton) {
+        // Check if an existing point is clicked
+        for (int i = 0; i < points.size(); ++i) {
+            if (QRect(points[i] - QPoint(5, 5), QSize(10, 10)).contains(event->pos())) {
+                currentPointIndex = i;
+                isDrawingEdge = true;
+                break;
+            }
+        }
+
+        // If no existing point is clicked, add a new point
+        if (!isDrawingEdge) {
+            points.append(event->pos());
+            currentPointIndex = points.size() - 1;
+        }
+
+        update();
+    }
+}
+
+void CanvasWidget::mouseMoveEvent(QMouseEvent *event) {
+    if (isDrawingEdge) {
+        // Update the canvas to show the edge being drawn
+        update();
+    }
+}
+
+void CanvasWidget::mouseReleaseEvent(QMouseEvent *event) {
+    if (isDrawingEdge) {
+        // Check if the edge is released on an existing point
+        for (int i = 0; i < points.size(); ++i) {
+            if (QRect(points[i] - QPoint(5, 5), QSize(10, 10)).contains(event->pos())) {
+                if (i != currentPointIndex) {
+                    edges.append(qMakePair(currentPointIndex, i));
+                    emit treeUpdated();
+                }
+                break;
+            }
+        }
+
+        isDrawingEdge = false;
+        update();
+    }
 }
