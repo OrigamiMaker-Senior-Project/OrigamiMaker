@@ -5,7 +5,7 @@ Purpose:      Header file for tmEdge class
 Author:       Robert J. Lang
 Modified by:  
 Created:      2003-11-15
-Copyright:    ©2003 Robert J. Lang. All Rights Reserved.
+Copyright:    ï¿½2003 Robert J. Lang. All Rights Reserved.
 *******************************************************************************/
 
 #ifndef _TMEDGE_H_
@@ -123,6 +123,7 @@ private:
   friend class tmPath;
   friend class tmPoly;
   friend class tmStubFinder;
+  friend class TreeModelWrapper;
 };
 
 #endif // _TMEDGE_H_

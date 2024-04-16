@@ -111,8 +111,12 @@ space.
 *****/
 void tmEdge::SetLabel(const char* aLabel)
 {
-  TMASSERT(strlen(aLabel) <= MAX_LABEL_LEN);
-  strncpy(mLabel, aLabel, MAX_LABEL_LEN);
+  //std::cout << "tmEdge::SetLabel" << std::endl;
+  size_t len = strlen(aLabel);
+  if (len > MAX_LABEL_LEN)
+    len = MAX_LABEL_LEN;
+  strncpy(mLabel, aLabel, len);
+  mLabel[len] = '\0'; // Ensure null termination
 }
 
 

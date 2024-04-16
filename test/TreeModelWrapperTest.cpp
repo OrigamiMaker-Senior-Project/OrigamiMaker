@@ -1,116 +1,193 @@
 #include "TreeModelWrapper.h"
 #include <iostream>
 
-int main() {
-    TreeModelWrapper wrapper;
+void testCreateTree(TreeModelWrapper &wrapper, const std::string &treeName)
+{
+    std::cout << "Creating " << treeName << " tree..." << std::endl;
+    tmTree *tree = nullptr;
+    if (treeName == "blank")
+        tree = wrapper.makeTreeBlank();
+    else if (treeName == "unoptimized")
+        tree = wrapper.makeTreeUnoptimized();
+    else if (treeName == "optimized")
+        tree = wrapper.makeTreeOptimized();
+    else if (treeName == "gusset")
+        tree = wrapper.makeTreeGusset();
+    else if (treeName == "conditioned")
+        tree = wrapper.makeTreeConditioned();
 
-    // Test creating a blank tree
-    std::cout << "Creating a blank tree..." << std::endl;
-    tmTree* blankTree = wrapper.makeTreeBlank();
-    std::cout << "Node count: " << blankTree->GetNumNodes() << std::endl;
-    std::cout << "Edge count: " << blankTree->GetNumEdges() << std::endl;
+    if (tree)
+    {
+        std::cout << "Node count: " << tree->GetNumNodes() << std::endl;
+        std::cout << "Edge count: " << tree->GetNumEdges() << std::endl;
+    }
+    else
+    {
+        std::cout << "Invalid tree type: " << treeName << std::endl;
+    }
+}
 
-    // Add more nodes if needed
-    // Test adding nodes and edges to the blank tree
-    std::cout << "Adding nodes and edges to the blank tree..." << std::endl;
-    int blankNode1Id = wrapper.createNode(0.2, 0.2);
-    int blankNode2Id = wrapper.createNode(0.4, 0.4, blankNode1Id);
-    int blankNode3Id = wrapper.createNode(0.6, 0.6, blankNode2Id);
-    int blankNode4Id = wrapper.createNode(0.8, 0.8, blankNode3Id);
-    int blackNode5Id = wrapper.createNode(0.9, 0.9, blankNode4Id);
-    std::cout << "Node count: " << blankTree->GetNumNodes() << std::endl;
-    std::cout << "Edge count: " << blankTree->GetNumEdges() << std::endl;
+void testAddNodesToTree(TreeModelWrapper &wrapper, const std::string &treeName)
+{
+    std::cout << "Adding nodes and edges to the " << treeName << " tree..." << std::endl;
+    int node1Id = wrapper.createNode(0.2, 0.2);
+    int node2Id = wrapper.createNode(0.4, 0.4, node1Id);
+    std::cout << "Node count: " << wrapper.getNodeCount() << std::endl;
+    std::cout << "Edge count: " << wrapper.getEdgeCount() << std::endl;
+}
 
-    // Test creating an unoptimized tree
-    std::cout << "Creating an unoptimized tree..." << std::endl;
-    tmTree* unoptimizedTree = wrapper.makeTreeUnoptimized();
-    std::cout << "Node count: " << unoptimizedTree->GetNumNodes() << std::endl;
-    std::cout << "Edge count: " << unoptimizedTree->GetNumEdges() << std::endl;
+void testSplitEdge(TreeModelWrapper &wrapper, int edgeId, double splitRatio)
+{
+    std::cout << "Splitting edge " << edgeId << " with ratio " << splitRatio << std::endl;
+    int newNodeId = wrapper.splitEdge(edgeId, splitRatio);
+    if (newNodeId != -1)
+    {
+        std::cout << "New node created with ID: " << newNodeId << std::endl;
+    }
+    else
+    {
+        std::cout << "Failed to split edge" << std::endl;
+    }
+}
 
-    // Test adding nodes and edges to the unoptimized tree
-    std::cout << "Adding nodes and edges to the unoptimized tree..." << std::endl;
-    int unoptNode1Id = wrapper.createNode(0.1, 0.1);
-    int unoptNode2Id = wrapper.createNode(0.9, 0.9, unoptNode1Id);
-    std::cout << "Node count: " << unoptimizedTree->GetNumNodes() << std::endl;
-    std::cout << "Edge count: " << unoptimizedTree->GetNumEdges() << std::endl;
-
-    // Test creating an optimized tree
-    std::cout << "Creating an optimized tree..." << std::endl;
-    tmTree* optimizedTree = wrapper.makeTreeOptimized();
-    std::cout << "Node count: " << optimizedTree->GetNumNodes() << std::endl;
-    std::cout << "Edge count: " << optimizedTree->GetNumEdges() << std::endl;
-
-    // Test adding nodes and edges to the optimized tree
-    std::cout << "Adding nodes and edges to the optimized tree..." << std::endl;
-    int optNode1Id = wrapper.createNode(0.3, 0.3);
-    int optNode2Id = wrapper.createNode(0.7, 0.7, optNode1Id);
-    std::cout << "Node count: " << optimizedTree->GetNumNodes() << std::endl;
-    std::cout << "Edge count: " << optimizedTree->GetNumEdges() << std::endl;
-
-    // Test creating a gusset tree
-    std::cout << "Creating a gusset tree..." << std::endl;
-    tmTree* gussetTree = wrapper.makeTreeGusset();
-    std::cout << "Node count: " << gussetTree->GetNumNodes() << std::endl;
-    std::cout << "Edge count: " << gussetTree->GetNumEdges() << std::endl;
-
-    // Test adding nodes and edges to the gusset tree
-    std::cout << "Adding nodes and edges to the gusset tree..." << std::endl;
-    int gussetNode1Id = wrapper.createNode(0.25, 0.25);
-    int gussetNode2Id = wrapper.createNode(0.75, 0.75, gussetNode1Id);
-    std::cout << "Node count: " << gussetTree->GetNumNodes() << std::endl;
-    std::cout << "Edge count: " << gussetTree->GetNumEdges() << std::endl;
-
-    // Test creating a conditioned tree
-    std::cout << "Creating a conditioned tree..." << std::endl;
-    tmTree* conditionedTree = wrapper.makeTreeConditioned();
-    std::cout << "Node count: " << conditionedTree->GetNumNodes() << std::endl;
-    std::cout << "Edge count: " << conditionedTree->GetNumEdges() << std::endl;
-
-    // Test adding nodes and edges to the conditioned tree
-    std::cout << "Adding nodes and edges to the conditioned tree..." << std::endl;
-    int condNode1Id = wrapper.createNode(0.15, 0.15);
-    int condNode2Id = wrapper.createNode(0.85, 0.85, condNode1Id);
-    int condEdge1Id = wrapper.splitEdge(1, 0.5);
-    std::cout << "Node count: " << conditionedTree->GetNumNodes() << std::endl;
-    std::cout << "Edge count: " << conditionedTree->GetNumEdges() << std::endl;
-
+void testGetNodeAndEdgeData(TreeModelWrapper &wrapper)
+{
     // Test getting node data
     std::vector<NodeData> nodeData = wrapper.getNodeData();
     std::cout << "Node data:" << std::endl;
-    for (const auto& data : nodeData) {
+    for (const auto &data : nodeData)
+    {
         std::cout << "  Node " << data.id << ": (" << data.x << ", " << data.y << "), Label: " << data.label << std::endl;
     }
 
     // Test getting edge data
     std::vector<EdgeData> edgeData = wrapper.getEdgeData();
     std::cout << "Edge data:" << std::endl;
-    for (const auto& data : edgeData) {
+    for (const auto &data : edgeData)
+    {
         std::cout << "  Edge " << data.id << ": Node " << data.node1Id << " -> Node " << data.node2Id << ", Label: " << data.label << std::endl;
     }
+}
 
-    // Test setting node labels
-    wrapper.setNodeLabel(blankNode1Id, "Blank Node 1");
-    wrapper.setNodeLabel(unoptNode1Id, "Unoptimized Node 1");
-    wrapper.setNodeLabel(optNode1Id, "Optimized Node 1");
-    wrapper.setNodeLabel(gussetNode1Id, "Gusset Node 1");
-    wrapper.setNodeLabel(condNode1Id, "Conditioned Node 1");
+void testSetNodeAndEdgeLabels(TreeModelWrapper &wrapper)
+{
+    // Get valid node and edge IDs from the wrapper
+    std::vector<NodeData> nodeData = wrapper.getNodeData();
+    std::vector<EdgeData> edgeData = wrapper.getEdgeData();
 
-    // Test setting edge labels
-    wrapper.setEdgeLabel(condEdge1Id, "Conditioned Edge 1");
+    if (!nodeData.empty())
+    {
+        int node1Id = nodeData[0].id;
+        wrapper.setNodeLabel(node1Id, "Node 1");
+    }
 
+    if (nodeData.size() >= 2)
+    {
+        int node2Id = nodeData[1].id;
+        wrapper.setNodeLabel(node2Id, "Node 2");
+    }
+
+    if (!edgeData.empty())
+    {
+        int edge1Id = edgeData[0].id;
+        wrapper.setEdgeLabel(edge1Id, "Edge 1");
+    }
+}
+
+void testGetNodePositions(TreeModelWrapper &wrapper)
+{
+    // Get valid node IDs from the wrapper
+    std::vector<NodeData> nodeData = wrapper.getNodeData();
+
+    if (nodeData.size() >= 2)
+    {
+        int node1Id = nodeData[0].id;
+        int node2Id = nodeData[1].id;
+
+        std::pair<double, double> node1Pos = wrapper.getNodePosition(node1Id);
+        std::pair<double, double> node2Pos = wrapper.getNodePosition(node2Id);
+
+        std::cout << "Node " << node1Id << " position: (" << node1Pos.first << ", " << node1Pos.second << ")" << std::endl;
+        std::cout << "Node " << node2Id << " position: (" << node2Pos.first << ", " << node2Pos.second << ")" << std::endl;
+    }
+}
+
+void testCreasePattern(TreeModelWrapper &wrapper)
+{
+    // Test creating a crease pattern
+    std::cout << "Creating a crease pattern..." << std::endl;
+    tmTree *cpTree = wrapper.makeTreeOptimized();
+    std::cout << "Is tree optimized? " << (wrapper.isTreeOptimized() ? "Yes" : "No") << std::endl;
+
+    if (wrapper.isTreeOptimized())
+    {
+        wrapper.buildCreasePattern();
+        std::cout << "Has full crease pattern? " << (wrapper.hasFullCreasePattern() ? "Yes" : "No") << std::endl;
+
+        if (wrapper.hasFullCreasePattern())
+        {
+            tmArray<tmEdge *> badEdges;
+            tmArray<tmPoly *> badPolys;
+            tmArray<tmVertex *> badVertices;
+            tmArray<tmCrease *> badCreases;
+            tmArray<tmFacet *> badFacets;
+            tmTree::CPStatus cpStatus = wrapper.getCreasePatternStatus(badEdges, badPolys, badVertices, badCreases, badFacets);
+            std::cout << "Crease pattern status: " << cpStatus << std::endl;
+        }
+        else
+        {
+            std::cout << "Failed to create a full crease pattern." << std::endl;
+        }
+    }
+    else
+    {
+        std::cout << "Tree is not optimized. Cannot create a crease pattern." << std::endl;
+    }
+}
+
+int main()
+{
+    TreeModelWrapper wrapper;
+    std::cout << "TreeModelWrapper test" << std::endl;
+    // Test creating different types of trees
+    testCreateTree(wrapper, "blank");
+    testCreateTree(wrapper, "unoptimized");
+    testCreateTree(wrapper, "optimized");
+    testCreateTree(wrapper, "gusset");
+    testCreateTree(wrapper, "conditioned");
+
+    std::cout << "Adding nodes and edges" << std::endl;
+    // Test adding nodes and edges to trees
+    testAddNodesToTree(wrapper, "blank");
+    testAddNodesToTree(wrapper, "unoptimized");
+    testAddNodesToTree(wrapper, "optimized");
+    testAddNodesToTree(wrapper, "gusset");
+    testAddNodesToTree(wrapper, "conditioned");
+
+    // Test splitting an edge (optional)
+    bool testSplitEdgeEnabled = false;
+    if (testSplitEdgeEnabled)
+    {
+        std::cout << "Splitting edge" << std::endl;
+        testSplitEdge(wrapper, 1, 0.5);
+    }
+
+    std::cout << "Getting node and edge data" << std::endl;
+    // Test getting node and edge data
+    testGetNodeAndEdgeData(wrapper);
+
+    std::cout << "Setting node and edge labels" << std::endl;
+    // Test setting node and edge labels
+    testSetNodeAndEdgeLabels(wrapper);
+
+    std::cout << "Getting node positions" << std::endl;
     // Test getting node positions
-    std::pair<double, double> blankNode1Pos = wrapper.getNodePosition(blankNode1Id);
-    std::pair<double, double> unoptNode1Pos = wrapper.getNodePosition(unoptNode1Id);
-    std::pair<double, double> optNode1Pos = wrapper.getNodePosition(optNode1Id);
-    std::pair<double, double> gussetNode1Pos = wrapper.getNodePosition(gussetNode1Id);
-    std::pair<double, double> condNode1Pos = wrapper.getNodePosition(condNode1Id);
+    testGetNodePositions(wrapper);
 
-    // Print node positions
-    std::cout << "Blank Node 1 position: (" << blankNode1Pos.first << ", " << blankNode1Pos.second << ")" << std::endl;
-    std::cout << "Unoptimized Node 1 position: (" << unoptNode1Pos.first << ", " << unoptNode1Pos.second << ")" << std::endl;
-    std::cout << "Optimized Node 1 position: (" << optNode1Pos.first << ", " << optNode1Pos.second << ")" << std::endl;
-    std::cout << "Gusset Node 1 position: (" << gussetNode1Pos.first << ", " << gussetNode1Pos.second << ")" << std::endl;
-    std::cout << "Conditioned Node 1 position: (" << condNode1Pos.first << ", " << condNode1Pos.second << ")" << std::endl;
+    std::cout << "Creating a crease pattern" << std::endl;
+    // Test creating a crease pattern
+    testCreasePattern(wrapper);
 
+    std::cout << "TreeModelWrapper test complete" << std::endl;
     return 0;
 }

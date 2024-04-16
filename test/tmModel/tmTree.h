@@ -603,6 +603,7 @@ template <class P>
   friend class tmConditionPathAngleFixed;
   friend class tmConditionPathAngleQuant;
   friend class tmStubFinder;
+  friend class TreeModelWrapper;
 };
 
 

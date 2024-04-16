@@ -5,7 +5,7 @@ Purpose:      Implementation file for tmEdge class
 Author:       Robert J. Lang
 Modified by:  
 Created:      2003-11-25
-Copyright:    ©2003 Robert J. Lang. All Rights Reserved.
+Copyright:    ï¿½2003 Robert J. Lang. All Rights Reserved.
 *******************************************************************************/
 
 #include "tmEdge.h"
@@ -110,8 +110,12 @@ space.
 *****/
 void tmEdge::SetLabel(const char* aLabel)
 {
-  TMASSERT(strlen(aLabel) <= MAX_LABEL_LEN);
-  strncpy(mLabel, aLabel, MAX_LABEL_LEN);
+  std::cout << "tmEdge::SetLabel" << std::endl;
+  size_t len = strlen(aLabel);
+  if (len > MAX_LABEL_LEN)
+    len = MAX_LABEL_LEN;
+  strncpy(mLabel, aLabel, len);
+  mLabel[len] = '\0'; // Ensure null termination
 }
 
 

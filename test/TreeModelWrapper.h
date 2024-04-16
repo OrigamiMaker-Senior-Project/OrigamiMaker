@@ -39,10 +39,10 @@ public:
 
     void buildTreePolys();
     void buildPolysAndCreasePattern();
-    bool hasFullCP() const;
-    tmTree::CPStatus getCPStatus(tmArray<tmEdge*>& badEdges, tmArray<tmPoly*>& badPolys,
-                                 tmArray<tmVertex*>& badVertices, tmArray<tmCrease*>& badCreases,
-                                 tmArray<tmFacet*>& badFacets);
+    bool hasFullCreasePattern() const;
+    tmTree::CPStatus getCreasePatternStatus(tmArray<tmEdge*>& badEdges, tmArray<tmPoly*>& badPolys,
+                                            tmArray<tmVertex*>& badVertices, tmArray<tmCrease*>& badCreases,
+                                            tmArray<tmFacet*>& badFacets);
     void getLeafNodes(tmArray<tmNode*>& aNodeList);
     void getBorderNodes(tmArray<tmNode*>& aNodeList);
     void getLeafPaths(tmArray<tmPath*>& aPathList);
@@ -60,11 +60,14 @@ public:
     void setPathsAngleFixed(const tmArray<tmPath*>& paths, tmFloat angle);
     void setPathsAngleQuant(const tmArray<tmPath*>& paths, size_t quant, tmFloat quantOffset);
 
-    tmTree* makeTreeBlank();
+  tmTree* makeTreeBlank();
     tmTree* makeTreeUnoptimized();
     tmTree* makeTreeOptimized();
     tmTree* makeTreeGusset();
     tmTree* makeTreeConditioned();
+
+    bool isTreeOptimized() const;
+    void buildCreasePattern();
     
 private:
     tmTree* tree;
