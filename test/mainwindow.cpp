@@ -1,6 +1,9 @@
 #include "mainwindow.h"
+#include "CanvasWidget.h"
 #include "ui_mainwindow.h"
-#include "canvaswidget.h"
+#include <QLabel>
+#include <QPixmap>
+#include <QFile>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -8,11 +11,16 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
-    // Connect the CanvasWidget to the main window
-    CanvasWidget *canvas = findChild<CanvasWidget *>("widget");
-    if (canvas) {
-        // You can set up any necessary connections or initializations for the canvas here
-    }
+    // Load and apply the stylesheet
+    QFile styleFile(":/stylesheets/stylesheet.css"); // Assuming the stylesheet file is added to the Qt resources
+    styleFile.open(QFile::ReadOnly);
+    QString styleSheet = QLatin1String(styleFile.readAll());
+    this->setStyleSheet(styleSheet);
+
+
+    // Create the canvas widget and add it to a specific section of the main window
+    canvasWidget = new CanvasWidget(this);
+    // setCentralWidget(canvasWidget);
 }
 
 MainWindow::~MainWindow()

@@ -2,9 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-
-// Forward declaration
-class CanvasWidget;
+#include "CanvasWidget.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -22,5 +20,6 @@ public:
 
 private:
     Ui::MainWindow *ui;
+    CanvasWidget *canvasWidget;
 };
 #endif // MAINWINDOW_H
