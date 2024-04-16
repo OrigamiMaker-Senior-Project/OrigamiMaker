@@ -11,8 +11,7 @@ void CanvasWidget::paintEvent(QPaintEvent *event) {
 
     // Set color & size of points
     painter.setBrush(Qt::black);
-    int pointSize = 5;          // Adjust the size as needed
-
+    int pointSize = 5;
     // Draw all points
     for (int i = 0; i < points.size(); ++i) {
 
