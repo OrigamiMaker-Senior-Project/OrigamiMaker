@@ -1,58 +1,3 @@
-#ifndef CANVASWIDGET_H
-#define CANVASWIDGET_H
-
-#include <QWidget>
-#include <QMouseEvent>
-#include <QKeyEvent>
-
-
-class CanvasWidget : public QWidget
-{
-    Q_OBJECT
-public:
-    explicit CanvasWidget(QWidget *parent = nullptr);
-
-    QVector<QPoint> getPoints() const { return points; }
-    QVector<QPair<int, int>> getEdges() const { return edges; }
-
-protected:
-    void paintEvent(QPaintEvent *event) override;
-    void mousePressEvent(QMouseEvent *event) override;
-    void mouseMoveEvent(QMouseEvent *event) override;
-    void mouseReleaseEvent(QMouseEvent *event) override;
-    void mouseDoubleClickEvent(QMouseEvent *event) override;
-    void keyPressEvent(QKeyEvent *event) override;
-
-private:
-    QVector<QPoint> points;
-    QVector<QPair<int, int>> edges;
-    int currentPointIndex;
-    bool isDrawingEdge;
-    QPoint currentEdgeEndPoint;
-    QVector<int> selectedPoints;
-    QVector<QPair<int, int>> selectedEdges;
-    int movingPointIndex;
-    bool isMovingPoint;
-
-    void selectPoint(int index);
-    void deselectPoint(int index);
-    void selectEdge(const QPair<int, int>& edge);
-    void deselectEdge(const QPair<int, int>& edge);
-    void deleteSelectedPoints();
-    void deleteSelectedEdges();
-    int findNearestPoint(const QPoint& pos) const;
-    QPair<int, int> findNearestEdge(const QPoint& pos) const;
-    bool isPointSelected(int index) const;
-    bool isEdgeSelected(const QPair<int, int>& edge) const;
-    void movePoint(int index, const QPoint& newPos);
-    void updateConnectedEdges(int pointIndex);
-
-signals:
-    void treeUpdated();
-};
-
-#endif // CANVASWIDGET_H
-
 #include "CanvasWidget.h"
 #include <QPainter>
 #include <QKeyEvent>
@@ -107,22 +52,28 @@ void CanvasWidget::mousePressEvent(QMouseEvent *event) {
         // Check if an existing point is clicked
         int nearestPointIndex = findNearestPoint(event->pos());
         if (nearestPointIndex != -1) {
-            currentPointIndex = nearestPointIndex;
-            isDrawingEdge = true;
-            currentEdgeEndPoint = event->pos();
-
-            // Toggle point selection
-            if (event->modifiers() & Qt::ControlModifier) {
-                if (isPointSelected(currentPointIndex)) {
-                    deselectPoint(currentPointIndex);
-                } else {
-                    selectPoint(currentPointIndex);
-                }
+            if (event->modifiers() & Qt::ShiftModifier) {
+                // Start moving the point if Shift is pressed
+                movingPointIndex = nearestPointIndex;
+                isMovingPoint = true;
             } else {
-                if (!isPointSelected(currentPointIndex)) {
-                    selectedPoints.clear();
-                    selectedEdges.clear();
-                    selectPoint(currentPointIndex);
+                currentPointIndex = nearestPointIndex;
+                isDrawingEdge = true;
+                currentEdgeEndPoint = event->pos();
+
+                // Toggle point selection
+                if (event->modifiers() & Qt::ControlModifier) {
+                    if (isPointSelected(currentPointIndex)) {
+                        deselectPoint(currentPointIndex);
+                    } else {
+                        selectPoint(currentPointIndex);
+                    }
+                } else {
+                    if (!isPointSelected(currentPointIndex)) {
+                        selectedPoints.clear();
+                        selectedEdges.clear();
+                        selectPoint(currentPointIndex);
+                    }
                 }
             }
         } else {
@@ -248,38 +199,34 @@ void CanvasWidget::deselectEdge(const QPair<int, int>& edge) {
 }
 
 void CanvasWidget::deleteSelectedPoints() {
-    // Sort the selected points in descending order
-    std::sort(selectedPoints.begin(), selectedPoints.end(), std::greater<int>());
-
-    // Remove selected points from the points vector
+    QVector<int> pointsToDelete;
     for (int index : selectedPoints) {
-        points.remove(index);
+        if (isLeafNode(index)) {
+            pointsToDelete.append(index);
+        }
     }
 
-    // Update the edges after removing points
-    for (int i = 0; i < edges.size(); ++i) {
-        auto &edge = edges[i];
-        if (selectedPoints.contains(edge.first) || selectedPoints.contains(edge.second)) {
-            edges.remove(i);
-            --i;
-        } else {
-            for (int j = 0; j < selectedPoints.size(); ++j) {
-                if (edge.first > selectedPoints[j]) {
-                    --edge.first;
-                }
-                if (edge.second > selectedPoints[j]) {
-                    --edge.second;
-                }
-            }
-        }
+    // Sort the points to delete in descending order
+    std::sort(pointsToDelete.begin(), pointsToDelete.end(), std::greater<int>());
+
+    // Delete points and their associated edges
+    for (int index : pointsToDelete) {
+        deletePoint(index);
     }
 
     selectedPoints.clear();
 }
 
 void CanvasWidget::deleteSelectedEdges() {
+    QVector<QPair<int, int>> edgesToDelete;
     for (const auto &edge : selectedEdges) {
-        edges.removeOne(edge);
+        if (isLeafNode(edge.first) || isLeafNode(edge.second)) {
+            edgesToDelete.append(edge);
+        }
+    }
+
+    for (const auto &edge : edgesToDelete) {
+        deleteEdge(edge);
     }
 
     selectedEdges.clear();
@@ -336,6 +283,7 @@ bool CanvasWidget::isEdgeSelected(const QPair<int, int>& edge) const {
 void CanvasWidget::movePoint(int index, const QPoint& newPos) {
     if (index >= 0 && index < points.size()) {
         points[index] = newPos;
+        updateConnectedEdges(index);
         emit treeUpdated();
     }
 }
@@ -348,4 +296,40 @@ void CanvasWidget::updateConnectedEdges(int pointIndex) {
             edge.first = pointIndex;
         }
     }
+}
+
+bool CanvasWidget::isLeafNode(int pointIndex) const {
+    int edgeCount = 0;
+    for (const auto &edge : edges) {
+        if (edge.first == pointIndex || edge.second == pointIndex) {
+            ++edgeCount;
+        }
+    }
+    return edgeCount == 1;
+}
+
+void CanvasWidget::deletePoint(int index) {
+    if (index >= 0 && index < points.size()) {
+        points.remove(index);
+
+        // Update the edges after removing the point
+        for (int i = 0; i < edges.size(); ++i) {
+            auto &edge = edges[i];
+            if (edge.first == index || edge.second == index) {
+                edges.remove(i);
+                --i;
+            } else {
+                if (edge.first > index) {
+                    --edge.first;
+                }
+                if (edge.second > index) {
+                    --edge.second;
+                }
+            }
+        }
+    }
+}
+
+void CanvasWidget::deleteEdge(const QPair<int, int>& edge) {
+    edges.removeOne(edge);
 }

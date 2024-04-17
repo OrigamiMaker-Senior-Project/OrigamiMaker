@@ -3,6 +3,7 @@
 
 #include <QWidget>
 #include <QMouseEvent>
+#include <QKeyEvent>
 
 class CanvasWidget : public QWidget
 {
@@ -18,6 +19,7 @@ protected:
     void mousePressEvent(QMouseEvent *event) override;
     void mouseMoveEvent(QMouseEvent *event) override;
     void mouseReleaseEvent(QMouseEvent *event) override;
+    void mouseDoubleClickEvent(QMouseEvent *event) override;
     void keyPressEvent(QKeyEvent *event) override;
 
 private:
@@ -28,6 +30,8 @@ private:
     QPoint currentEdgeEndPoint;
     QVector<int> selectedPoints;
     QVector<QPair<int, int>> selectedEdges;
+    int movingPointIndex;
+    bool isMovingPoint;
 
     void selectPoint(int index);
     void deselectPoint(int index);
@@ -36,8 +40,14 @@ private:
     void deleteSelectedPoints();
     void deleteSelectedEdges();
     int findNearestPoint(const QPoint& pos) const;
+    QPair<int, int> findNearestEdge(const QPoint& pos) const;
     bool isPointSelected(int index) const;
     bool isEdgeSelected(const QPair<int, int>& edge) const;
+    void movePoint(int index, const QPoint& newPos);
+    void updateConnectedEdges(int pointIndex);
+    bool isLeafNode(int pointIndex) const;
+    void deletePoint(int index);
+    void deleteEdge(const QPair<int, int>& edge);
 
 signals:
     void treeUpdated();
