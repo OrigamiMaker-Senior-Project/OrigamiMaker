@@ -405,6 +405,9 @@ distclean: debug-distclean release-distclean  FORCE
 	-$(DEL_FILE) Makefile
 	-$(DEL_FILE) .qmake.stash
 
+C:/Users/tooco/Desktop/SeniorProg/OrigamiMaker/test/tmModel/libtmModel.a:
+	cd C:/Users/tooco/Desktop/SeniorProg/OrigamiMaker/test/tmModel && $(MAKE)
+
 debug-mocclean:
 	$(MAKE) -f $(MAKEFILE).Debug mocclean
 release-mocclean:

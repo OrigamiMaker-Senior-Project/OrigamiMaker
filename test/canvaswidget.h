@@ -18,12 +18,26 @@ protected:
     void mousePressEvent(QMouseEvent *event) override;
     void mouseMoveEvent(QMouseEvent *event) override;
     void mouseReleaseEvent(QMouseEvent *event) override;
+    void keyPressEvent(QKeyEvent *event) override;
 
 private:
     QVector<QPoint> points;
     QVector<QPair<int, int>> edges;
     int currentPointIndex;
     bool isDrawingEdge;
+    QPoint currentEdgeEndPoint;
+    QVector<int> selectedPoints;
+    QVector<QPair<int, int>> selectedEdges;
+
+    void selectPoint(int index);
+    void deselectPoint(int index);
+    void selectEdge(const QPair<int, int>& edge);
+    void deselectEdge(const QPair<int, int>& edge);
+    void deleteSelectedPoints();
+    void deleteSelectedEdges();
+    int findNearestPoint(const QPoint& pos) const;
+    bool isPointSelected(int index) const;
+    bool isEdgeSelected(const QPair<int, int>& edge) const;
 
 signals:
     void treeUpdated();

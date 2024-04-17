@@ -24,7 +24,6 @@
 #include <QtWidgets/QScrollArea>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QWidget>
-#include "CanvasWidget.h"
 
 QT_BEGIN_NAMESPACE
 
@@ -120,7 +119,6 @@ public:
     QLabel *label_conditions;
     QLabel *label_view_settings;
     QGroupBox *drawingAreaGroupBox;
-    CanvasWidget *CanvasWidget;
     QMenuBar *menubar;
     QMenu *menuFile;
     QMenu *menuEdit;
@@ -503,21 +501,15 @@ public:
         label_view_settings->setObjectName("label_view_settings");
         label_view_settings->setGeometry(QRect(10, 420, 121, 20));
 
-        gridLayout_4->addWidget(sideMenuGroupBox, 0, 1, 1, 1, Qt::AlignRight);
+        gridLayout_4->addWidget(sideMenuGroupBox, 0, 4, 1, 1, Qt::AlignRight);
 
         drawingAreaGroupBox = new QGroupBox(centralwidget);
         drawingAreaGroupBox->setObjectName("drawingAreaGroupBox");
         sizePolicy.setHeightForWidth(drawingAreaGroupBox->sizePolicy().hasHeightForWidth());
         drawingAreaGroupBox->setSizePolicy(sizePolicy);
         drawingAreaGroupBox->setMinimumSize(QSize(645, 0));
-        QGroupBox *drawingAreaGroupBox;
-        class CanvasWidget *CanvasWidget;
-        CanvasWidget->setObjectName("CanvasWidget");
-        CanvasWidget->setGeometry(QRect(0, 0, 641, 571));
-        sizePolicy.setHeightForWidth(CanvasWidget->sizePolicy().hasHeightForWidth());
-        CanvasWidget->setSizePolicy(sizePolicy);
 
-        gridLayout_4->addWidget(drawingAreaGroupBox, 0, 0, 1, 1);
+        gridLayout_4->addWidget(drawingAreaGroupBox, 0, 3, 1, 1);
 
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);

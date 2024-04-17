@@ -62,7 +62,7 @@ tmNode* TreeModelWrapper::createNode(double x, double y, tmNode* parentNode)
 void TreeModelWrapper::createNodesFromList(const std::vector<std::pair<double, double>>& nodePositions)
 {
     std::cout << "Creating nodes from list..." << std::endl;
-    
+
     tmNode* parentNode = nullptr;
     for (const auto& pos : nodePositions)
     {
@@ -73,7 +73,7 @@ void TreeModelWrapper::createNodesFromList(const std::vector<std::pair<double, d
             parentNode = newNode;
         }
     }
-    
+
 }
 
 int TreeModelWrapper::getNodeCount() const
@@ -82,6 +82,7 @@ int TreeModelWrapper::getNodeCount() const
     std::cout << "Node count: " << count << std::endl;
     return count;
 }
+
 
 int TreeModelWrapper::getEdgeCount() const
 {
@@ -174,7 +175,16 @@ tmTree* TreeModelWrapper::createTreeFromList(const std::vector<std::pair<double,
     nextNodeId = 1;
     nextEdgeId = 1;
 
-    createNodesFromList(nodePositions);
+    tmNode* parentNode = nullptr;
+    for (const auto& pos : nodePositions)
+    {
+        std::cout << "Creating node at (" << pos.first << ", " << pos.second << ")" << std::endl;
+        tmNode* newNode = createNode(pos.first, pos.second, parentNode);
+        if (newNode != nullptr)
+        {
+            parentNode = newNode;
+        }
+    }
 
     if (tree != nullptr)
     {

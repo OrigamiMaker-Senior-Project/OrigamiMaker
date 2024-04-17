@@ -66,6 +66,7 @@ public:
 
     void connectSignals(QObject *receiver);
 
+
 signals:
     void treeUpdated();
 

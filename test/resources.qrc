@@ -2,4 +2,5 @@
     <qresource lang="css" prefix="/stylesheets">
         <file>stylesheet.css</file>
     </qresource>
+    <qresource lang="none" prefix="/images"/>
 </RCC>

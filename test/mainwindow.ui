@@ -33,7 +33,7 @@
     </sizepolicy>
    </property>
    <layout class="QGridLayout" name="gridLayout_4">
-    <item row="0" column="1" alignment="Qt::AlignRight">
+    <item row="0" column="4" alignment="Qt::AlignRight">
      <widget class="QGroupBox" name="sideMenuGroupBox">
       <property name="sizePolicy">
        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
@@ -605,7 +605,7 @@
       </widget>
      </widget>
     </item>
-    <item row="0" column="0">
+    <item row="0" column="3">
      <widget class="QGroupBox" name="drawingAreaGroupBox">
       <property name="sizePolicy">
        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
@@ -622,22 +622,6 @@
       <property name="title">
        <string/>
       </property>
-      <widget class="CanvasWidget" name="CanvasWidget" native="true">
-       <property name="geometry">
-        <rect>
-         <x>0</x>
-         <y>0</y>
-         <width>641</width>
-         <height>571</height>
-        </rect>
-       </property>
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-      </widget>
      </widget>
     </item>
    </layout>
@@ -860,14 +844,6 @@
    </property>
   </action>
  </widget>
- <customwidgets>
-  <customwidget>
-   <class>CanvasWidget</class>
-   <extends>QWidget</extends>
-   <header>CanvasWidget.h</header>
-   <container>1</container>
-  </customwidget>
- </customwidgets>
  <resources/>
  <connections/>
 </ui>

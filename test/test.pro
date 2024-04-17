@@ -131,8 +131,14 @@ RESOURCES += \
 INCLUDEPATH += $$PWD/tmModel
 DEPENDPATH += $$PWD/tmModel
 
-# Run the Makefile
-# system(make -f $$PWD/Makefile)
+# Compile the tmModel library
+TMMODEL_DIR = $$PWD/tmModel
+TMMODEL_LIB = $$TMMODEL_DIR/libtmModel.a
 
-# Link against the generated library
-#LIBS += -L$$PWD -ltmModel
+tmModel.target = $$TMMODEL_LIB
+tmModel.commands = cd $$TMMODEL_DIR && $(MAKE)
+QMAKE_EXTRA_TARGETS += tmModel
+PRE_TARGETDEPS += $$TMMODEL_LIB
+
+# Link against the tmModel library
+LIBS += -L$$TMMODEL_DIR -ltmModel

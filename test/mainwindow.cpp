@@ -19,9 +19,12 @@ MainWindow::MainWindow(QWidget *parent)
     QString styleSheet = QLatin1String(styleFile.readAll());
     this->setStyleSheet(styleSheet);
 
+    // Create a layout for the drawingAreaGroupBox
+    QVBoxLayout *drawingAreaLayout = new QVBoxLayout(ui->drawingAreaGroupBox);
+    drawingAreaLayout->setContentsMargins(0, 0, 0, 0);
 
     canvasWidget = new CanvasWidget(this);
-    setCentralWidget(canvasWidget);
+    drawingAreaLayout->addWidget(canvasWidget);
 
     treeModelWrapper.connectSignals(this);
 
