@@ -30,7 +30,7 @@ MainWindow::MainWindow(QWidget *parent)
 
     QAction *createCreasePatternAction = new QAction(tr("Create Crease Pattern"), this);
     connect(createCreasePatternAction, &QAction::triggered, this, &MainWindow::onCreateCreasePatternClicked);
-    ui->menuCreate_Crease_Pattern->addAction(createCreasePatternAction);
+    ui->menubar->addAction(createCreasePatternAction);
 }
 MainWindow::~MainWindow()
 {
