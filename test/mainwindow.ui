@@ -681,16 +681,10 @@
     <addaction name="actionTreeMaker_Help_F1"/>
     <addaction name="actionAbout_TreeMaker"/>
    </widget>
-   <widget class="QMenu" name="menuCreate_Crease_Pattern">
-    <property name="title">
-     <string>Create Crease Pattern</string>
-    </property>
-   </widget>
    <addaction name="menuFile"/>
    <addaction name="menuEdit"/>
    <addaction name="menuView"/>
    <addaction name="menuHelp"/>
-   <addaction name="menuCreate_Crease_Pattern"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
   <action name="actionNew_Ctrl_N">

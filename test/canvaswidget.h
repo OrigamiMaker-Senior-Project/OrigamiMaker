@@ -1,3 +1,4 @@
+// CanvasWidget.h
 #ifndef CANVASWIDGET_H
 #define CANVASWIDGET_H
 
@@ -20,7 +21,7 @@ protected:
     void mouseMoveEvent(QMouseEvent *event) override;
     void mouseReleaseEvent(QMouseEvent *event) override;
     void mouseDoubleClickEvent(QMouseEvent *event) override;
-    void keyPressEvent(QKeyEvent *event) override;
+    bool eventFilter(QObject *watched, QEvent *event) override;
 
 private:
     QVector<QPoint> points;
@@ -44,13 +45,15 @@ private:
     bool isPointSelected(int index) const;
     bool isEdgeSelected(const QPair<int, int>& edge) const;
     void movePoint(int index, const QPoint& newPos);
-    void updateConnectedEdges(int pointIndex);
+    void updateConnectedEdges();
     bool isLeafNode(int pointIndex) const;
     void deletePoint(int index);
     void deleteEdge(const QPair<int, int>& edge);
+    bool isTreeConnected() const;
 
 signals:
     void treeUpdated();
+    void deletionReverted();
 };
 
 #endif // CANVASWIDGET_H

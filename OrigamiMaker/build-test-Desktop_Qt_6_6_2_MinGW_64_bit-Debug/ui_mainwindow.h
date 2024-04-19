@@ -124,7 +124,6 @@ public:
     QMenu *menuEdit;
     QMenu *menuView;
     QMenu *menuHelp;
-    QMenu *menuCreate_Crease_Pattern;
     QStatusBar *statusbar;
 
     void setupUi(QMainWindow *MainWindow)
@@ -523,8 +522,6 @@ public:
         menuView->setObjectName("menuView");
         menuHelp = new QMenu(menubar);
         menuHelp->setObjectName("menuHelp");
-        menuCreate_Crease_Pattern = new QMenu(menubar);
-        menuCreate_Crease_Pattern->setObjectName("menuCreate_Crease_Pattern");
         MainWindow->setMenuBar(menubar);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName("statusbar");
@@ -534,7 +531,6 @@ public:
         menubar->addAction(menuEdit->menuAction());
         menubar->addAction(menuView->menuAction());
         menubar->addAction(menuHelp->menuAction());
-        menubar->addAction(menuCreate_Crease_Pattern->menuAction());
         menuFile->addAction(actionNew_Ctrl_N);
         menuFile->addAction(actionOpen_Ctrl_O);
         menuFile->addAction(actionClose_Ctrl_S);
@@ -655,7 +651,6 @@ public:
         menuEdit->setTitle(QCoreApplication::translate("MainWindow", "Edit", nullptr));
         menuView->setTitle(QCoreApplication::translate("MainWindow", "View", nullptr));
         menuHelp->setTitle(QCoreApplication::translate("MainWindow", "Help", nullptr));
-        menuCreate_Crease_Pattern->setTitle(QCoreApplication::translate("MainWindow", "Create Crease Pattern", nullptr));
     } // retranslateUi
 
 };
