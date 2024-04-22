@@ -1,10 +1,12 @@
-// CanvasWidget.h
 #ifndef CANVASWIDGET_H
 #define CANVASWIDGET_H
 
 #include <QWidget>
 #include <QMouseEvent>
 #include <QKeyEvent>
+#include <QImage>
+#include <QPixmap>
+#include <QLabel>
 
 class CanvasWidget : public QWidget
 {
@@ -14,6 +16,10 @@ public:
 
     QVector<QPoint> getPoints() const { return points; }
     QVector<QPair<int, int>> getEdges() const { return edges; }
+    void drawCreasePattern(const std::vector<std::pair<QPointF, QPointF>>& creasePattern);
+    void createDemoTree();
+    void drawDemoCreasePattern();
+    QImage getDemoCreasePatternImage() const { return demoCreasePatternImage; }
 
 protected:
     void paintEvent(QPaintEvent *event) override;
@@ -33,6 +39,7 @@ private:
     QVector<QPair<int, int>> selectedEdges;
     int movingPointIndex;
     bool isMovingPoint;
+    QImage demoCreasePatternImage;
 
     void selectPoint(int index);
     void deselectPoint(int index);
@@ -54,6 +61,7 @@ private:
 signals:
     void treeUpdated();
     void deletionReverted();
+    void demoCreasePatternGenerated(const QImage& image);
 };
 
 #endif // CANVASWIDGET_H

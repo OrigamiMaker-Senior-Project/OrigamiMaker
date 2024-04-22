@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1000</width>
-    <height>643</height>
+    <height>712</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -33,7 +33,7 @@
     </sizepolicy>
    </property>
    <layout class="QGridLayout" name="gridLayout_4">
-    <item row="0" column="4" alignment="Qt::AlignRight">
+    <item row="0" column="5" alignment="Qt::AlignRight">
      <widget class="QGroupBox" name="sideMenuGroupBox">
       <property name="sizePolicy">
        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
@@ -605,7 +605,7 @@
       </widget>
      </widget>
     </item>
-    <item row="0" column="3">
+    <item row="0" column="0">
      <widget class="QGroupBox" name="drawingAreaGroupBox">
       <property name="sizePolicy">
        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
@@ -615,8 +615,8 @@
       </property>
       <property name="minimumSize">
        <size>
-        <width>645</width>
-        <height>0</height>
+        <width>650</width>
+        <height>650</height>
        </size>
       </property>
       <property name="title">

@@ -49,6 +49,12 @@ release/tmTree_TestTrees.o
 release/tmPoint.o
 release/tmPart.o
 release/tmHeader.o
+release/tmNLCO.o
+release/tmNLCO_alm.o
+release/tmNLCO_cfsqp.o
+release/tmNLCO_rfsqp.o
+release/tmNLCO_wnlib.o
+release/TreeModelWrapperTest.o
 release/qrc_resources.o
 release/moc_CanvasWidget.o
 release/moc_TreeModelWrapper.o

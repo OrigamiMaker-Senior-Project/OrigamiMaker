@@ -7,6 +7,7 @@
 *****************************************************************************/
 
 #include "../../../test/mainwindow.h"
+#include <QtGui/qtextcursor.h>
 #include <QtCore/qmetatype.h>
 
 #if __has_include(<QtCore/qtmochelpers.h>)
@@ -41,15 +42,23 @@ constexpr auto qt_meta_stringdata_CLASSMainWindowENDCLASS = QtMocHelpers::string
     "MainWindow",
     "onTreeUpdated",
     "",
-    "onCreateCreasePatternClicked"
+    "onCreateCreasePatternClicked",
+    "onCreateDemoClicked",
+    "onCreateDemoCreasePatternClicked",
+    "showCreasePatternDialog",
+    "pixmap"
 );
 #else  // !QT_MOC_HAS_STRING_DATA
 struct qt_meta_stringdata_CLASSMainWindowENDCLASS_t {
-    uint offsetsAndSizes[8];
+    uint offsetsAndSizes[16];
     char stringdata0[11];
     char stringdata1[14];
     char stringdata2[1];
     char stringdata3[29];
+    char stringdata4[20];
+    char stringdata5[33];
+    char stringdata6[24];
+    char stringdata7[7];
 };
 #define QT_MOC_LITERAL(ofs, len) \
     uint(sizeof(qt_meta_stringdata_CLASSMainWindowENDCLASS_t::offsetsAndSizes) + ofs), len 
@@ -58,12 +67,20 @@ Q_CONSTINIT static const qt_meta_stringdata_CLASSMainWindowENDCLASS_t qt_meta_st
         QT_MOC_LITERAL(0, 10),  // "MainWindow"
         QT_MOC_LITERAL(11, 13),  // "onTreeUpdated"
         QT_MOC_LITERAL(25, 0),  // ""
-        QT_MOC_LITERAL(26, 28)   // "onCreateCreasePatternClicked"
+        QT_MOC_LITERAL(26, 28),  // "onCreateCreasePatternClicked"
+        QT_MOC_LITERAL(55, 19),  // "onCreateDemoClicked"
+        QT_MOC_LITERAL(75, 32),  // "onCreateDemoCreasePatternClicked"
+        QT_MOC_LITERAL(108, 23),  // "showCreasePatternDialog"
+        QT_MOC_LITERAL(132, 6)   // "pixmap"
     },
     "MainWindow",
     "onTreeUpdated",
     "",
-    "onCreateCreasePatternClicked"
+    "onCreateCreasePatternClicked",
+    "onCreateDemoClicked",
+    "onCreateDemoCreasePatternClicked",
+    "showCreasePatternDialog",
+    "pixmap"
 };
 #undef QT_MOC_LITERAL
 #endif // !QT_MOC_HAS_STRING_DATA
@@ -75,7 +92,7 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSMainWindowENDCLASS[] = {
       12,       // revision
        0,       // classname
        0,    0, // classinfo
-       2,   14, // methods
+       5,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -83,12 +100,18 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSMainWindowENDCLASS[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags, initial metatype offsets
-       1,    0,   26,    2, 0x0a,    1 /* Public */,
-       3,    0,   27,    2, 0x0a,    2 /* Public */,
+       1,    0,   44,    2, 0x0a,    1 /* Public */,
+       3,    0,   45,    2, 0x0a,    2 /* Public */,
+       4,    0,   46,    2, 0x0a,    3 /* Public */,
+       5,    0,   47,    2, 0x0a,    4 /* Public */,
+       6,    1,   48,    2, 0x0a,    5 /* Public */,
 
  // slots: parameters
     QMetaType::Void,
     QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void, QMetaType::QPixmap,    7,
 
        0        // eod
 };
@@ -105,7 +128,14 @@ Q_CONSTINIT const QMetaObject MainWindow::staticMetaObject = { {
         // method 'onTreeUpdated'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'onCreateCreasePatternClicked'
-        QtPrivate::TypeAndForceComplete<void, std::false_type>
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'onCreateDemoClicked'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'onCreateDemoCreasePatternClicked'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'showCreasePatternDialog'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        QtPrivate::TypeAndForceComplete<const QPixmap &, std::false_type>
     >,
     nullptr
 } };
@@ -118,10 +148,12 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         switch (_id) {
         case 0: _t->onTreeUpdated(); break;
         case 1: _t->onCreateCreasePatternClicked(); break;
+        case 2: _t->onCreateDemoClicked(); break;
+        case 3: _t->onCreateDemoCreasePatternClicked(); break;
+        case 4: _t->showCreasePatternDialog((*reinterpret_cast< std::add_pointer_t<QPixmap>>(_a[1]))); break;
         default: ;
         }
     }
-    (void)_a;
 }
 
 const QMetaObject *MainWindow::metaObject() const
@@ -143,13 +175,13 @@ int MainWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 2)
+        if (_id < 5)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 2;
+        _id -= 5;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 2)
+        if (_id < 5)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 2;
+        _id -= 5;
     }
     return _id;
 }

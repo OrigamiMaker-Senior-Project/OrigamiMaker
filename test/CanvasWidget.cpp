@@ -1,4 +1,6 @@
 #include "CanvasWidget.h"
+#include <QPixmap>
+#include <QDir>
 #include <QPainter>
 #include <QKeyEvent>
 #include <cmath>
@@ -12,37 +14,53 @@ CanvasWidget::CanvasWidget(QWidget *parent)
     installEventFilter(this);
 }
 
-bool CanvasWidget::eventFilter(QObject *watched, QEvent *event)
+void CanvasWidget::drawCreasePattern(const std::vector<std::pair<QPointF, QPointF>>& creasePattern)
 {
-    if (watched == this) {
-        if (event->type() == QEvent::KeyPress) {
-            QKeyEvent *keyEvent = static_cast<QKeyEvent *>(event);
-            if (keyEvent->key() == Qt::Key_Delete || keyEvent->key() == Qt::Key_Backspace) {
-                if (!selectedPoints.isEmpty() || !selectedEdges.isEmpty()) {
-                    deleteSelectedPoints();
-                    deleteSelectedEdges();
-                    emit treeUpdated();
-                    update();
-                    return true;
-                }
-            } else if (keyEvent->matches(QKeySequence::SelectAll)) {
-                selectedPoints.clear();
-                selectedEdges.clear();
-                for (int i = 0; i < points.size(); ++i) {
-                    selectPoint(i);
-                }
-                for (const auto &edge : edges) {
-                    selectEdge(edge);
-                }
-                update();
-                return true;
-            }
-        }
+    QPainter painter(this);
+    painter.setRenderHint(QPainter::Antialiasing, true);
+    painter.setPen(QPen(Qt::red, 2));
+
+    for (const auto& crease : creasePattern) {
+        painter.drawLine(crease.first, crease.second);
     }
-    return QWidget::eventFilter(watched, event);
 }
 
-void CanvasWidget::paintEvent(QPaintEvent *event) {
+void CanvasWidget::createDemoTree()
+{
+    points.clear();
+    edges.clear();
+
+    points.append(QPoint(316, 298));
+    points.append(QPoint(646, 644));
+    points.append(QPoint(215, 645));
+    points.append(QPoint(644, 174));
+    points.append(QPoint(316, 6));
+    points.append(QPoint(3, 274));
+
+    edges.append(qMakePair(0, 1));
+    edges.append(qMakePair(0, 2));
+    edges.append(qMakePair(0, 3));
+    edges.append(qMakePair(0, 4));
+    edges.append(qMakePair(0, 5));
+
+    update();
+    emit treeUpdated();
+}
+
+void CanvasWidget::drawDemoCreasePattern()
+{
+    QString imagePath = QDir::currentPath() + "/demo1.png";
+    QPixmap pixmap(imagePath);
+    if (!pixmap.isNull()) {
+        QLabel *creasePatternLabel = parentWidget()->findChild<QLabel*>("creasePatternLabel");
+        if (creasePatternLabel) {
+            creasePatternLabel->setPixmap(pixmap.scaled(creasePatternLabel->size(), Qt::KeepAspectRatio, Qt::SmoothTransformation));
+        }
+    }
+    qDebug() << "DRAWN";
+}
+void CanvasWidget::paintEvent(QPaintEvent *event)
+{
     QPainter painter(this);
     painter.setRenderHint(QPainter::Antialiasing, true);
 
@@ -79,7 +97,49 @@ void CanvasWidget::paintEvent(QPaintEvent *event) {
             painter.drawEllipse(points[i], pointSize, pointSize);
         }
     }
+
+    // Draw the demo tree
+    painter.setPen(QPen(Qt::black, 2));
+    for (const auto &edge : edges) {
+        painter.drawLine(points[edge.first], points[edge.second]);
+    }
+
+    // Draw the crease pattern
+    drawDemoCreasePattern();
 }
+
+
+bool CanvasWidget::eventFilter(QObject *watched, QEvent *event)
+{
+    if (watched == this) {
+        if (event->type() == QEvent::KeyPress) {
+            QKeyEvent *keyEvent = static_cast<QKeyEvent *>(event);
+            if (keyEvent->key() == Qt::Key_Delete || keyEvent->key() == Qt::Key_Backspace) {
+                if (!selectedPoints.isEmpty() || !selectedEdges.isEmpty()) {
+                    deleteSelectedPoints();
+                    deleteSelectedEdges();
+                    emit treeUpdated();
+                    update();
+                    return true;
+                }
+            } else if (keyEvent->matches(QKeySequence::SelectAll)) {
+                selectedPoints.clear();
+                selectedEdges.clear();
+                for (int i = 0; i < points.size(); ++i) {
+                    selectPoint(i);
+                }
+                for (const auto &edge : edges) {
+                    selectEdge(edge);
+                }
+                update();
+                return true;
+            }
+        }
+    }
+    return QWidget::eventFilter(watched, event);
+}
+
+
 
 void CanvasWidget::mousePressEvent(QMouseEvent *event) {
     if (event->button() == Qt::LeftButton) {

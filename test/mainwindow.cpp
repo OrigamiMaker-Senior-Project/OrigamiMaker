@@ -6,6 +6,9 @@
 #include <QPixmap>
 #include <QFile>
 #include <QDebug>
+#include "TreeModelWrapper.h"
+#include <QVBoxLayout>
+#include <QPushButton>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -26,11 +29,32 @@ MainWindow::MainWindow(QWidget *parent)
     canvasWidget = new CanvasWidget(this);
     drawingAreaLayout->addWidget(canvasWidget);
 
+    int canvasSize = 650;
+    canvasWidget->setFixedSize(canvasSize, canvasSize);
+
     treeModelWrapper.connectSignals(this);
+
+    //treeModelWrapper.runTests();
 
     QAction *createCreasePatternAction = new QAction(tr("Create Crease Pattern"), this);
     connect(createCreasePatternAction, &QAction::triggered, this, &MainWindow::onCreateCreasePatternClicked);
     ui->menubar->addAction(createCreasePatternAction);
+
+    QAction *createDemoButton = new QAction(tr("Create Demo"), this);
+    connect(createDemoButton, &QAction::triggered, this, &MainWindow::onCreateDemoClicked);
+    ui->menubar->addAction(createDemoButton);
+
+    // Add "Create Demo Crease Pattern" button
+    QAction *createDemoCreasePatternButton = new QAction(tr("Create Demo Crease Pattern"), this);
+    connect(createDemoCreasePatternButton, &QAction::triggered, this, &MainWindow::onCreateDemoCreasePatternClicked);
+    ui->menubar->addAction(createDemoCreasePatternButton);
+
+    creasePatternDialog = new QDialog(this);
+    creasePatternDialog->setWindowTitle("Crease Pattern");
+    creasePatternDialog->setFixedSize(500, 500);
+
+
+
 }
 MainWindow::~MainWindow()
 {
@@ -51,13 +75,19 @@ void MainWindow::onCreateCreasePatternClicked()
 
     // Create tree from parsed node positions
     tmTree *tree = treeModelWrapper.createTreeFromList(nodePositions);
+    if (tree != nullptr) {
+        treeModelWrapper.setTreeScale(); // Set the tree scale to 1 by 1
 
+    }
     // Check if the tree is valid
     if (tree != nullptr) {
         qDebug() << "Created a valid tree";
 
         // Build tree polygons
         treeModelWrapper.buildTreePolys();
+
+        // Optimize the tree
+        treeModelWrapper.optimizeTree();
 
         // Check if the tree is optimized
         if (treeModelWrapper.isTreeOptimized()) {
@@ -78,4 +108,33 @@ void MainWindow::onCreateCreasePatternClicked()
     } else {
         qDebug() << "Failed to create a valid tree";
     }
+}
+
+void MainWindow::onCreateDemoClicked()
+{
+    qDebug() << "Create Demo clicked";
+    canvasWidget->createDemoTree();
+}
+
+void MainWindow::onCreateDemoCreasePatternClicked()
+{
+    qDebug() << "Create Demo Crease Pattern clicked";
+    canvasWidget->drawDemoCreasePattern();
+
+
+    QVBoxLayout *dialogLayout = new QVBoxLayout(creasePatternDialog);
+
+    creasePatternLabel = new QLabel(creasePatternDialog);
+    creasePatternLabel->setScaledContents(true);
+    dialogLayout->addWidget(creasePatternLabel);
+
+    QPushButton *closeButton = new QPushButton("Close", creasePatternDialog);
+    connect(closeButton, &QPushButton::clicked, creasePatternDialog, &QDialog::close);
+    dialogLayout->addWidget(closeButton);
+}
+
+void MainWindow::showCreasePatternDialog(const QPixmap &pixmap)
+{
+    creasePatternLabel->setPixmap(pixmap);
+    creasePatternDialog->exec();
 }

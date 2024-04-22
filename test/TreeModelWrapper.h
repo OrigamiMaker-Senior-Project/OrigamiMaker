@@ -63,8 +63,22 @@ public:
 
     bool isTreeOptimized() const;
     void buildCreasePattern();
+    void optimizeTree();
+    void scaleOptimization();
+    void strainOptimization();
+    void edgeOptimization(tmDpptrArray<tmNode>& nodes, tmDpptrArray<tmEdge>& edges);
+    void setTreeScale();
+    std::vector<std::pair<QPointF, QPointF>> getCreasePattern() const;
+
 
     void connectSignals(QObject *receiver);
+
+
+    void testCreateTreeFromList(TreeModelWrapper& wrapper, const std::vector<std::pair<double, double>>& nodePositions);
+    void testGetNodeAndEdgeData(TreeModelWrapper& wrapper);
+    void testCreasePattern(TreeModelWrapper& wrapper);
+    void runTests();
+
 
 
 signals:
@@ -78,6 +92,13 @@ private:
     int nextEdgeId;
 
     void cleanupAfterEdit();
+
+    void removeStrain(tmArray<tmEdge*>& aEdgeList);
+    void removeAllStrain();
+    void perturbNodes(const tmArray<tmNode*>& aNodeList);
+    bool canPerturbAllNodes() const;
+    void perturbAllNodes();
+
 };
 
 #endif // TREEMODELWRAPPER_H

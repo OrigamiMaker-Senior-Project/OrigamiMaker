@@ -130,7 +130,7 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName("MainWindow");
-        MainWindow->resize(1000, 643);
+        MainWindow->resize(1000, 712);
         QSizePolicy sizePolicy(QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Expanding);
         sizePolicy.setHorizontalStretch(0);
         sizePolicy.setVerticalStretch(0);
@@ -500,15 +500,15 @@ public:
         label_view_settings->setObjectName("label_view_settings");
         label_view_settings->setGeometry(QRect(10, 420, 121, 20));
 
-        gridLayout_4->addWidget(sideMenuGroupBox, 0, 4, 1, 1, Qt::AlignRight);
+        gridLayout_4->addWidget(sideMenuGroupBox, 0, 5, 1, 1, Qt::AlignRight);
 
         drawingAreaGroupBox = new QGroupBox(centralwidget);
         drawingAreaGroupBox->setObjectName("drawingAreaGroupBox");
         sizePolicy.setHeightForWidth(drawingAreaGroupBox->sizePolicy().hasHeightForWidth());
         drawingAreaGroupBox->setSizePolicy(sizePolicy);
-        drawingAreaGroupBox->setMinimumSize(QSize(645, 0));
+        drawingAreaGroupBox->setMinimumSize(QSize(650, 650));
 
-        gridLayout_4->addWidget(drawingAreaGroupBox, 0, 3, 1, 1);
+        gridLayout_4->addWidget(drawingAreaGroupBox, 0, 0, 1, 1);
 
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);

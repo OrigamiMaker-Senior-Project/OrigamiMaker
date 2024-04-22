@@ -57,7 +57,13 @@ SOURCES += \
     tmModel/tmTree_TestTrees.cpp \
     tmModel/tmPoint.cpp \
     tmModel/tmPart.cpp \
-    tmModel/tmHeader.cpp
+    tmModel/tmHeader.cpp \
+    tmModel/tmNLCO.cpp \
+    tmModel/tmNLCO_alm.cpp \
+    tmModel/tmNLCO_cfsqp.cpp \
+    tmModel/tmNLCO_rfsqp.cpp \
+    tmModel/tmNLCO_wnlib.cpp \
+    TreeModelWrapperTest.cpp \
 
 HEADERS += \
     CanvasWidget.h \
@@ -113,7 +119,12 @@ HEADERS += \
     tmModel/tmVertex.h \
     tmModel/tmCrease.h \
     tmModel/tmFacet.h \
-    tmModel/tmCondition.h
+    tmModel/tmCondition.h \
+    tmModel/tmNLCO.h \
+    tmModel/tmNLCO_alm.h \
+    tmModel/tmNLCO_cfsqp.h \
+    tmModel/tmNLCO_rfsqp.h \
+    tmModel/tmNLCO_wnlib.h \
 
 FORMS += \
     mainwindow.ui
@@ -123,6 +134,7 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 DISTFILES += \
+    demo1.tmd5 \
     stylesheet.css
 
 RESOURCES += \

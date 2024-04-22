@@ -49,6 +49,12 @@ debug/tmTree_TestTrees.o
 debug/tmPoint.o
 debug/tmPart.o
 debug/tmHeader.o
+debug/tmNLCO.o
+debug/tmNLCO_alm.o
+debug/tmNLCO_cfsqp.o
+debug/tmNLCO_rfsqp.o
+debug/tmNLCO_wnlib.o
+debug/TreeModelWrapperTest.o
 debug/qrc_resources.o
 debug/moc_CanvasWidget.o
 debug/moc_TreeModelWrapper.o
